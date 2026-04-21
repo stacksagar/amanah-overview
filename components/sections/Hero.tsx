@@ -239,38 +239,39 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* ── Orbital ring system — top-right ── */}
+      {/* ── Orbital ring system — top-right (responsive) ── */}
       <div
-        className="absolute -top-32 -right-48 pointer-events-none"
+        className="absolute -top-10 -right-10 sm:-top-32 sm:-right-48 pointer-events-none"
         aria-hidden="true"
       >
         <div
           ref={outerRingRef}
-          className="w-[560px] h-[560px] rounded-full border border-border/35 will-transform"
+          className="w-[260px] h-[260px] sm:w-[560px] sm:h-[560px] rounded-full border border-border/35 will-transform"
         />
         <div
           ref={midRingRef}
-          className="absolute top-[80px] left-[80px] w-[400px] h-[400px] rounded-full will-transform"
+          className="absolute top-[37px] left-[37px] w-[186px] h-[186px]
+                     sm:top-[80px] sm:left-[80px] sm:w-[400px] sm:h-[400px] rounded-full will-transform"
           style={{ border: "1px dashed rgba(0,102,255,0.25)" }}
         />
         <div
           ref={innerRingRef}
-          className="absolute top-[160px] left-[160px] w-[240px] h-[240px] rounded-full will-transform"
+          className="absolute top-[74px] left-[74px] w-[112px] h-[112px]
+                     sm:top-[160px] sm:left-[160px] sm:w-[240px] sm:h-[240px] rounded-full will-transform"
           style={{ border: "1px solid rgba(234,234,234,0.12)" }}
         />
-        {/* Cardinal tick marks */}
         {[0, 90, 180, 270].map((deg) => (
           <div
             key={deg}
-            className="absolute w-px h-5 bg-border/60"
+            className="absolute w-px h-3 sm:h-5 bg-border/60"
             style={{
               top: "50%",
               left: "50%",
-              transform: `rotate(${deg}deg) translateX(-50%) translateY(-280px)`,
+              transform: `rotate(${deg}deg) translateX(-50%) translateY(-130px)`,
             }}
           />
         ))}
-        <div className="absolute top-[248px] left-[248px] w-2 h-2 rounded-full bg-accent/50" />
+        <div className="absolute top-[115px] left-[115px] sm:top-[248px] sm:left-[248px] w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-accent/50" />
       </div>
 
       {/* ── Floating wireframe square — left ── */}
@@ -383,7 +384,7 @@ export default function Hero() {
           ].map(({ text, italic }) => (
             <div key={text} className="block overflow-hidden">
               <span
-                className={`block text-[clamp(3rem,9.5vw,9.5rem)] will-transform whitespace-nowrap
+                className={`block text-[clamp(2.4rem,7.5vw,8.5rem)] will-transform
                             ${italic ? "italic" : ""}`}
               >
                 {text.split("").map((char, ci) => (
@@ -406,11 +407,10 @@ export default function Hero() {
           ref={subRef}
           className="mt-10 text-dim font-sans font-light
                      text-[clamp(0.9rem,1.2vw,1.05rem)]
-                     leading-relaxed max-w-lg mx-auto tracking-wide will-opacity"
+                     leading-relaxed max-w-sm md:max-w-lg mx-auto tracking-wide will-opacity"
         >
-          Autonomous stewardship for those who refuse to choose
-          <br className="hidden md:block" />
-          between principle and performance.
+          Autonomous stewardship for those who refuse to choose between
+          principle and performance.
         </p>
 
         {/* CTA */}
@@ -428,6 +428,28 @@ export default function Hero() {
           >
             Learn More
           </a>
+        </div>
+
+        {/* ── Mobile stat strip — fills empty space on small screens ── */}
+        <div className="md:hidden mt-12 flex items-center justify-center gap-0">
+          {[
+            { val: "$24T+", label: "Market" },
+            { val: "0%", label: "Fees" },
+            { val: "9", label: "Agents" },
+            { val: "24/7", label: "Active" },
+          ].map(({ val, label }, i) => (
+            <div key={label} className="flex items-center">
+              {i > 0 && <div className="w-px h-8 bg-border/30 mx-4 sm:mx-6" />}
+              <div className="text-center">
+                <div className="font-serif font-black text-lg text-paper leading-none">
+                  {val}
+                </div>
+                <div className="text-[7px] tracking-[0.35em] uppercase text-dim/40 font-sans mt-1.5">
+                  {label}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
