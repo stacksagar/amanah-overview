@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Design Tokens ────────────────────────────────────── */
+@theme {
+  --color-ink: #050505;
+  --color-paper: #eaeaea;
+  --color-dim: #888888;
+  --color-accent: #0066ff;
+  --color-card: #0f0f0f;
+  --color-border: #1a1a1a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Global Reset ─────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: auto; /* Lenis handles this */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #050505;
+  color: #eaeaea;
+  overflow-x: hidden;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Hide default cursor for custom cursor */
+@media (hover: hover) {
+  html,
+  body,
+  * {
+    cursor: none !important;
+  }
+}
+
+/* ─── Film Grain ────────────────────────────────────────── */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  overflow: hidden;
+}
+
+.film-grain::before {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+  mix-blend-mode: overlay;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  animation: grain 0.6s steps(1) infinite;
+  will-change: transform;
+}
+
+@keyframes grain {
+  0% {
+    transform: translate(0, 0);
+  }
+  11% {
+    transform: translate(-2%, -3%);
+  }
+  22% {
+    transform: translate(3%, 1%);
+  }
+  33% {
+    transform: translate(-1%, 2%);
+  }
+  44% {
+    transform: translate(2%, -1%);
+  }
+  55% {
+    transform: translate(-3%, 3%);
+  }
+  66% {
+    transform: translate(1%, -2%);
+  }
+  77% {
+    transform: translate(3%, 1%);
+  }
+  88% {
+    transform: translate(-2%, 2%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ─── Performance Utils ─────────────────────────────────── */
+.will-transform {
+  will-change: transform;
+}
+.will-opacity {
+  will-change: opacity;
+}
+.clip {
+  overflow: hidden;
+}
+
+/* ─── Text Selection ────────────────────────────────────── */
+::selection {
+  background: #0066ff;
+  color: #050505;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+}
+
+/* ─── Scroll indicator ──────────────────────────────────── */
+@keyframes scroll-line {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  49% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+.animate-scroll-line {
+  animation: scroll-line 2s ease-in-out infinite;
+}
+
+/* ─── Glow (ambient) ────────────────────────────────────── */
+.hero-glow {
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 50% 55%,
+      rgba(0, 102, 255, 0.1) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 50% 65%,
+      rgba(0, 102, 255, 0.06) 0%,
+      transparent 70%
+    );
+}
+
+/* ─── 3D card preserve ──────────────────────────────────── */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* ─── Hover underline slide ─────────────────────────────── */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.link-underline:hover::after {
+  width: 100%;
 }
