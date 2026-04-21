@@ -83,18 +83,18 @@ export default function Distinction() {
     <section
       ref={sectionRef}
       id="distinction"
-      className="px-6 md:px-16 lg:px-24 py-42 md:py-48 border-t border-border"
+      className="px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border"
     >
       <div className="max-w-7xl mx-auto">
-        <p className="dist-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-20 md:mb-22">
+        <p className="dist-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-18 md:mb-20">
           02 — Aligned by Design
         </p>
 
         <div
-          className="dist-headline overflow-hidden mb-24 md:mb-26"
+          className="dist-headline overflow-hidden mb-22"
           aria-label="Built to stay aligned."
         >
-          <h2 className="font-serif font-black leading-[0.84] tracking-tight">
+          <h2 className="font-serif font-black leading-tight tracking-tight">
             {["Built to Stay", "Aligned."].map((line, li) => (
               <div key={line} className="block overflow-hidden">
                 <span
@@ -116,12 +116,12 @@ export default function Distinction() {
           </h2>
         </div>
 
-        <div className="dist-pillars grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-8 mb-32">
+        <div className="dist-pillars grid grid-cols-1 md:grid-cols-3 gap-6 mb-28">
           {PILLARS.map((p) => (
             <div
               key={p.num}
               className="dist-pillar group relative overflow-hidden border border-border
-                         px-12 py-16 md:px-14 md:py-18 flex flex-col gap-9 will-opacity
+                         px-10 py-14 md:px-12 md:py-16 flex flex-col gap-7 will-opacity
                          hover:border-accent/25 transition-colors duration-500 cursor-default"
             >
               {/* Hover fill */}
@@ -133,7 +133,7 @@ export default function Distinction() {
               <div className="relative">
                 <div
                   className="dist-pillar-line h-px bg-paper/10 w-full group-hover:bg-accent/40
-                                transition-colors duration-500 mb-7"
+                                transition-colors duration-500 mb-6"
                 />
                 <span className="text-[9px] tracking-[0.4em] uppercase text-accent/50 font-sans">
                   {p.num}
@@ -152,12 +152,12 @@ export default function Distinction() {
           ))}
         </div>
 
-        <div className="dist-quote-wrap overflow-hidden border-l-2 border-accent/40 pl-12 md:pl-16">
+        <div className="dist-quote-wrap overflow-hidden border-l-2 border-accent/40 pl-12 md:pl-14">
           <blockquote className="dist-quote-inner font-serif text-[clamp(1.3rem,2.5vw,2.2rem)] font-medium italic leading-snug text-paper/80 max-w-3xl">
             &ldquo;Nawah is built to follow your rules, not work around
             them.&rdquo;
           </blockquote>
-          <p className="mt-8 text-[9px] tracking-[0.4em] uppercase text-dim/50 font-sans">
+          <p className="mt-6 text-[9px] tracking-[0.4em] uppercase text-dim/50 font-sans">
             Nawah — The Founding Principle
           </p>
         </div>

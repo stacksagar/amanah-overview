@@ -79,7 +79,7 @@ export default function Statement() {
       ref={sectionRef}
       id="statement"
       className="relative min-h-[70vh] flex flex-col items-center justify-center
-                 px-6 md:px-16 lg:px-24 py-42 md:py-48 border-t border-border overflow-hidden"
+                 px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border overflow-hidden"
     >
       {/* Decorative diamond shape */}
       <div
@@ -107,7 +107,7 @@ export default function Statement() {
       <div className="max-w-5xl mx-auto text-center">
         <div
           ref={line1Ref}
-          className="overflow-hidden mb-4"
+          className="overflow-hidden mb-3"
           style={{ clipPath: "inset(0 100% 0 0)" }}
         >
           <p
@@ -119,7 +119,7 @@ export default function Statement() {
         </div>
         <div
           ref={line2Ref}
-          className="overflow-hidden mb-16"
+          className="overflow-hidden mb-14"
           style={{ clipPath: "inset(0 0 0 100%)" }}
         >
           <p
@@ -155,7 +155,7 @@ export default function Statement() {
           </p>
         </div>
 
-        <div className="stmt-attr mt-18 md:mt-20 flex items-center justify-center gap-3">
+        <div className="stmt-attr mt-16 flex items-center justify-center gap-3">
           <div className="w-8 h-px bg-dim/30" />
           <span className="text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
             Nawah — The Founding Principle

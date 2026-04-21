@@ -379,45 +379,43 @@ export default function Hero() {
       <div className="relative z-10 text-center max-w-7xl mx-auto w-full hero-skew-target will-transform">
         <p
           ref={eyebrowRef}
-          className="text-[10px] tracking-[0.5em] uppercase text-dim/80 font-sans mb-16 md:mb-18 will-opacity"
+          className="text-[10px] tracking-[0.5em] uppercase text-dim/80 font-sans mb-14 md:mb-16 will-opacity"
         >
           Clear. Ethical. Always working.
         </p>
 
-        <div className="mb-20 md:mb-24">
-          <h1
-            className="font-serif font-black leading-[0.82] tracking-tight text-paper"
-            aria-label="Your Wealth. Working While You Sleep."
-          >
-            {[
-              { text: "YOUR WEALTH.", italic: false },
-              { text: "WORKING", italic: false },
-              { text: "WHILE YOU SLEEP.", italic: true },
-            ].map(({ text, italic }) => (
-              <div key={text} className="block overflow-hidden">
-                <span
-                  className={`block text-[clamp(2.6rem,7vw,7.8rem)] will-transform
-                              ${italic ? "italic" : ""}`}
-                >
-                  {text.split("").map((char, ci) => (
-                    <span
-                      key={ci}
-                      className="overflow-hidden inline-block align-bottom leading-none"
-                    >
-                      <span className="hero-char inline-block will-transform leading-none">
-                        {char === " " ? "\u00a0" : char}
-                      </span>
+        <h1
+          className="font-serif font-black leading-[0.9] tracking-tight text-paper"
+          aria-label="Your Wealth. Working While You Sleep."
+        >
+          {[
+            { text: "YOUR WEALTH.", italic: false },
+            { text: "WORKING", italic: false },
+            { text: "WHILE YOU SLEEP.", italic: true },
+          ].map(({ text, italic }) => (
+            <div key={text} className="block overflow-hidden">
+              <span
+                className={`block text-[clamp(2.6rem,7vw,7.8rem)] will-transform
+                            ${italic ? "italic" : ""}`}
+              >
+                {text.split("").map((char, ci) => (
+                  <span
+                    key={ci}
+                    className="overflow-hidden inline-block align-bottom leading-none"
+                  >
+                    <span className="hero-char inline-block will-transform leading-none">
+                      {char === " " ? "\u00a0" : char}
                     </span>
-                  ))}
-                </span>
-              </div>
-            ))}
-          </h1>
-        </div>
+                  </span>
+                ))}
+              </span>
+            </div>
+          ))}
+        </h1>
 
         <p
           ref={subRef}
-          className="mb-12 md:mb-14 text-dim font-sans font-light
+          className="mt-12 text-dim font-sans font-light
                      text-[clamp(1rem,1.2vw,1.12rem)]
                      leading-[1.9] max-w-sm md:max-w-2xl mx-auto tracking-[0.01em] will-opacity"
         >
@@ -425,19 +423,19 @@ export default function Hero() {
           limits. The system does the work.
         </p>
 
-        <p className="mb-20 md:mb-24 text-paper/55 font-sans font-light text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+        <p className="mt-8 text-paper/55 font-sans font-light text-base md:text-lg leading-relaxed max-w-xl mx-auto">
           Clear records. No hidden moves.
         </p>
 
         <div
           ref={ctaRef}
-          className="flex flex-col items-center gap-10 md:gap-12 will-opacity"
+          className="mt-16 md:mt-20 flex flex-col items-center gap-6 will-opacity"
         >
           <form
             onSubmit={handleEarlyAccess}
-            className="w-full max-w-4xl border border-border/80 bg-card/80 px-10 py-10 sm:px-11 sm:py-11 md:px-16 md:py-16 flex flex-col gap-10 md:gap-11 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
+            className="w-full max-w-4xl border border-border/80 bg-card/80 px-5 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8 flex flex-col gap-5 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
           >
-            <div className="space-y-6 md:space-y-7">
+            <div className="space-y-3 md:space-y-4">
               <p className="text-[11px] tracking-[0.38em] uppercase text-dim/70 font-sans">
                 Join early access
               </p>
@@ -445,18 +443,18 @@ export default function Hero() {
                 Leave your email. We will contact you when Nawah opens.
               </p>
             </div>
-            <div className="flex flex-col lg:flex-row items-stretch justify-center gap-7 md:gap-8">
+            <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 md:gap-5">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 aria-label="Enter your email"
-                className="flex-1 min-w-0 bg-transparent border border-border px-12 md:px-16 py-9 md:py-10 font-sans text-base md:text-lg text-paper placeholder:text-dim/35 outline-none focus:border-paper/30 transition-colors duration-300"
+                className="flex-1 min-w-0 bg-transparent border border-border px-8 md:px-10 py-6 md:py-7 font-sans text-base md:text-lg text-paper placeholder:text-dim/35 outline-none focus:border-paper/30 transition-colors duration-300"
               />
               <button
                 type="submit"
-                className="group relative overflow-hidden border border-paper/25 px-16 md:px-18 py-9 md:py-10 font-sans text-[11px] tracking-[0.3em] uppercase text-paper will-transform lg:min-w-80"
+                className="group relative overflow-hidden border border-paper/25 px-10 md:px-12 py-6 md:py-7 font-sans text-[11px] tracking-[0.3em] uppercase text-paper will-transform lg:min-w-[260px]"
               >
                 <span className="absolute inset-0 bg-paper translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
                 <span className="relative mix-blend-difference">
@@ -470,7 +468,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="mt-18 md:mt-20 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14">
+        <div className="mt-14 md:mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-5 md:gap-x-12">
           {[
             { val: "$4.5T+", label: "Capital" },
             { val: "0%", label: "Fixed Fees" },

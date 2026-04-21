@@ -92,16 +92,16 @@ export default function Architecture() {
     <section
       ref={sectionRef}
       id="architecture"
-      className="px-6 md:px-16 lg:px-24 py-42 md:py-48 border-t border-border overflow-hidden"
+      className="px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="flex items-start justify-between mb-22 md:mb-24">
+        <div className="flex items-start justify-between mb-20">
           <p className="arch-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
             05 — Built for Scrutiny
           </p>
           <div
             ref={crossRef}
-            className="w-10 h-10 will-transform opacity-20 shrink-0"
+            className="w-10 h-10 will-transform opacity-20 flex-shrink-0"
             aria-hidden="true"
           >
             <svg viewBox="0 0 40 40" fill="none">
@@ -112,11 +112,11 @@ export default function Architecture() {
         </div>
 
         <div
-          className="arch-headline-wrap overflow-hidden mb-24 md:mb-26"
+          className="arch-headline-wrap overflow-hidden mb-22"
           style={{ clipPath: "inset(0 100% 0 0)" }}
           aria-label="Built to be checked"
         >
-          <h2 className="font-serif font-black leading-[0.84] tracking-tight text-paper">
+          <h2 className="font-serif font-black leading-[0.9] tracking-tight text-paper">
             <span className="block text-[clamp(3rem,8vw,8rem)]">
               Built to Be
             </span>
@@ -126,8 +126,8 @@ export default function Architecture() {
           </h2>
         </div>
 
-        <div className="arch-body-wrap grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-32">
-          <div className="space-y-7 md:space-y-8">
+        <div className="arch-body-wrap grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-24 mb-28">
+          <div className="space-y-6">
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
               Trust should not depend on guesswork. What Nawah does should be
               easy to review.
@@ -136,7 +136,7 @@ export default function Architecture() {
               That is why decisions, rules, and records are made clear.
             </p>
           </div>
-          <div className="border-l border-border pl-10 md:pl-12">
+          <div className="border-l border-border pl-8 md:pl-12">
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
               We are building the system with ethical review and formal checks
               in mind.
@@ -151,12 +151,12 @@ export default function Architecture() {
           </div>
         </div>
 
-        <div className="arch-stats grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        <div className="arch-stats grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {STATS.map((s) => (
             <div
               key={s.label}
               className="arch-stat group relative overflow-hidden border border-border
-                         px-10 py-12 md:px-12 md:py-14 flex flex-col gap-6 will-transform
+                         px-8 py-10 flex flex-col gap-4 will-transform
                          hover:border-accent/30 transition-colors duration-500 cursor-default"
             >
               {/* Hover fill */}

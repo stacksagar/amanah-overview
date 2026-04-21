@@ -139,13 +139,13 @@ function AgentCard({
   return (
     <div
       ref={cardRef}
-      className="agent-card bg-card border border-border px-11 py-12 md:px-14 md:py-16 flex flex-col gap-11 md:gap-12
+      className="agent-card bg-card border border-border px-7 py-8 md:px-8 md:py-9 flex flex-col gap-6
                  group will-transform hover:border-accent/30 transition-colors duration-500"
       style={{ transformStyle: "preserve-3d" }}
       data-index={index}
     >
-      <div className="flex items-start justify-between gap-8 md:gap-9">
-        <div className="flex items-center gap-7 md:gap-8">
+      <div className="flex items-start justify-between gap-5">
+        <div className="flex items-center gap-4">
           <div
             className={`relative w-18 h-22 rounded-[1.6rem] bg-linear-to-b ${agent.palette} overflow-hidden border border-paper/10 shrink-0`}
             style={{ transform: "translateZ(22px)" }}
@@ -157,13 +157,13 @@ function AgentCard({
           </div>
 
           <div style={{ transform: "translateZ(16px)" }}>
-            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/40 font-sans mb-5">
+            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/40 font-sans mb-2">
               {agent.id}
             </p>
             <h3 className="font-serif font-black text-[1.55rem] text-paper leading-none group-hover:italic transition-all duration-400">
               {agent.name}
             </h3>
-            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-accent/65 mt-6">
+            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-accent/65 mt-3">
               {agent.sub}
             </p>
           </div>
@@ -174,10 +174,7 @@ function AgentCard({
         </span>
       </div>
 
-      <div
-        style={{ transform: "translateZ(18px)" }}
-        className="space-y-7 md:space-y-8"
-      >
+      <div style={{ transform: "translateZ(18px)" }} className="space-y-4">
         <p className="text-paper/70 font-sans font-light text-sm md:text-[0.96rem] leading-relaxed">
           {agent.bio}
         </p>
@@ -251,51 +248,49 @@ export default function Intelligence() {
     <section
       ref={sectionRef}
       id="intelligence"
-      className="px-6 md:px-16 lg:px-24 py-44 md:py-52 border-t border-border"
+      className="px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
-        <div className="mb-36 md:mb-40">
-          <p className="intel-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-20 md:mb-22">
+        <div className="mb-24">
+          <p className="intel-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-14">
             03 — A Council That Never Sleeps
           </p>
 
-          <div className="mb-18 md:mb-20">
-            <div
-              className="intel-headline overflow-hidden"
-              aria-label="Meet the Nine Agents."
-            >
-              <h2 className="font-serif font-black leading-[0.84] tracking-tight text-paper">
-                {["Meet the", "Nine Agents."].map((line, li) => (
-                  <div key={line} className="block overflow-hidden">
-                    <span
-                      className={`block text-[clamp(2.8rem,6.4vw,6.8rem)] will-transform ${li === 1 ? "italic text-paper/52" : ""}`}
-                    >
-                      {line.split("").map((char, ci) => (
-                        <span
-                          key={ci}
-                          className="overflow-hidden inline-block align-bottom"
-                        >
-                          <span className="intel-char inline-block will-transform">
-                            {char === " " ? "\u00a0" : char}
-                          </span>
+          <div
+            className="intel-headline overflow-hidden mb-8"
+            aria-label="Meet the Nine Agents."
+          >
+            <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
+              {["Meet the", "Nine Agents."].map((line, li) => (
+                <div key={line} className="block overflow-hidden">
+                  <span
+                    className={`block text-[clamp(2.8rem,6.4vw,6.8rem)] will-transform ${li === 1 ? "italic text-paper/52" : ""}`}
+                  >
+                    {line.split("").map((char, ci) => (
+                      <span
+                        key={ci}
+                        className="overflow-hidden inline-block align-bottom"
+                      >
+                        <span className="intel-char inline-block will-transform">
+                          {char === " " ? "\u00a0" : char}
                         </span>
-                      ))}
-                    </span>
-                  </div>
-                ))}
-              </h2>
-            </div>
+                      </span>
+                    ))}
+                  </span>
+                </div>
+              ))}
+            </h2>
           </div>
 
-          <p className="intel-sub text-dim font-sans font-light max-w-2xl leading-[1.95] text-sm md:text-base will-opacity">
+          <p className="intel-sub text-dim font-sans font-light max-w-2xl leading-[1.9] text-sm md:text-base will-opacity">
             Each agent has one job. Together, they help Nawah make clear and
             disciplined decisions.
           </p>
         </div>
 
         {/* 9-agent grid with 3D tilt */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 xl:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 xl:grid-cols-3">
           {AGENTS.map((agent, i) => (
             <AgentCard key={agent.id} agent={agent} index={i} />
           ))}
@@ -303,8 +298,8 @@ export default function Intelligence() {
 
         {/* Bottom quote — client content */}
         <div
-          className="mt-28 pt-16 md:pt-18 border-t border-border flex flex-col md:flex-row
-                        items-start md:items-end justify-between gap-12"
+          className="mt-20 pt-12 border-t border-border flex flex-col md:flex-row
+                        items-start md:items-end justify-between gap-8"
         >
           <p className="font-serif italic text-[clamp(1.1rem,2vw,1.8rem)] text-paper/60 max-w-2xl leading-snug">
             &ldquo;Nine agents. One system. One goal: manage wealth with

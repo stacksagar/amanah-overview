@@ -106,21 +106,21 @@ export default function Philosophy() {
     <section
       ref={sectionRef}
       id="philosophy"
-      className="px-6 md:px-16 lg:px-24 py-42 md:py-48 border-t border-border overflow-hidden"
+      className="px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
-        <p className="phil-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-20 md:mb-22">
+        <p className="phil-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-18 md:mb-20">
           01 — Rethink the Relationship
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-26 lg:gap-40 mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-24 lg:gap-36 mb-28">
           <div>
             <div
-              className="phil-headline-wrap overflow-hidden mb-20 md:mb-22"
+              className="phil-headline-wrap overflow-hidden mb-16 md:mb-18"
               style={{ clipPath: "inset(0 100% 0 0)" }}
             >
               <h2
-                className="font-serif font-black leading-[0.84] tracking-tight text-paper"
+                className="font-serif font-black leading-[0.9] tracking-tight text-paper"
                 aria-label="A Better Way to Grow Wealth."
               >
                 <span className="block text-[clamp(2.7rem,7vw,7rem)]">
@@ -135,7 +135,7 @@ export default function Philosophy() {
               </h2>
             </div>
 
-            <div className="phil-paras space-y-9 md:space-y-10 max-w-xl md:max-w-2xl">
+            <div className="phil-paras space-y-8 max-w-xl md:max-w-2xl">
               <p className="phil-para text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
                 Most people do not have time to watch markets all day. But money
                 still needs care.
@@ -156,20 +156,20 @@ export default function Philosophy() {
 
           <div
             ref={floatRef}
-            className="relative flex items-center justify-center min-h-100 py-8 md:py-10 will-transform opacity-85"
+            className="relative flex items-center justify-center min-h-[400px] will-transform opacity-85"
           >
             <div
               ref={ring1Ref}
-              className="absolute w-85 h-85 rounded-full border border-border/50 will-transform"
+              className="absolute w-[340px] h-[340px] rounded-full border border-border/50 will-transform"
             />
             <div
               ref={ring2Ref}
-              className="absolute w-60 h-60 rounded-full will-transform"
+              className="absolute w-[240px] h-[240px] rounded-full will-transform"
               style={{ border: "1px dashed rgba(0,102,255,0.3)" }}
             />
             <div
               ref={ring3Ref}
-              className="absolute w-35 h-35 rounded-full will-transform"
+              className="absolute w-[140px] h-[140px] rounded-full will-transform"
               style={{ border: "1px solid rgba(0,102,255,0.6)" }}
             />
             <div className="w-3 h-3 rounded-full bg-accent/80" />
@@ -189,7 +189,7 @@ export default function Philosophy() {
 
         {/* Dot grid */}
         <div
-          className="phil-dots grid gap-5 mb-32"
+          className="phil-dots grid gap-5 mb-28"
           style={{ gridTemplateColumns: "repeat(6, 1fr)", maxWidth: "280px" }}
         >
           {dots.map((_, i) => (
@@ -202,7 +202,7 @@ export default function Philosophy() {
 
         {/* Pull quote — client content */}
         <div
-          className="phil-quote-wrap border-l-2 border-accent/50 pl-12 md:pl-16 max-w-4xl"
+          className="phil-quote-wrap border-l-2 border-accent/50 pl-10 md:pl-14 max-w-4xl"
           style={{ overflow: "hidden" }}
         >
           <div
@@ -216,7 +216,7 @@ export default function Philosophy() {
               &ldquo;Your money should keep working, even when you are not
               watching it.&rdquo;
             </blockquote>
-            <p className="mt-8 text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
+            <p className="mt-6 text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
               The Founding Question
             </p>
           </div>

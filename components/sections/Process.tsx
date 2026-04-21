@@ -112,11 +112,11 @@ export default function Process() {
     <section
       ref={sectionRef}
       id="process"
-      className="px-6 md:px-16 lg:px-24 py-44 md:py-48 border-t border-border"
+      className="px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border"
     >
       <div className="max-w-7xl mx-auto">
         {/* Label row with spinning hexagon */}
-        <div className="flex items-start justify-between mb-28 md:mb-32">
+        <div className="flex items-start justify-between mb-24">
           <p className="proc-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
             How It Works
           </p>
@@ -163,10 +163,10 @@ export default function Process() {
 
         {/* Headline */}
         <div
-          className="proc-headline overflow-hidden mb-32 md:mb-36"
+          className="proc-headline overflow-hidden mb-24"
           aria-label="How It Works."
         >
-          <h2 className="font-serif font-black leading-[0.84] tracking-tight text-paper">
+          <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
             {["How It", "Works."].map((line, li) => (
               <div key={line} className="block overflow-hidden">
                 <span
@@ -192,18 +192,18 @@ export default function Process() {
         <div className="proc-steps relative grid grid-cols-1 md:grid-cols-[1px_1fr] gap-0">
           {/* Vertical connector */}
           <div className="hidden md:block">
-            <div className="proc-connector w-px h-full bg-linear-to-b from-accent/60 via-border to-transparent mx-auto" />
+            <div className="proc-connector w-px h-full bg-gradient-to-b from-accent/60 via-border to-transparent mx-auto" />
           </div>
 
           {/* Step list */}
-          <div className="md:pl-28 space-y-0 divide-y divide-border">
+          <div className="md:pl-20 space-y-0 divide-y divide-border">
             {STEPS.map((step) => (
               <div
                 key={step.num}
-                className="proc-step py-20 md:py-24 flex flex-col md:flex-row gap-14 md:gap-24 will-transform"
+                className="proc-step py-16 md:py-18 flex flex-col md:flex-row gap-10 md:gap-18 will-transform"
               >
                 {/* Number + accent */}
-                <div className="shrink-0 flex flex-col gap-5">
+                <div className="shrink-0 flex flex-col gap-3">
                   <span className="text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
                     {step.num}
                   </span>
@@ -213,7 +213,7 @@ export default function Process() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col gap-8 md:gap-9 max-w-2xl">
+                <div className="flex flex-col gap-5 max-w-2xl">
                   <h3 className="font-serif font-bold text-[clamp(1.55rem,2.5vw,2.1rem)] text-paper leading-snug">
                     {step.heading}
                   </h3>

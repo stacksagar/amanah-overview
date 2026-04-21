@@ -85,7 +85,7 @@ export default function Footer() {
     <footer
       ref={sectionRef}
       id="footer"
-      className="min-h-screen px-6 md:px-16 lg:px-24 pt-28 md:pt-32 pb-14 md:pb-16 flex flex-col
+      className="min-h-screen px-6 md:px-16 lg:px-24 pt-24 pb-12 flex flex-col
                  justify-between border-t border-border overflow-hidden relative"
     >
       {/* Decorative SVG line */}
@@ -129,10 +129,10 @@ export default function Footer() {
       </div>
 
       {/* Meta row */}
-      <div className="footer-meta-wrap border-t border-border/60 pt-14 md:pt-16 mt-14 md:mt-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-14 mb-16">
+      <div className="footer-meta-wrap border-t border-border/60 pt-12 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-14">
           <div className="footer-meta">
-            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-4">
+            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-3">
               Nawah Wealth
             </p>
             <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
@@ -143,10 +143,10 @@ export default function Footer() {
           </div>
 
           <div className="footer-meta">
-            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-4">
+            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-3">
               The Founders
             </p>
-            <div className="space-y-4 text-dim/90 font-sans font-light text-sm leading-relaxed">
+            <div className="space-y-3 text-dim/90 font-sans font-light text-sm leading-relaxed">
               <p>Founded in London, 2026.</p>
               <p>
                 Built by a team focused on clear systems, ethical rules, and
@@ -156,10 +156,10 @@ export default function Footer() {
           </div>
 
           <div className="footer-meta">
-            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-4">
+            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-3">
               Investor Inquiries
             </p>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
                 We are currently raising pre-seed capital.
               </p>
@@ -175,12 +175,12 @@ export default function Footer() {
 
         <div
           className="footer-meta flex flex-col md:flex-row items-start md:items-center
-                        justify-between gap-5 md:gap-6"
+                        justify-between gap-4"
         >
           <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
             Pre-seed stage.
           </p>
-          <div className="flex gap-8 md:gap-10 items-center flex-wrap">
+          <div className="flex gap-8 items-center flex-wrap">
             <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
               © 2026 Nawah Wealth. All rights reserved.
             </p>

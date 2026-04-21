@@ -127,11 +127,11 @@ export default function Numbers() {
     <section
       ref={sectionRef}
       id="numbers"
-      className="px-6 md:px-16 lg:px-24 py-42 md:py-48 border-t border-border overflow-hidden"
+      className="px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* Top row with SVG arc decoration */}
-        <div className="flex items-start justify-between mb-26 md:mb-28">
+        <div className="flex items-start justify-between mb-24">
           <p className="nums-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
             04 — In Simple Numbers
           </p>
@@ -166,12 +166,9 @@ export default function Numbers() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18 lg:gap-14">
-          {STATS.map((stat) => (
-            <div
-              key={stat.label}
-              className="stat-card flex flex-col gap-6 md:gap-7"
-            >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12">
+          {STATS.map((stat, i) => (
+            <div key={stat.label} className="stat-card flex flex-col gap-5">
               <div
                 className="stat-line h-px bg-accent/40 w-full"
                 style={{ transformOrigin: "left center" }}
