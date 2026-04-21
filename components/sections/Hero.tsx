@@ -56,6 +56,14 @@ export default function Hero() {
   const dot3Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    /* Immediately set initial hidden states — before any useEffect delay */
+    gsap.set(".hero-char", { y: "115%" });
+    gsap.set(eyebrowRef.current, { opacity: 0 });
+    gsap.set(subRef.current, { opacity: 0, y: 32 });
+    gsap.set(ctaRef.current, { opacity: 0, y: 20 });
+    gsap.set(yearRef.current, { opacity: 0 });
+    gsap.set(scrollRef.current, { opacity: 0 });
+
     const ctx = gsap.context(() => {
       /* ── Continuous shape animations ── */
       gsap.to(outerRingRef.current, {
@@ -164,12 +172,17 @@ export default function Hero() {
 
       const tl = gsap.timeline({ delay: 0.1 });
 
-      tl.from(eyebrowRef.current, { opacity: 0, duration: 0.01 });
+      /* Eyebrow fade-in (initially hidden via gsap.set outside context) */
+      tl.to(
+        eyebrowRef.current,
+        { opacity: 1, duration: 0.6, ease: "power2.out" },
+        0.2,
+      );
 
-      tl.from(
+      tl.to(
         ".hero-char",
         {
-          y: "115%",
+          y: "0%",
           duration: 1.8,
           ease: "expo.out",
           stagger: { each: 0.022, from: "start" },
@@ -177,18 +190,18 @@ export default function Hero() {
         0.4,
       );
 
-      tl.from(
+      tl.to(
         subRef.current,
-        { opacity: 0, y: 32, duration: 1.2, ease: "power4.out" },
+        { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" },
         "-=1.0",
       );
-      tl.from(
+      tl.to(
         ctaRef.current,
-        { opacity: 0, y: 20, duration: 0.9, ease: "power3.out" },
+        { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
         "-=0.8",
       );
-      tl.from(yearRef.current, { opacity: 0, duration: 0.6 }, "-=0.5");
-      tl.from(scrollRef.current, { opacity: 0, duration: 0.5 }, "-=0.4");
+      tl.to(yearRef.current, { opacity: 1, duration: 0.6 }, "-=0.5");
+      tl.to(scrollRef.current, { opacity: 1, duration: 0.5 }, "-=0.4");
 
       /* ── Scroll velocity skew ── */
       let lastScrollY = 0;
@@ -370,7 +383,7 @@ export default function Hero() {
           ].map(({ text, italic }) => (
             <div key={text} className="block overflow-hidden">
               <span
-                className={`block text-[clamp(3rem,9.5vw,9.5rem)] will-transform
+                className={`block text-[clamp(3rem,9.5vw,9.5rem)] will-transform whitespace-nowrap
                             ${italic ? "italic" : ""}`}
               >
                 {text.split("").map((char, ci) => (

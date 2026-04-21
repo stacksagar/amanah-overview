@@ -9,7 +9,8 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
   weight: ["400", "500", "700", "800", "900"],
   style: ["normal", "italic"],
-  display: "swap",
+  display: "block",
+  preload: true,
 });
 
 const inter = Inter({
