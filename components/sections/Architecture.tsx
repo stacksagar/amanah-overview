@@ -9,23 +9,23 @@ gsap.registerPlugin(ScrollTrigger);
 const STATS = [
   {
     value: "100%",
-    label: "Clear records",
-    body: "Every action is logged.",
+    label: "Recorded actions",
+    body: "Every action is saved and can be checked later.",
   },
   {
-    value: "AAOIFI",
-    label: "Review framework",
-    body: "Built with formal review in mind.",
+    value: "CLEAR",
+    label: "Easy to review",
+    body: "People should be able to understand what the system is doing.",
   },
   {
     value: "0",
-    label: "False claims",
-    body: "We do not claim what we have not earned.",
+    label: "Empty promises",
+    body: "We do not say things we cannot prove.",
   },
   {
     value: "OPEN",
-    label: "Open review",
-    body: "We welcome careful scrutiny.",
+    label: "Open to questions",
+    body: "We welcome questions, review, and feedback.",
   },
 ];
 
@@ -97,11 +97,11 @@ export default function Architecture() {
       <div className="max-w-7xl mx-auto w-full">
         <div className="flex items-start justify-between mb-20">
           <p className="arch-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
-            05 — Built for Scrutiny
+            05 — Easy to Check
           </p>
           <div
             ref={crossRef}
-            className="w-10 h-10 will-transform opacity-20 flex-shrink-0"
+            className="w-10 h-10 shrink-0 will-transform opacity-20"
             aria-hidden="true"
           >
             <svg viewBox="0 0 40 40" fill="none">
@@ -114,14 +114,14 @@ export default function Architecture() {
         <div
           className="arch-headline-wrap overflow-hidden mb-22"
           style={{ clipPath: "inset(0 100% 0 0)" }}
-          aria-label="Built to be checked"
+          aria-label="Made to be clear"
         >
           <h2 className="font-serif font-black leading-[0.9] tracking-tight text-paper">
             <span className="block text-[clamp(3rem,8vw,8rem)]">
-              Built to Be
+              Made to Be
             </span>
             <span className="block text-[clamp(3rem,8vw,8rem)] italic text-paper/50">
-              Checked.
+              Clear.
             </span>
           </h2>
         </div>
@@ -129,24 +129,22 @@ export default function Architecture() {
         <div className="arch-body-wrap grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-24 mb-28">
           <div className="space-y-6">
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-              Trust should not depend on guesswork. What Nawah does should be
-              easy to review.
+              Nawah should be easy to understand. People should be able to see
+              what it does.
             </p>
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-              That is why decisions, rules, and records are made clear.
+              That is why decisions, rules, and records are kept clear.
             </p>
           </div>
           <div className="border-l border-border pl-8 md:pl-12">
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
-              We are building the system with ethical review and formal checks
-              in mind.
+              We want both users and experts to be able to review the system.
             </p>
             <p className="arch-body mt-6 text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
-              We do not claim more than we can prove.
+              We only say what we can show.
             </p>
             <p className="arch-body mt-8 font-serif italic text-[clamp(1.2rem,2vw,1.7rem)] leading-snug text-paper/70">
-              &ldquo;Trust grows when people can see what the system is
-              doing.&rdquo;
+              &ldquo;People trust what they can see.&rdquo;
             </p>
           </div>
         </div>
@@ -156,7 +154,7 @@ export default function Architecture() {
             <div
               key={s.label}
               className="arch-stat group relative overflow-hidden border border-border
-                         px-8 py-10 flex flex-col gap-4 will-transform
+                         px-8 py-10 md:py-12 flex flex-col gap-5 will-transform
                          hover:border-accent/30 transition-colors duration-500 cursor-default"
             >
               {/* Hover fill */}
@@ -172,12 +170,12 @@ export default function Architecture() {
                 {s.value}
               </span>
               <div className="relative">
-                <p className="text-[9px] tracking-[0.4em] uppercase text-dim font-sans mb-2">
+                <p className="text-[10px] tracking-[0.28em] uppercase text-dim font-sans mb-3">
                   {s.label}
                 </p>
                 <p
-                  className="text-dim/60 font-sans font-light text-xs leading-relaxed opacity-0
-                               group-hover:opacity-100 transition-opacity duration-500"
+                  className="text-dim/70 font-sans font-light text-sm leading-relaxed
+                               transition-colors duration-300 group-hover:text-dim/90"
                 >
                   {s.body}
                 </p>
