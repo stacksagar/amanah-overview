@@ -177,6 +177,31 @@ body {
   transform-style: preserve-3d;
 }
 
+/* ─── Brand shimmer sweep ───────────────────────────────── */
+@keyframes brand-shimmer {
+  0% {
+    background-position: 250% center;
+  }
+  100% {
+    background-position: -250% center;
+  }
+}
+.brand-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    #eaeaea 20%,
+    #0066ff 38%,
+    #66aaff 45%,
+    #0066ff 52%,
+    #eaeaea 68%
+  );
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brand-shimmer 5s linear infinite;
+}
+
 /* ─── Hover underline slide ─────────────────────────────── */
 .link-underline {
   position: relative;
