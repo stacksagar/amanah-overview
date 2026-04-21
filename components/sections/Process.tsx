@@ -9,20 +9,20 @@ gsap.registerPlugin(ScrollTrigger);
 const STEPS = [
   {
     num: "01",
-    heading: "You Set the Boundaries.",
-    body: "Your ethics. Your risk tolerance. Your ambitions. These are not preferences. They are constraints the system cannot violate.",
+    heading: "You Set the Rules.",
+    body: "You choose your limits, your goals, and your ethical boundaries.",
     accent: "Define",
   },
   {
     num: "02",
-    heading: "Independent Minds. Collective Intelligence.",
-    body: "Six core agents continuously analyse from different perspectives. They don’t agree by default. They challenge assumptions. They pressure-test conclusions. Only when consensus is earned — not assumed — does action follow.",
+    heading: "The Agents Review the Market.",
+    body: "Each agent looks at the market from a different angle before action is taken.",
     accent: "Deliberate",
   },
   {
     num: "03",
-    heading: "You Wake Informed — Not Surprised.",
-    body: "Every decision is recorded. Every action is explained. Every alternative is visible. Not just what happened — but why it happened, and what was rejected. You don’t just see results. You see reasoning.",
+    heading: "You See What Happened.",
+    body: "You get a clear record of actions, reasons, and results.",
     accent: "Transparency",
   },
 ];
@@ -112,11 +112,11 @@ export default function Process() {
     <section
       ref={sectionRef}
       id="process"
-      className="px-6 md:px-16 lg:px-24 py-36 border-t border-border"
+      className="px-6 md:px-16 lg:px-24 py-44 md:py-48 border-t border-border"
     >
       <div className="max-w-7xl mx-auto">
         {/* Label row with spinning hexagon */}
-        <div className="flex items-start justify-between mb-20">
+        <div className="flex items-start justify-between mb-28 md:mb-32">
           <p className="proc-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
             How It Works
           </p>
@@ -163,10 +163,10 @@ export default function Process() {
 
         {/* Headline */}
         <div
-          className="proc-headline overflow-hidden mb-24"
+          className="proc-headline overflow-hidden mb-32 md:mb-36"
           aria-label="How It Works."
         >
-          <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
+          <h2 className="font-serif font-black leading-[0.84] tracking-tight text-paper">
             {["How It", "Works."].map((line, li) => (
               <div key={line} className="block overflow-hidden">
                 <span
@@ -192,18 +192,18 @@ export default function Process() {
         <div className="proc-steps relative grid grid-cols-1 md:grid-cols-[1px_1fr] gap-0">
           {/* Vertical connector */}
           <div className="hidden md:block">
-            <div className="proc-connector w-px h-full bg-gradient-to-b from-accent/60 via-border to-transparent mx-auto" />
+            <div className="proc-connector w-px h-full bg-linear-to-b from-accent/60 via-border to-transparent mx-auto" />
           </div>
 
           {/* Step list */}
-          <div className="md:pl-16 space-y-0 divide-y divide-border">
+          <div className="md:pl-28 space-y-0 divide-y divide-border">
             {STEPS.map((step) => (
               <div
                 key={step.num}
-                className="proc-step py-14 flex flex-col md:flex-row gap-8 md:gap-16 will-transform"
+                className="proc-step py-20 md:py-24 flex flex-col md:flex-row gap-14 md:gap-24 will-transform"
               >
                 {/* Number + accent */}
-                <div className="flex-shrink-0 flex flex-col gap-2">
+                <div className="shrink-0 flex flex-col gap-5">
                   <span className="text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
                     {step.num}
                   </span>
@@ -213,11 +213,11 @@ export default function Process() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col gap-4 max-w-xl">
-                  <h3 className="font-serif font-bold text-[clamp(1.4rem,2.5vw,2rem)] text-paper leading-snug">
+                <div className="flex flex-col gap-8 md:gap-9 max-w-2xl">
+                  <h3 className="font-serif font-bold text-[clamp(1.55rem,2.5vw,2.1rem)] text-paper leading-snug">
                     {step.heading}
                   </h3>
-                  <p className="text-dim/70 font-sans font-light text-[clamp(0.9rem,1.1vw,1rem)] leading-relaxed">
+                  <p className="text-dim/70 font-sans font-light text-[clamp(0.98rem,1.1vw,1.04rem)] leading-[1.9] max-w-[34ch]">
                     {step.body}
                   </p>
                 </div>

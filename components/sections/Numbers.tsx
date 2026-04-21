@@ -11,28 +11,28 @@ const STATS = [
     prefix: "$",
     value: 4.5,
     suffix: "T+",
-    label: "In ethical capital underserved by intelligent systems",
+    label: "Ethical finance market",
     decimals: 1,
   },
   {
     prefix: "",
     value: 100,
     suffix: "%",
-    label: "Decision traceability — every move, fully auditable",
+    label: "Clear decision record",
     decimals: 0,
   },
   {
     prefix: "",
     value: 0,
     suffix: "%",
-    label: "Fixed fees — we only win when you do",
+    label: "Fixed management fee",
     decimals: 0,
   },
   {
     prefix: "",
     value: 9,
     suffix: "",
-    label: "Agents. Six deliberators. One unified mandate",
+    label: "AI agents working together",
     decimals: 0,
   },
 ];
@@ -127,13 +127,13 @@ export default function Numbers() {
     <section
       ref={sectionRef}
       id="numbers"
-      className="px-6 md:px-16 lg:px-24 py-36 border-t border-border overflow-hidden"
+      className="px-6 md:px-16 lg:px-24 py-42 md:py-48 border-t border-border overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* Top row with SVG arc decoration */}
-        <div className="flex items-start justify-between mb-20">
+        <div className="flex items-start justify-between mb-26 md:mb-28">
           <p className="nums-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
-            The Founding Question — By the Numbers
+            04 — In Simple Numbers
           </p>
           {/* Animated arc */}
           <div
@@ -166,9 +166,12 @@ export default function Numbers() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8">
-          {STATS.map((stat, i) => (
-            <div key={stat.label} className="stat-card flex flex-col gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-18 lg:gap-14">
+          {STATS.map((stat) => (
+            <div
+              key={stat.label}
+              className="stat-card flex flex-col gap-6 md:gap-7"
+            >
               <div
                 className="stat-line h-px bg-accent/40 w-full"
                 style={{ transformOrigin: "left center" }}
@@ -178,7 +181,7 @@ export default function Numbers() {
                 {stat.value}
                 {stat.suffix}
               </div>
-              <p className="stat-label text-dim/70 font-sans font-light text-sm leading-relaxed max-w-[18ch]">
+              <p className="stat-label text-dim/70 font-sans font-light text-sm md:text-base leading-[1.85] max-w-[18ch]">
                 {stat.label}
               </p>
             </div>

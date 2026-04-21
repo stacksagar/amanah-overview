@@ -10,17 +10,17 @@ const PILLARS = [
   {
     num: "01",
     title: "If You Don’t Grow",
-    body: "We don’t earn. Alignment is not a promise in the interface. It is enforced in the economics.",
+    body: "We do not earn. Nawah only wins when you win.",
   },
   {
     num: "02",
     title: "If You Set a Boundary",
-    body: "It cannot be crossed. Your ethics are not preferences. They are system constraints.",
+    body: "The system stays inside it. Your rules come first.",
   },
   {
     num: "03",
     title: "If a Decision Is Made",
-    body: "It must be explained. No hidden overrides. No opaque incentives. No silent compromises.",
+    body: "It should be clear. You should know what happened and why.",
   },
 ];
 
@@ -83,47 +83,45 @@ export default function Distinction() {
     <section
       ref={sectionRef}
       id="distinction"
-      className="px-6 md:px-16 lg:px-24 py-36 border-t border-border"
+      className="px-6 md:px-16 lg:px-24 py-42 md:py-48 border-t border-border"
     >
       <div className="max-w-7xl mx-auto">
-        <p className="dist-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-16">
+        <p className="dist-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-20 md:mb-22">
           02 — Aligned by Design
         </p>
 
         <div
-          className="dist-headline overflow-hidden mb-20"
-          aria-label="Alignment Isn’t a Promise. It’s the Architecture."
+          className="dist-headline overflow-hidden mb-24 md:mb-26"
+          aria-label="Built to stay aligned."
         >
-          <h2 className="font-serif font-black leading-tight tracking-tight">
-            {["Alignment Isn’t a Promise.", "It’s the Architecture."].map(
-              (line, li) => (
-                <div key={line} className="block overflow-hidden">
-                  <span
-                    className={`block text-[clamp(2.8rem,7vw,7rem)] will-transform text-paper ${li === 1 ? "italic" : ""}`}
-                  >
-                    {line.split("").map((char, ci) => (
-                      <span
-                        key={ci}
-                        className="overflow-hidden inline-block align-bottom"
-                      >
-                        <span className="dist-char inline-block will-transform">
-                          {char === " " ? "\u00a0" : char}
-                        </span>
+          <h2 className="font-serif font-black leading-[0.84] tracking-tight">
+            {["Built to Stay", "Aligned."].map((line, li) => (
+              <div key={line} className="block overflow-hidden">
+                <span
+                  className={`block text-[clamp(2.8rem,6.8vw,6.6rem)] will-transform text-paper ${li === 1 ? "italic text-paper/52" : ""}`}
+                >
+                  {line.split("").map((char, ci) => (
+                    <span
+                      key={ci}
+                      className="overflow-hidden inline-block align-bottom"
+                    >
+                      <span className="dist-char inline-block will-transform">
+                        {char === " " ? "\u00a0" : char}
                       </span>
-                    ))}
-                  </span>
-                </div>
-              ),
-            )}
+                    </span>
+                  ))}
+                </span>
+              </div>
+            ))}
           </h2>
         </div>
 
-        <div className="dist-pillars grid grid-cols-1 md:grid-cols-3 gap-4 mb-24">
+        <div className="dist-pillars grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-8 mb-32">
           {PILLARS.map((p) => (
             <div
               key={p.num}
               className="dist-pillar group relative overflow-hidden border border-border
-                         px-10 py-12 flex flex-col gap-6 will-opacity
+                         px-12 py-16 md:px-14 md:py-18 flex flex-col gap-9 will-opacity
                          hover:border-accent/25 transition-colors duration-500 cursor-default"
             >
               {/* Hover fill */}
@@ -135,31 +133,31 @@ export default function Distinction() {
               <div className="relative">
                 <div
                   className="dist-pillar-line h-px bg-paper/10 w-full group-hover:bg-accent/40
-                                transition-colors duration-500 mb-6"
+                                transition-colors duration-500 mb-7"
                 />
                 <span className="text-[9px] tracking-[0.4em] uppercase text-accent/50 font-sans">
                   {p.num}
                 </span>
               </div>
               <h3
-                className="relative font-serif font-bold text-2xl text-paper leading-snug
+                className="relative font-serif font-bold text-[1.85rem] text-paper leading-snug
                              group-hover:italic transition-all duration-300"
               >
                 {p.title}
               </h3>
-              <p className="relative text-dim/70 font-sans font-light text-sm leading-loose flex-1">
+              <p className="relative text-dim/70 font-sans font-light text-sm md:text-base leading-[1.9] flex-1 max-w-[28ch]">
                 {p.body}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="dist-quote-wrap overflow-hidden border-l-2 border-accent/40 pl-10">
+        <div className="dist-quote-wrap overflow-hidden border-l-2 border-accent/40 pl-12 md:pl-16">
           <blockquote className="dist-quote-inner font-serif text-[clamp(1.3rem,2.5vw,2.2rem)] font-medium italic leading-snug text-paper/80 max-w-3xl">
-            &ldquo;This isn’t marketing alignment. It’s mathematical alignment —
-            embedded into every layer of the system.&rdquo;
+            &ldquo;Nawah is built to follow your rules, not work around
+            them.&rdquo;
           </blockquote>
-          <p className="mt-6 text-[9px] tracking-[0.4em] uppercase text-dim/50 font-sans">
+          <p className="mt-8 text-[9px] tracking-[0.4em] uppercase text-dim/50 font-sans">
             Nawah — The Founding Principle
           </p>
         </div>

@@ -2,7 +2,7 @@
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { type FormEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,11 +55,11 @@ export default function Hero() {
   const dot2Ref = useRef<HTMLDivElement>(null);
   const dot3Ref = useRef<HTMLDivElement>(null);
 
-  const handleEarlyAccess = (e: FormEvent<HTMLFormElement>) => {
+  const handleEarlyAccess = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const value = email.trim();
-    if (typeof window !== "undefined" && value) {
-      window.sessionStorage.setItem("nawah_waitlist_email", value);
+    if (typeof globalThis.window !== "undefined" && value) {
+      globalThis.window.sessionStorage.setItem("nawah_waitlist_email", value);
     }
     document
       .getElementById("access")
@@ -180,7 +180,7 @@ export default function Hero() {
       if (eyebrowRef.current) {
         scramble(
           eyebrowRef.current,
-          "EVERY DECISION LOGGED. EVERY ACTION EXPLAINABLE.",
+          "CLEAR. ETHICAL. ALWAYS WORKING.",
           1.4,
           0.3,
         );
@@ -244,7 +244,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 overflow-hidden"
+      className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 md:px-16 lg:px-24 pt-32 pb-24 md:pt-40 md:pb-28 overflow-hidden"
     >
       {/* Ambient glow */}
       <div
@@ -254,7 +254,7 @@ export default function Hero() {
 
       {/* ── Orbital ring system — top-right (responsive) ── */}
       <div
-        className="absolute -top-10 -right-10 sm:-top-32 sm:-right-48 pointer-events-none"
+        className="absolute -top-10 -right-10 sm:-top-28 sm:-right-40 pointer-events-none opacity-75"
         aria-hidden="true"
       >
         <div
@@ -290,7 +290,7 @@ export default function Hero() {
       {/* ── Floating wireframe square — left ── */}
       <div
         ref={squareWrapRef}
-        className="absolute left-[6%] top-[38%] pointer-events-none will-transform"
+        className="absolute left-[7%] top-[40%] pointer-events-none will-transform hidden lg:block opacity-70"
         aria-hidden="true"
       >
         <div
@@ -308,7 +308,7 @@ export default function Hero() {
       <div
         ref={orbitalRef}
         className="absolute bottom-[18%] left-[4%] w-[100px] h-[100px]
-                      pointer-events-none will-transform"
+                      pointer-events-none will-transform hidden lg:block opacity-70"
         aria-hidden="true"
       >
         <div
@@ -332,19 +332,19 @@ export default function Hero() {
       {/* ── Floating accent dots ── */}
       <div
         ref={dot1Ref}
-        className="absolute top-[22%] left-[14%] w-2 h-2 rounded-full
+        className="absolute top-[22%] left-[14%] w-2 h-2 rounded-full hidden md:block
                                     bg-accent/40 pointer-events-none will-transform"
         aria-hidden="true"
       />
       <div
         ref={dot2Ref}
-        className="absolute top-[60%] right-[12%] w-1.5 h-1.5 rounded-full
+        className="absolute top-[60%] right-[12%] w-1.5 h-1.5 rounded-full hidden md:block
                                     bg-paper/15 pointer-events-none will-transform"
         aria-hidden="true"
       />
       <div
         ref={dot3Ref}
-        className="absolute top-[75%] left-[22%] w-1 h-1 rounded-full
+        className="absolute top-[75%] left-[22%] w-1 h-1 rounded-full hidden md:block
                                     bg-accent/25 pointer-events-none will-transform"
         aria-hidden="true"
       />
@@ -376,106 +376,113 @@ export default function Hero() {
         Est. 2026
       </span>
 
-      <div className="relative z-10 text-center max-w-6xl mx-auto w-full hero-skew-target will-transform">
+      <div className="relative z-10 text-center max-w-7xl mx-auto w-full hero-skew-target will-transform">
         <p
           ref={eyebrowRef}
-          className="text-[10px] tracking-[0.55em] uppercase text-dim font-sans mb-12 will-opacity"
+          className="text-[10px] tracking-[0.5em] uppercase text-dim/80 font-sans mb-16 md:mb-18 will-opacity"
         >
-          Every decision logged. Every action explainable.
+          Clear. Ethical. Always working.
         </p>
 
-        <h1
-          className="font-serif font-black leading-[0.9] tracking-tight text-paper"
-          aria-label="Sharia-Compliant Wealth. Compounding While You Sleep."
-        >
-          {[
-            { text: "SHARIA-COMPLIANT", italic: false },
-            { text: "WEALTH.", italic: false },
-            { text: "COMPOUNDING", italic: false },
-            { text: "WHILE YOU SLEEP.", italic: true },
-          ].map(({ text, italic }) => (
-            <div key={text} className="block overflow-hidden">
-              <span
-                className={`block text-[clamp(2.1rem,6.3vw,7.1rem)] will-transform
-                            ${italic ? "italic" : ""}`}
-              >
-                {text.split("").map((char, ci) => (
-                  <span
-                    key={ci}
-                    className="overflow-hidden inline-block align-bottom leading-none"
-                  >
-                    <span className="hero-char inline-block will-transform leading-none">
-                      {char === " " ? "\u00a0" : char}
+        <div className="mb-20 md:mb-24">
+          <h1
+            className="font-serif font-black leading-[0.82] tracking-tight text-paper"
+            aria-label="Your Wealth. Working While You Sleep."
+          >
+            {[
+              { text: "YOUR WEALTH.", italic: false },
+              { text: "WORKING", italic: false },
+              { text: "WHILE YOU SLEEP.", italic: true },
+            ].map(({ text, italic }) => (
+              <div key={text} className="block overflow-hidden">
+                <span
+                  className={`block text-[clamp(2.6rem,7vw,7.8rem)] will-transform
+                              ${italic ? "italic" : ""}`}
+                >
+                  {text.split("").map((char, ci) => (
+                    <span
+                      key={ci}
+                      className="overflow-hidden inline-block align-bottom leading-none"
+                    >
+                      <span className="hero-char inline-block will-transform leading-none">
+                        {char === " " ? "\u00a0" : char}
+                      </span>
                     </span>
-                  </span>
-                ))}
-              </span>
-            </div>
-          ))}
-        </h1>
+                  ))}
+                </span>
+              </div>
+            ))}
+          </h1>
+        </div>
 
         <p
           ref={subRef}
-          className="mt-10 text-dim font-sans font-light
-                     text-[clamp(0.95rem,1.15vw,1.08rem)]
-                     leading-relaxed max-w-sm md:max-w-3xl mx-auto tracking-wide will-opacity"
+          className="mb-12 md:mb-14 text-dim font-sans font-light
+                     text-[clamp(1rem,1.2vw,1.12rem)]
+                     leading-[1.9] max-w-sm md:max-w-2xl mx-auto tracking-[0.01em] will-opacity"
         >
-          A council of autonomous AI agents trades ethically on your behalf —
-          within your principles, without your presence. You define the rules.
-          They execute with precision. You wake to outcomes.
+          Nawah uses AI agents to manage wealth within your rules. You set the
+          limits. The system does the work.
         </p>
 
-        <p className="mt-6 text-paper/55 font-sans font-light text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-          No black boxes. No blind trust.
+        <p className="mb-20 md:mb-24 text-paper/55 font-sans font-light text-base md:text-lg leading-relaxed max-w-xl mx-auto">
+          Clear records. No hidden moves.
         </p>
 
         <div
           ref={ctaRef}
-          className="mt-14 flex flex-col items-center gap-5 will-opacity"
+          className="flex flex-col items-center gap-10 md:gap-12 will-opacity"
         >
           <form
             onSubmit={handleEarlyAccess}
-            className="w-full max-w-3xl flex flex-col sm:flex-row items-stretch justify-center gap-3 sm:gap-4"
+            className="w-full max-w-4xl border border-border/80 bg-card/80 px-10 py-10 sm:px-11 sm:py-11 md:px-16 md:py-16 flex flex-col gap-10 md:gap-11 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
           >
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email input field"
-              aria-label="Email input field"
-              className="flex-1 min-w-0 bg-transparent border border-border px-7 py-5 font-sans text-sm text-paper placeholder:text-dim/35 outline-none focus:border-paper/30 transition-colors duration-300"
-            />
-            <button
-              type="submit"
-              className="group relative overflow-hidden border border-paper/25 px-8 md:px-10 py-5 font-sans text-[10px] tracking-[0.35em] uppercase text-paper will-transform"
-            >
-              <span className="absolute inset-0 bg-paper translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
-              <span className="relative mix-blend-difference">
-                Request Early Access
-              </span>
-            </button>
+            <div className="space-y-6 md:space-y-7">
+              <p className="text-[11px] tracking-[0.38em] uppercase text-dim/70 font-sans">
+                Join early access
+              </p>
+              <p className="text-dim/75 font-sans font-light text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+                Leave your email. We will contact you when Nawah opens.
+              </p>
+            </div>
+            <div className="flex flex-col lg:flex-row items-stretch justify-center gap-7 md:gap-8">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                aria-label="Enter your email"
+                className="flex-1 min-w-0 bg-transparent border border-border px-12 md:px-16 py-9 md:py-10 font-sans text-base md:text-lg text-paper placeholder:text-dim/35 outline-none focus:border-paper/30 transition-colors duration-300"
+              />
+              <button
+                type="submit"
+                className="group relative overflow-hidden border border-paper/25 px-16 md:px-18 py-9 md:py-10 font-sans text-[11px] tracking-[0.3em] uppercase text-paper will-transform lg:min-w-80"
+              >
+                <span className="absolute inset-0 bg-paper translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
+                <span className="relative mix-blend-difference">
+                  Request Access
+                </span>
+              </button>
+            </div>
           </form>
-          <p className="text-[9px] tracking-[0.35em] uppercase text-dim/55 font-sans text-center">
-            Limited founding cohort. Private access only.
+          <p className="text-[10px] tracking-[0.32em] uppercase text-dim/55 font-sans text-center">
+            Private list. Limited places.
           </p>
         </div>
 
-        <div className="md:hidden mt-12 flex items-center justify-center gap-0">
+        <div className="mt-18 md:mt-20 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14">
           {[
             { val: "$4.5T+", label: "Capital" },
-            { val: "100%", label: "Traceable" },
-            { val: "0", label: "Fixed Fees" },
+            { val: "0%", label: "Fixed Fees" },
             { val: "9", label: "Agents" },
-          ].map(({ val, label }, i) => (
-            <div key={label} className="flex items-center">
-              {i > 0 && <div className="w-px h-8 bg-border/30 mx-4 sm:mx-6" />}
-              <div className="text-center">
-                <div className="font-serif font-black text-lg text-paper leading-none">
-                  {val}
-                </div>
-                <div className="text-[7px] tracking-[0.35em] uppercase text-dim/40 font-sans mt-1.5">
-                  {label}
-                </div>
+            { val: "Clear", label: "Records" },
+          ].map(({ val, label }) => (
+            <div key={label} className="text-center min-w-[92px]">
+              <div className="font-serif font-black text-xl md:text-2xl text-paper leading-none">
+                {val}
+              </div>
+              <div className="text-[8px] tracking-[0.32em] uppercase text-dim/45 font-sans mt-2">
+                {label}
               </div>
             </div>
           ))}
@@ -484,11 +491,10 @@ export default function Hero() {
 
       <div
         ref={scrollRef}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 will-opacity px-6"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 will-opacity px-6"
       >
-        <p className="max-w-sm text-center text-[8px] md:text-[9px] tracking-[0.25em] uppercase text-dim/45 font-sans leading-relaxed">
-          Watch how nine independent agents deliberate, challenge, and decide —
-          every single night.
+        <p className="max-w-sm text-center text-[8px] md:text-[9px] tracking-[0.24em] uppercase text-dim/45 font-sans leading-relaxed">
+          Scroll to see how Nawah works.
         </p>
         <span className="text-[8px] tracking-[0.6em] uppercase text-dim/40 font-sans">
           Scroll

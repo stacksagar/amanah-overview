@@ -9,23 +9,23 @@ gsap.registerPlugin(ScrollTrigger);
 const STATS = [
   {
     value: "100%",
-    label: "Decision traceability",
-    body: "Every move, fully auditable.",
+    label: "Clear records",
+    body: "Every action is logged.",
   },
   {
     value: "AAOIFI",
-    label: "Aligned review structure",
-    body: "Frameworks are being developed for AAOIFI-aligned review.",
+    label: "Review framework",
+    body: "Built with formal review in mind.",
   },
   {
     value: "0",
-    label: "Unclaimed certifications",
-    body: "We do not claim certification we have not earned.",
+    label: "False claims",
+    body: "We do not claim what we have not earned.",
   },
   {
     value: "OPEN",
-    label: "Scrutiny invited",
-    body: "The journey is documented openly and welcomes examination.",
+    label: "Open review",
+    body: "We welcome careful scrutiny.",
   },
 ];
 
@@ -92,16 +92,16 @@ export default function Architecture() {
     <section
       ref={sectionRef}
       id="architecture"
-      className="px-6 md:px-16 lg:px-24 py-36 border-t border-border overflow-hidden"
+      className="px-6 md:px-16 lg:px-24 py-42 md:py-48 border-t border-border overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="flex items-start justify-between mb-16">
+        <div className="flex items-start justify-between mb-22 md:mb-24">
           <p className="arch-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
             05 — Built for Scrutiny
           </p>
           <div
             ref={crossRef}
-            className="w-10 h-10 will-transform opacity-20 flex-shrink-0"
+            className="w-10 h-10 will-transform opacity-20 shrink-0"
             aria-hidden="true"
           >
             <svg viewBox="0 0 40 40" fill="none">
@@ -112,55 +112,51 @@ export default function Architecture() {
         </div>
 
         <div
-          className="arch-headline-wrap overflow-hidden mb-20"
+          className="arch-headline-wrap overflow-hidden mb-24 md:mb-26"
           style={{ clipPath: "inset(0 100% 0 0)" }}
-          aria-label="Built to Withstand Scrutiny"
+          aria-label="Built to be checked"
         >
-          <h2 className="font-serif font-black leading-[0.9] tracking-tight text-paper">
+          <h2 className="font-serif font-black leading-[0.84] tracking-tight text-paper">
             <span className="block text-[clamp(3rem,8vw,8rem)]">
-              Built to Withstand
+              Built to Be
             </span>
             <span className="block text-[clamp(3rem,8vw,8rem)] italic text-paper/50">
-              Scrutiny.
+              Checked.
             </span>
           </h2>
         </div>
 
-        <div className="arch-body-wrap grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 mb-24">
-          <div className="space-y-6">
+        <div className="arch-body-wrap grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 mb-32">
+          <div className="space-y-7 md:space-y-8">
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-              Opacity is where trust breaks. So we removed it. Every decision
-              leaves a trail. Every action carries justification. Every system
-              component is designed to be examined.
+              Trust should not depend on guesswork. What Nawah does should be
+              easy to review.
             </p>
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-              Not hidden. Not simplified. Not masked. Because trust isn’t
-              claimed. It’s engineered — then tested.
+              That is why decisions, rules, and records are made clear.
             </p>
           </div>
-          <div className="border-l border-border pl-8 md:pl-12">
+          <div className="border-l border-border pl-10 md:pl-12">
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
-              Our ethical boundary frameworks are being developed in
-              consultation with Islamic finance scholars and structured for
-              AAOIFI-aligned review.
+              We are building the system with ethical review and formal checks
+              in mind.
             </p>
             <p className="arch-body mt-6 text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
-              We do not claim certification we have not earned. We document the
-              journey openly — and invite scrutiny at every stage.
+              We do not claim more than we can prove.
             </p>
             <p className="arch-body mt-8 font-serif italic text-[clamp(1.2rem,2vw,1.7rem)] leading-snug text-paper/70">
-              &ldquo;Trust is not requested. It is constructed — decision by
-              decision, until it becomes undeniable.&rdquo;
+              &ldquo;Trust grows when people can see what the system is
+              doing.&rdquo;
             </p>
           </div>
         </div>
 
-        <div className="arch-stats grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="arch-stats grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {STATS.map((s) => (
             <div
               key={s.label}
               className="arch-stat group relative overflow-hidden border border-border
-                         px-8 py-10 flex flex-col gap-4 will-transform
+                         px-10 py-12 md:px-12 md:py-14 flex flex-col gap-6 will-transform
                          hover:border-accent/30 transition-colors duration-500 cursor-default"
             >
               {/* Hover fill */}
