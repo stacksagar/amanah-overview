@@ -9,7 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Access() {
   const sectionRef = useRef<HTMLElement>(null);
   const orbRef = useRef<HTMLDivElement>(null);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(() => {
+    if (typeof window === "undefined") return "";
+    return window.sessionStorage.getItem("nawah_waitlist_email") ?? "";
+  });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -71,36 +74,33 @@ export default function Access() {
 
       <div className="relative z-10 max-w-5xl mx-auto w-full">
         {submitted ? (
-          /* ── Confirmed state ── */
           <div className="text-center">
             <p className="confirm-el text-[9px] tracking-[0.5em] uppercase text-accent font-sans mb-10">
-              You&rsquo;re In
+              Request Received
             </p>
             <h2
               className="confirm-el font-serif font-black italic
                            text-[clamp(3rem,8vw,8rem)] leading-[0.9] tracking-tight text-paper mb-8"
             >
-              Welcome to the list.
+              Invitation pending.
             </h2>
             <p className="confirm-el text-dim font-sans font-light text-base max-w-md mx-auto leading-relaxed">
-              We will reach out personally when your access is ready.
-              You&rsquo;re among the first to shape what this becomes.
+              We&rsquo;ll reach out personally as founding access opens.
+              You&rsquo;re early enough to help shape the standard.
             </p>
           </div>
         ) : (
-          /* ── Default state ── */
           <>
             <p className="access-el text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-16">
-              06 — The Invitation
+              06 — Founding Access
             </p>
 
-            {/* Headline */}
             <div className="overflow-hidden mb-3">
               <h2
                 className="access-el font-serif font-black leading-[0.9] tracking-tight text-paper
                              text-[clamp(3rem,9vw,9rem)]"
               >
-                Early
+                Founding
               </h2>
             </div>
             <div className="overflow-hidden mb-16">
@@ -112,34 +112,39 @@ export default function Access() {
               </h2>
             </div>
 
-            {/* 2-col: body + form */}
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-16 lg:gap-24">
-              {/* Body — exact client content */}
               <div className="space-y-6">
                 <p
                   className="access-el text-dim font-sans font-light leading-loose
                                text-[clamp(0.95rem,1.3vw,1.1rem)]"
                 >
-                  We are currently accepting a limited cohort of founding
-                  members. These individuals will shape our evolution,
-                  stress-test our systems, and establish the foundation for a
-                  new standard in autonomous stewardship.
+                  We are opening access to a small group of founding members.
+                  Not users. Contributors to the standard we are building.
                 </p>
                 <p
                   className="access-el text-dim font-sans font-light leading-loose
                                text-[clamp(0.95rem,1.3vw,1.1rem)]"
                 >
-                  Priority is given to those who align with our founding
-                  principles: transparency, ethical rigor, and the courage to
-                  demand better from those who manage wealth.
+                  They will shape the system. Stress-test its limits. Define
+                  what autonomous, ethical wealth stewardship becomes.
+                </p>
+                <p
+                  className="access-el text-paper/55 font-sans font-light leading-loose
+                               text-[clamp(0.95rem,1.3vw,1.05rem)]"
+                >
+                  This is not early access for convenience. It is early access
+                  for influence.
+                </p>
+                <p className="access-el text-[10px] tracking-[0.35em] uppercase text-dim/55 font-sans pt-3">
+                  Pre-seed stage. MVP in active development. Target launch: Q3
+                  2026.
                 </p>
 
-                {/* 3 bullet principles */}
                 <div className="access-el pt-4 space-y-3">
                   {[
-                    "Transparency first",
-                    "Ethical rigor",
-                    "Demanding excellence",
+                    "Founding members only",
+                    "Private access",
+                    "Influence the standard",
                   ].map((p) => (
                     <div key={p} className="flex items-center gap-4">
                       <div className="w-1 h-1 rounded-full bg-accent flex-shrink-0" />
@@ -151,16 +156,15 @@ export default function Access() {
                 </div>
               </div>
 
-              {/* Form */}
               <div className="access-el">
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   <label className="text-[9px] tracking-[0.4em] uppercase text-dim/60 font-sans mb-2">
-                    Your Email Address
+                    Request Invitation
                   </label>
                   <input
                     type="email"
                     required
-                    placeholder="your@email.com"
+                    placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full bg-transparent border border-border px-8 py-5
@@ -168,7 +172,6 @@ export default function Access() {
                                outline-none focus:border-paper/30 transition-colors duration-300"
                   />
 
-                  {/* Sliding fill button */}
                   <button
                     type="submit"
                     className="group relative overflow-hidden border border-paper/25
@@ -186,7 +189,7 @@ export default function Access() {
                   </button>
 
                   <p className="text-[9px] text-dim/40 font-sans font-light leading-relaxed mt-2">
-                    No spam. No selling. Just one email when your spot opens.
+                    For those who expect more from those who manage wealth.
                   </p>
                 </form>
               </div>

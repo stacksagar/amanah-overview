@@ -9,18 +9,18 @@ gsap.registerPlugin(ScrollTrigger);
 const PILLARS = [
   {
     num: "01",
-    title: "No Management Fees",
-    body: "Traditional stewardship extracts value regardless of outcome. We considered this fundamentally misaligned. We participate only in success.",
+    title: "If You Don’t Grow",
+    body: "We don’t earn. Alignment is not a promise in the interface. It is enforced in the economics.",
   },
   {
     num: "02",
-    title: "Performance-Only",
-    body: "No administrative charges. No flat fees. No performance — no compensation. When our success requires yours, every algorithm optimises for a single outcome: your growth.",
+    title: "If You Set a Boundary",
+    body: "It cannot be crossed. Your ethics are not preferences. They are system constraints.",
   },
   {
     num: "03",
-    title: "Geometry of Alignment",
-    body: "This is not generosity. It is geometry. Our structure inverts the old model. When we win, you win first. That is the only sequence we accept.",
+    title: "If a Decision Is Made",
+    body: "It must be explained. No hidden overrides. No opaque incentives. No silent compromises.",
   },
 ];
 
@@ -86,39 +86,38 @@ export default function Distinction() {
       className="px-6 md:px-16 lg:px-24 py-36 border-t border-border"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Label */}
         <p className="dist-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-16">
-          02 — Aligned by Design, Not by Accident
+          02 — Aligned by Design
         </p>
 
-        {/* Headline */}
         <div
           className="dist-headline overflow-hidden mb-20"
-          aria-label="The Geometry of Alignment"
+          aria-label="Alignment Isn’t a Promise. It’s the Architecture."
         >
           <h2 className="font-serif font-black leading-tight tracking-tight">
-            {["The Geometry", "of Alignment."].map((line, li) => (
-              <div key={line} className="block overflow-hidden">
-                <span
-                  className={`block text-[clamp(2.8rem,7vw,7rem)] will-transform text-paper ${li === 1 ? "italic" : ""}`}
-                >
-                  {line.split("").map((char, ci) => (
-                    <span
-                      key={ci}
-                      className="overflow-hidden inline-block align-bottom"
-                    >
-                      <span className="dist-char inline-block will-transform">
-                        {char === " " ? "\u00a0" : char}
+            {["Alignment Isn’t a Promise.", "It’s the Architecture."].map(
+              (line, li) => (
+                <div key={line} className="block overflow-hidden">
+                  <span
+                    className={`block text-[clamp(2.8rem,7vw,7rem)] will-transform text-paper ${li === 1 ? "italic" : ""}`}
+                  >
+                    {line.split("").map((char, ci) => (
+                      <span
+                        key={ci}
+                        className="overflow-hidden inline-block align-bottom"
+                      >
+                        <span className="dist-char inline-block will-transform">
+                          {char === " " ? "\u00a0" : char}
+                        </span>
                       </span>
-                    </span>
-                  ))}
-                </span>
-              </div>
-            ))}
+                    ))}
+                  </span>
+                </div>
+              ),
+            )}
           </h2>
         </div>
 
-        {/* 3 pillars */}
         <div className="dist-pillars grid grid-cols-1 md:grid-cols-3 gap-4 mb-24">
           {PILLARS.map((p) => (
             <div
@@ -155,13 +154,14 @@ export default function Distinction() {
           ))}
         </div>
 
-        {/* Pull-quote */}
         <div className="dist-quote-wrap overflow-hidden border-l-2 border-accent/40 pl-10">
           <blockquote className="dist-quote-inner font-serif text-[clamp(1.3rem,2.5vw,2.2rem)] font-medium italic leading-snug text-paper/80 max-w-3xl">
-            &ldquo;When our success requires yours, every decision, every
-            algorithm, every waking moment of our system optimises for a single
-            outcome: your growth.&rdquo;
+            &ldquo;This isn’t marketing alignment. It’s mathematical alignment —
+            embedded into every layer of the system.&rdquo;
           </blockquote>
+          <p className="mt-6 text-[9px] tracking-[0.4em] uppercase text-dim/50 font-sans">
+            Nawah — The Founding Principle
+          </p>
         </div>
       </div>
     </section>

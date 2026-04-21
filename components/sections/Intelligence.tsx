@@ -37,10 +37,10 @@ const AGENTS = [
   },
   {
     id: "05",
-    name: "Risk",
+    name: "Capital Protection",
     sub: "Vigilance",
-    desc: "Guards against drawdown, tail risk, and correlation failures. Never sleeps. Never assumes safety.",
-    role: "Capital Protection",
+    desc: "Identifies fragility before it becomes loss. Guards against drawdowns, tail risk, and hidden correlations. Assumes nothing. Verifies everything.",
+    role: "Loss Prevention",
   },
   {
     id: "06",
@@ -51,9 +51,9 @@ const AGENTS = [
   },
   {
     id: "07",
-    name: "Compliance",
+    name: "Ethical Boundary",
     sub: "Integrity",
-    desc: "Monitors Shariah constraints, regulatory boundaries, and ethical rules. Every position validated before execution.",
+    desc: "Every opportunity is screened before it earns consideration. Business activity. Debt exposure. Interest involvement. Financial structure. No exceptions. No silent overrides.",
     role: "Ethical Boundary",
   },
   {
@@ -223,10 +223,10 @@ export default function Intelligence() {
 
           <div
             className="intel-headline overflow-hidden mb-6"
-            aria-label="NINE MINDS. ONE MANDATE."
+            aria-label="A Council That Never Sleeps."
           >
             <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
-              {["NINE MINDS.", "ONE MANDATE."].map((line, li) => (
+              {["A Council", "That Never Sleeps."].map((line, li) => (
                 <div key={line} className="block overflow-hidden">
                   <span
                     className={`block text-[clamp(2.6rem,6.5vw,7rem)] will-transform ${li === 1 ? "italic text-paper/50" : ""}`}
@@ -247,10 +247,11 @@ export default function Intelligence() {
             </h2>
           </div>
 
-          <p className="intel-sub text-dim font-sans font-light max-w-md leading-loose text-sm will-opacity">
-            Nine specialised intelligences — each devoted to a distinct domain
-            of analysis, each operating in concert, each accountable. They
-            deliberate. They disagree. They consensus. You wake to transparency.
+          <p className="intel-sub text-dim font-sans font-light max-w-2xl leading-loose text-sm md:text-base will-opacity">
+            Nine specialised intelligences. Each accountable. Each independent.
+            Each essential. They analyse. They challenge. They disagree. They
+            converge. No ego. No fatigue. No blind spots. Only disciplined
+            decision-making — at machine speed, with human values.
           </p>
         </div>
 
@@ -267,11 +268,11 @@ export default function Intelligence() {
                         items-start md:items-end justify-between gap-8"
         >
           <p className="font-serif italic text-[clamp(1.1rem,2vw,1.8rem)] text-paper/60 max-w-2xl leading-snug">
-            &ldquo;Nine minds. One mandate. Zero compromise. Your wealth, tended
-            around the clock.&rdquo;
+            &ldquo;Nine minds. One mandate. Zero compromise. Your wealth —
+            tended without interruption.&rdquo;
           </p>
           <p className="text-[9px] tracking-[0.4em] uppercase text-dim/40 font-sans shrink-0">
-            Amanah — Council Protocol
+            Nawah — Council Protocol
           </p>
         </div>
       </div>

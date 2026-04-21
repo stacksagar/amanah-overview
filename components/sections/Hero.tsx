@@ -1,9 +1,8 @@
 "use client";
 
-import MagneticButton from "@/components/ui/MagneticButton";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { type FormEvent, useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +42,7 @@ export default function Hero() {
   const ctaRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const yearRef = useRef<HTMLSpanElement>(null);
+  const [email, setEmail] = useState("");
   /* Shapes */
   const outerRingRef = useRef<HTMLDivElement>(null);
   const midRingRef = useRef<HTMLDivElement>(null);
@@ -54,6 +54,17 @@ export default function Hero() {
   const dot1Ref = useRef<HTMLDivElement>(null);
   const dot2Ref = useRef<HTMLDivElement>(null);
   const dot3Ref = useRef<HTMLDivElement>(null);
+
+  const handleEarlyAccess = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const value = email.trim();
+    if (typeof window !== "undefined" && value) {
+      window.sessionStorage.setItem("nawah_waitlist_email", value);
+    }
+    document
+      .getElementById("access")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   useEffect(() => {
     /* Immediately set initial hidden states — before any useEffect delay */
@@ -167,7 +178,12 @@ export default function Hero() {
 
       /* ── Scramble eyebrow on load ── */
       if (eyebrowRef.current) {
-        scramble(eyebrowRef.current, "Autonomous Wealth Stewardship", 1.4, 0.3);
+        scramble(
+          eyebrowRef.current,
+          "EVERY DECISION LOGGED. EVERY ACTION EXPLAINABLE.",
+          1.4,
+          0.3,
+        );
       }
 
       const tl = gsap.timeline({ delay: 0.1 });
@@ -204,7 +220,6 @@ export default function Hero() {
       tl.to(scrollRef.current, { opacity: 1, duration: 0.5 }, "-=0.4");
 
       /* ── Scroll velocity skew ── */
-      let lastScrollY = 0;
       const skewSetter = gsap.quickSetter(".hero-skew-target", "skewY", "deg");
       const clamp = gsap.utils.clamp(-8, 8);
 
@@ -218,10 +233,8 @@ export default function Hero() {
             ease: "power3",
             overwrite: "auto",
           });
-          lastScrollY = self.scroll();
         },
       });
-      void lastScrollY;
     }, sectionRef.current ?? undefined);
 
     return () => ctx.revert();
@@ -364,27 +377,26 @@ export default function Hero() {
       </span>
 
       <div className="relative z-10 text-center max-w-6xl mx-auto w-full hero-skew-target will-transform">
-        {/* Scramble eyebrow */}
         <p
           ref={eyebrowRef}
           className="text-[10px] tracking-[0.55em] uppercase text-dim font-sans mb-12 will-opacity"
         >
-          Autonomous Wealth Stewardship
+          Every decision logged. Every action explainable.
         </p>
 
-        {/* Headline — client content */}
         <h1
           className="font-serif font-black leading-[0.9] tracking-tight text-paper"
-          aria-label="THE FUTURE OF WEALTH GROWS WHILE YOU REST."
+          aria-label="Sharia-Compliant Wealth. Compounding While You Sleep."
         >
           {[
-            { text: "THE FUTURE OF", italic: false },
-            { text: "WEALTH GROWS", italic: false },
-            { text: "WHILE YOU REST.", italic: true },
+            { text: "SHARIA-COMPLIANT", italic: false },
+            { text: "WEALTH.", italic: false },
+            { text: "COMPOUNDING", italic: false },
+            { text: "WHILE YOU SLEEP.", italic: true },
           ].map(({ text, italic }) => (
             <div key={text} className="block overflow-hidden">
               <span
-                className={`block text-[clamp(2.4rem,7.5vw,8.5rem)] will-transform
+                className={`block text-[clamp(2.1rem,6.3vw,7.1rem)] will-transform
                             ${italic ? "italic" : ""}`}
               >
                 {text.split("").map((char, ci) => (
@@ -402,41 +414,58 @@ export default function Hero() {
           ))}
         </h1>
 
-        {/* Sub — client content */}
         <p
           ref={subRef}
           className="mt-10 text-dim font-sans font-light
-                     text-[clamp(0.9rem,1.2vw,1.05rem)]
-                     leading-relaxed max-w-sm md:max-w-lg mx-auto tracking-wide will-opacity"
+                     text-[clamp(0.95rem,1.15vw,1.08rem)]
+                     leading-relaxed max-w-sm md:max-w-3xl mx-auto tracking-wide will-opacity"
         >
-          Autonomous stewardship for those who refuse to choose between
-          principle and performance.
+          A council of autonomous AI agents trades ethically on your behalf —
+          within your principles, without your presence. You define the rules.
+          They execute with precision. You wake to outcomes.
         </p>
 
-        {/* CTA */}
+        <p className="mt-6 text-paper/55 font-sans font-light text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+          No black boxes. No blind trust.
+        </p>
+
         <div
           ref={ctaRef}
-          className="mt-14 flex items-center justify-center gap-6 will-opacity"
+          className="mt-14 flex flex-col items-center gap-5 will-opacity"
         >
-          <MagneticButton href="#access" arrow>
-            Enter the Waitlist
-          </MagneticButton>
-          <a
-            href="#philosophy"
-            className="text-[9px] tracking-[0.4em] uppercase text-dim/50 font-sans
-                       hover:text-dim transition-colors duration-300 hidden md:block"
+          <form
+            onSubmit={handleEarlyAccess}
+            className="w-full max-w-3xl flex flex-col sm:flex-row items-stretch justify-center gap-3 sm:gap-4"
           >
-            Learn More
-          </a>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email input field"
+              aria-label="Email input field"
+              className="flex-1 min-w-0 bg-transparent border border-border px-7 py-5 font-sans text-sm text-paper placeholder:text-dim/35 outline-none focus:border-paper/30 transition-colors duration-300"
+            />
+            <button
+              type="submit"
+              className="group relative overflow-hidden border border-paper/25 px-8 md:px-10 py-5 font-sans text-[10px] tracking-[0.35em] uppercase text-paper will-transform"
+            >
+              <span className="absolute inset-0 bg-paper translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
+              <span className="relative mix-blend-difference">
+                Request Early Access
+              </span>
+            </button>
+          </form>
+          <p className="text-[9px] tracking-[0.35em] uppercase text-dim/55 font-sans text-center">
+            Limited founding cohort. Private access only.
+          </p>
         </div>
 
-        {/* ── Mobile stat strip — fills empty space on small screens ── */}
         <div className="md:hidden mt-12 flex items-center justify-center gap-0">
           {[
-            { val: "$24T+", label: "Market" },
-            { val: "0%", label: "Fees" },
+            { val: "$4.5T+", label: "Capital" },
+            { val: "100%", label: "Traceable" },
+            { val: "0", label: "Fixed Fees" },
             { val: "9", label: "Agents" },
-            { val: "24/7", label: "Active" },
           ].map(({ val, label }, i) => (
             <div key={label} className="flex items-center">
               {i > 0 && <div className="w-px h-8 bg-border/30 mx-4 sm:mx-6" />}
@@ -453,11 +482,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div
         ref={scrollRef}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 will-opacity"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 will-opacity px-6"
       >
+        <p className="max-w-sm text-center text-[8px] md:text-[9px] tracking-[0.25em] uppercase text-dim/45 font-sans leading-relaxed">
+          Watch how nine independent agents deliberate, challenge, and decide —
+          every single night.
+        </p>
         <span className="text-[8px] tracking-[0.6em] uppercase text-dim/40 font-sans">
           Scroll
         </span>

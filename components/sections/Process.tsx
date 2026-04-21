@@ -9,20 +9,20 @@ gsap.registerPlugin(ScrollTrigger);
 const STEPS = [
   {
     num: "01",
-    heading: "You Define the Boundaries",
-    body: "Set your ethical constraints, risk appetite, and financial goals. Amanah never operates outside the limits you establish. Your principles are hard-coded — not guidelines.",
+    heading: "You Set the Boundaries.",
+    body: "Your ethics. Your risk tolerance. Your ambitions. These are not preferences. They are constraints the system cannot violate.",
     accent: "Define",
   },
   {
     num: "02",
-    heading: "Six Minds Deliberate",
-    body: "Macro, Fundamental, Technical, Sentiment, Risk, and Execution agents analyse continuously. They disagree. They debate. They reach consensus. No single point of failure.",
+    heading: "Independent Minds. Collective Intelligence.",
+    body: "Six core agents continuously analyse from different perspectives. They don’t agree by default. They challenge assumptions. They pressure-test conclusions. Only when consensus is earned — not assumed — does action follow.",
     accent: "Deliberate",
   },
   {
     num: "03",
-    heading: "You Wake to Results",
-    body: "Every action logged. Every decision explained. Full transparency on what happened, why it happened, and what was considered. You review. You approve. You own.",
+    heading: "You Wake Informed — Not Surprised.",
+    body: "Every decision is recorded. Every action is explained. Every alternative is visible. Not just what happened — but why it happened, and what was rejected. You don’t just see results. You see reasoning.",
     accent: "Transparency",
   },
 ];
@@ -164,13 +164,13 @@ export default function Process() {
         {/* Headline */}
         <div
           className="proc-headline overflow-hidden mb-24"
-          aria-label="Simple by design. Powerful by nature."
+          aria-label="How It Works."
         >
           <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
-            {["Simple by Design.", "Powerful by Nature."].map((line, li) => (
+            {["How It", "Works."].map((line, li) => (
               <div key={line} className="block overflow-hidden">
                 <span
-                  className={`block text-[clamp(2rem,5.5vw,5.5rem)] will-transform ${li === 1 ? "italic text-paper/40" : ""}`}
+                  className={`block text-[clamp(2.4rem,6vw,5.8rem)] will-transform ${li === 1 ? "italic text-paper/40" : ""}`}
                 >
                   {line.split("").map((char, ci) => (
                     <span

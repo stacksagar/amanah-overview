@@ -4,6 +4,11 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
+const title =
+  "Nawah Wealth — Sharia-Compliant Wealth. Compounding While You Sleep.";
+const description =
+  "A council of autonomous AI agents trades ethically on your behalf — within your principles, without your presence. Every decision logged. Every action explainable.";
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -21,9 +26,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Amanah — Autonomous Wealth Stewardship",
-  description:
-    "Your wealth, working while you sleep. AI-powered autonomous stewardship aligned with your principles.",
+  title,
+  description,
+  applicationName: "Nawah Wealth",
+  keywords: [
+    "Nawah Wealth",
+    "Sharia-compliant wealth",
+    "ethical investing",
+    "autonomous AI agents",
+    "Islamic finance",
+    "AAOIFI-aligned",
+  ],
+  openGraph: {
+    title,
+    description,
+    siteName: "Nawah Wealth",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({

@@ -9,30 +9,30 @@ gsap.registerPlugin(ScrollTrigger);
 const STATS = [
   {
     prefix: "$",
-    value: 24,
+    value: 4.5,
     suffix: "T+",
-    label: "Global Islamic Finance Market",
-    decimals: 0,
+    label: "In ethical capital underserved by intelligent systems",
+    decimals: 1,
   },
   {
     prefix: "",
     value: 100,
     suffix: "%",
-    label: "Decision audit trail — every action logged",
+    label: "Decision traceability — every move, fully auditable",
     decimals: 0,
   },
   {
     prefix: "",
     value: 0,
     suffix: "%",
-    label: "Management fees. We earn only when you do.",
+    label: "Fixed fees — we only win when you do",
     decimals: 0,
   },
   {
     prefix: "",
     value: 9,
     suffix: "",
-    label: "Specialised AI agents deliberating 24/7",
+    label: "Agents. Six deliberators. One unified mandate",
     decimals: 0,
   },
 ];
@@ -133,7 +133,7 @@ export default function Numbers() {
         {/* Top row with SVG arc decoration */}
         <div className="flex items-start justify-between mb-20">
           <p className="nums-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
-            By the Numbers
+            The Founding Question — By the Numbers
           </p>
           {/* Animated arc */}
           <div

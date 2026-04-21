@@ -6,7 +6,15 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const LETTERS = ["A", "M", "A", "N", "A", "H"];
+const LETTERS = [
+  { id: "n-1", value: "N" },
+  { id: "a-1", value: "A" },
+  { id: "w-1", value: "W" },
+  { id: "a-2", value: "A" },
+  { id: "h-1", value: "H" },
+];
+
+const LEGAL_ITEMS = ["Privacy", "Terms"];
 
 export default function Footer() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -107,14 +115,14 @@ export default function Footer() {
           className="font-serif font-black tracking-tighter leading-none select-none
                      flex items-end gap-0"
           style={{ fontSize: "clamp(5rem, 20vw, 22rem)" }}
-          aria-label="AMANAH"
+          aria-label="NAWAH"
         >
-          {LETTERS.map((letter, i) => (
+          {LETTERS.map(({ id, value }, i) => (
             <span
-              key={i}
+              key={id}
               className={`brand-letter-${i} brand-shimmer inline-block will-transform`}
             >
-              {letter}
+              {value}
             </span>
           ))}
         </h2>
@@ -125,34 +133,52 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="footer-meta">
             <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-3">
-              Location
+              Nawah Wealth
             </p>
             <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
               Designed in London.
               <br />
-              Growing globally.
+              Built for a global standard.
             </p>
           </div>
 
           <div className="footer-meta">
             <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-3">
-              Contact
+              The Founders
             </p>
-            <a
-              href="mailto:hello@amanah.wealth"
-              className="text-dim/90 font-sans font-light text-sm hover:text-accent transition-colors duration-300"
-            >
-              hello@amanah.wealth
-            </a>
+            <div className="space-y-3 text-dim/90 font-sans font-light text-sm leading-relaxed">
+              <p>Founded in London, 2026.</p>
+              <p>
+                Built by operators with backgrounds in strategy, systems, and
+                intelligent automation — with a shared conviction: wealth
+                stewardship should be transparent, ethical, and structurally
+                aligned with those it serves.
+              </p>
+              <p>(Not just promised — enforced.)</p>
+            </div>
           </div>
 
           <div className="footer-meta">
             <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-3">
-              Commitment
+              Investor Inquiries
             </p>
-            <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
-              Transparent · Ethical · Autonomous
-            </p>
+            <div className="space-y-3">
+              <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
+                We are currently raising pre-seed capital to complete MVP
+                development, formalise our Sharia advisory board, and prepare
+                for Q3 2026 launch.
+              </p>
+              <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
+                We welcome aligned partners who understand the scale of ethical
+                finance — and the inevitability of autonomous systems within it.
+              </p>
+              <a
+                href="mailto:founder@nawah.co.uk"
+                className="text-dim/90 font-sans font-light text-sm hover:text-accent transition-colors duration-300"
+              >
+                founder@nawah.co.uk
+              </a>
+            </div>
           </div>
         </div>
 
@@ -161,18 +187,21 @@ export default function Footer() {
                         justify-between gap-4"
         >
           <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
-            © 2026 Amanah Wealth. All rights reserved.
+            Pre-seed stage. MVP in development.
           </p>
-          <div className="flex gap-8">
-            {["Privacy", "Terms"].map((item) => (
-              <a
+          <div className="flex gap-8 items-center flex-wrap">
+            <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
+              © 2026 Nawah Wealth. All rights reserved.
+            </p>
+            {LEGAL_ITEMS.map((item) => (
+              <button
                 key={item}
-                href="#"
+                type="button"
                 className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans
                            hover:text-dim transition-colors duration-300"
               >
                 {item}
-              </a>
+              </button>
             ))}
           </div>
         </div>

@@ -11,9 +11,9 @@ import Process from "@/components/sections/Process";
 import Statement from "@/components/sections/Statement";
 
 const NAV_LINKS = [
-  { href: "#philosophy", label: "Philosophy" },
+  { href: "#philosophy", label: "Rethink" },
   { href: "#intelligence", label: "The Council" },
-  { href: "#access", label: "Join Waitlist" },
+  { href: "#access", label: "Founding Access" },
 ];
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
                       px-6 md:px-16 py-5 mix-blend-difference pointer-events-none"
       >
         <span className="font-serif font-bold tracking-[0.15em] text-paper text-sm pointer-events-auto">
-          AMANAH
+          NAWAH
         </span>
         <div className="flex items-center gap-8 pointer-events-auto">
           {NAV_LINKS.map(({ href, label }) => (
