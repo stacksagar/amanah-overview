@@ -22,13 +22,13 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-5 mix-blend-difference pointer-events-none">
         <a
           href="#hero"
-          className="pointer-events-auto relative w-30 h-10 md:w-34 md:h-12"
+          className="pointer-events-auto relative w-16 h-10 sm:w-20 sm:h-12 md:w-28 md:h-16 lg:w-36 lg:h-20"
         >
           <Image
             src="/logo.png"
             alt="Nawah Wealth"
             fill
-            sizes="200px"
+            sizes="(max-width: 639px) 64px, (max-width: 767px) 80px, (max-width: 1023px) 112px, 144px"
             className="object-contain object-left"
             priority
           />

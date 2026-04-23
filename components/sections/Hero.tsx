@@ -41,7 +41,6 @@ export default function Hero() {
   const subRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const yearRef = useRef<HTMLSpanElement>(null);
   const [email, setEmail] = useState("");
   /* Shapes */
   const outerRingRef = useRef<HTMLDivElement>(null);
@@ -68,11 +67,10 @@ export default function Hero() {
 
   useEffect(() => {
     /* Immediately set initial hidden states — before any useEffect delay */
-    gsap.set(".hero-char", { y: "115%" });
+    gsap.set(".hero-line", { y: "115%" });
     gsap.set(eyebrowRef.current, { opacity: 0 });
     gsap.set(subRef.current, { opacity: 0, y: 32 });
     gsap.set(ctaRef.current, { opacity: 0, y: 20 });
-    gsap.set(yearRef.current, { opacity: 0 });
     gsap.set(scrollRef.current, { opacity: 0 });
 
     const ctx = gsap.context(() => {
@@ -191,12 +189,12 @@ export default function Hero() {
       );
 
       tl.to(
-        ".hero-char",
+        ".hero-line",
         {
           y: "0%",
-          duration: 1.8,
+          duration: 1.5,
           ease: "expo.out",
-          stagger: { each: 0.022, from: "start" },
+          stagger: 0.14,
         },
         0.4,
       );
@@ -211,7 +209,6 @@ export default function Hero() {
         { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
         "-=0.8",
       );
-      tl.to(yearRef.current, { opacity: 1, duration: 0.6 }, "-=0.5");
       tl.to(scrollRef.current, { opacity: 1, duration: 0.5 }, "-=0.4");
 
       /* ── Scroll velocity skew ── */
@@ -371,27 +368,42 @@ export default function Hero() {
         </p>
 
         <h1
-          className="font-serif font-black leading-[0.9] tracking-tight text-paper"
+          className="font-serif font-black leading-[0.9] tracking-tight text-paper max-w-[14ch] sm:max-w-[13ch] md:max-w-none mx-auto"
           aria-label="Sharia-Compliant Investing That Grows While You Sleep"
         >
           {[
-            { text: "SHARIA-COMPLIANT", italic: false },
-            { text: "INVESTING THAT GROWS", italic: false },
-            { text: "WHILE YOU SLEEP", italic: true },
-          ].map(({ text, italic }) => (
-            <div key={text} className="block overflow-hidden">
+            {
+              mobile: ["SHARIA-COMPLIANT"],
+              desktop: "SHARIA-COMPLIANT",
+              italic: false,
+            },
+            {
+              mobile: ["INVESTING THAT", "GROWS"],
+              desktop: "INVESTING THAT GROWS",
+              italic: false,
+            },
+            {
+              mobile: ["WHILE YOU SLEEP"],
+              desktop: "WHILE YOU SLEEP",
+              italic: true,
+            },
+          ].map(({ mobile, desktop, italic }) => (
+            <div key={desktop} className="block overflow-hidden">
               <span
-                className={`block text-[clamp(2.6rem,7vw,7.8rem)] will-transform
+                className={`hero-line hidden md:block text-[clamp(3.6rem,7vw,7.8rem)] will-transform leading-[0.9]
                             ${italic ? "italic" : ""}`}
               >
-                {text.split("").map((char, ci) => (
+                {desktop}
+              </span>
+
+              <span className="block md:hidden">
+                {mobile.map((line) => (
                   <span
-                    key={ci}
-                    className="overflow-hidden inline-block align-bottom leading-none"
+                    key={line}
+                    className={`hero-line block text-[clamp(2.7rem,11vw,4.6rem)] will-transform leading-[0.92]
+                                ${italic ? "italic" : ""}`}
                   >
-                    <span className="hero-char inline-block will-transform leading-none">
-                      {char === " " ? "\u00a0" : char}
-                    </span>
+                    {line}
                   </span>
                 ))}
               </span>
