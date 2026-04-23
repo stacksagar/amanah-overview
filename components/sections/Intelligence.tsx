@@ -9,83 +9,56 @@ gsap.registerPlugin(ScrollTrigger);
 const AGENTS = [
   {
     id: "01",
-    name: "Mara Cole",
-    sub: "Macro Agent",
-    desc: "Watches rates, markets, and big world changes.",
-    role: "Sees the big picture",
-    bio: "Calm, wide view, early signals.",
+    title: "Global View",
+    desc: "Reads global economic shifts, interest rate cycles, and geopolitical signals before they price into the market.",
     palette: "from-[#0f172a] via-[#1d4ed8] to-[#60a5fa]",
   },
   {
     id: "02",
-    name: "Omar Hale",
-    sub: "Fundamental Agent",
-    desc: "Checks if a business is strong, healthy, and worth owning.",
-    role: "Checks business quality",
-    bio: "Looks past hype and into the numbers.",
+    title: "Intrinsic Value",
+    desc: "Excavates company financials, sector dynamics, earnings quality, and long-term value creation potential.",
     palette: "from-[#111827] via-[#0f766e] to-[#5eead4]",
   },
   {
     id: "03",
-    name: "Lina Voss",
-    sub: "Technical Agent",
-    desc: "Finds timing, trend, and price patterns.",
-    role: "Finds entry timing",
-    bio: "Focused on structure and clean entries.",
+    title: "Entry and Exit",
+    desc: "Identifies momentum, structure, and pattern across multiple timeframes with machine-grade consistency.",
     palette: "from-[#1f2937] via-[#7c3aed] to-[#c4b5fd]",
   },
   {
     id: "04",
-    name: "Ava Noor",
-    sub: "Sentiment Agent",
-    desc: "Tracks market mood, headlines, and crowd behaviour.",
-    role: "Reads market mood",
-    bio: "Knows when noise starts moving price.",
+    title: "Crowd Psychology",
+    desc: "Monitors news velocity, crowd positioning, and market mood in real time — without emotional bias.",
     palette: "from-[#172554] via-[#2563eb] to-[#93c5fd]",
   },
   {
     id: "05",
-    name: "Yusuf Ward",
-    sub: "Risk Agent",
-    desc: "Looks for danger before small loss becomes big loss.",
-    role: "Protects capital",
-    bio: "Careful, strict, never relaxed.",
+    title: "Capital Protection",
+    desc: "Guards against drawdown, tail risk, and correlation failures. Never sleeps. Never assumes safety.",
     palette: "from-[#111827] via-[#7f1d1d] to-[#f87171]",
   },
   {
     id: "06",
-    name: "Rey Mercer",
-    sub: "Execution Agent",
-    desc: "Places trades with speed, care, and less slippage.",
-    role: "Executes the trade",
-    bio: "Built for clean and careful action.",
+    title: "Trade Quality",
+    desc: "Times every trade with optimal precision to minimise slippage, market impact, and missed opportunity.",
     palette: "from-[#0f172a] via-[#334155] to-[#cbd5e1]",
   },
   {
     id: "07",
-    name: "Sami Rahn",
-    sub: "Ethics Agent",
-    desc: "Checks that every decision stays inside your ethical rules.",
-    role: "Protects the rules",
-    bio: "Nothing moves without approval here.",
+    title: "Ethical Boundary",
+    desc: "Screens every position against Sharia-informed ethical frameworks before execution. Debt ratios. Business activity. Interest exposure. Your principles, hard-coded. No exceptions. No overrides.",
     palette: "from-[#052e16] via-[#15803d] to-[#86efac]",
   },
   {
     id: "08",
-    name: "Nadia Pike",
-    sub: "Quant Agent",
-    desc: "Tests patterns, models, and repeat signals.",
-    role: "Tests the data",
-    bio: "Finds what repeats and what breaks.",
+    title: "Quantitative Edge",
+    desc: "Mathematical modeling, statistical pattern extraction, and factor analysis at scale no human can match.",
     palette: "from-[#13151a] via-[#4338ca] to-[#818cf8]",
   },
   {
     id: "09",
-    name: "Elias Stone",
-    sub: "Allocation Agent",
-    desc: "Decides size, balance, and where capital should go.",
-    role: "Builds the portfolio",
-    bio: "Keeps the whole system balanced.",
+    title: "Portfolio Design",
+    desc: "Dynamic portfolio construction, position sizing, and rebalancing. Always optimal. Always systematic. Never emotional.",
     palette: "from-[#1a1a1a] via-[#0f766e] to-[#67e8f9]",
   },
 ];
@@ -128,11 +101,9 @@ function useTilt(ref: React.RefObject<HTMLDivElement | null>) {
 
 function AgentCard({
   agent,
-  index,
-}: {
+}: Readonly<{
   agent: (typeof AGENTS)[0];
-  index: number;
-}) {
+}>) {
   const cardRef = useRef<HTMLDivElement>(null);
   useTilt(cardRef);
 
@@ -142,9 +113,8 @@ function AgentCard({
       className="agent-card bg-card border border-border px-7 py-8 md:px-8 md:py-9 flex flex-col gap-6
                  group will-transform hover:border-accent/30 transition-colors duration-500"
       style={{ transformStyle: "preserve-3d" }}
-      data-index={index}
     >
-      <div className="flex items-start justify-between gap-5">
+      <div className="flex items-start gap-5">
         <div className="flex items-center gap-4">
           <div
             className={`relative w-18 h-22 rounded-[1.6rem] bg-linear-to-b ${agent.palette} overflow-hidden border border-paper/10 shrink-0`}
@@ -158,31 +128,21 @@ function AgentCard({
 
           <div style={{ transform: "translateZ(16px)" }}>
             <p className="text-[9px] tracking-[0.4em] uppercase text-dim/40 font-sans mb-2">
-              {agent.id}
+              Agent {agent.id}
             </p>
             <h3 className="font-serif font-black text-[1.55rem] text-paper leading-none group-hover:italic transition-all duration-400">
-              {agent.name}
+              {agent.title}
             </h3>
-            <p className="font-sans text-[11px] tracking-[0.28em] uppercase text-accent/65 mt-3">
-              {agent.sub}
-            </p>
           </div>
         </div>
-
-        <span className="text-[8px] tracking-[0.28em] uppercase text-dim/40 font-sans text-right max-w-[12ch] leading-relaxed">
-          {agent.role}
-        </span>
       </div>
 
       <div style={{ transform: "translateZ(18px)" }} className="space-y-4">
-        <p className="text-paper/70 font-sans font-light text-sm md:text-[0.96rem] leading-relaxed">
-          {agent.bio}
-        </p>
-
-        <div className="h-px bg-border group-hover:bg-accent/30 transition-colors duration-500" />
-
         <p className="text-dim/72 font-sans font-light text-sm md:text-[0.98rem] leading-[1.85] flex-1">
           {agent.desc}
+        </p>
+        <p className="font-sans text-[10px] tracking-[0.28em] uppercase text-accent/65">
+          AI Persona — Not Human
         </p>
       </div>
     </div>
@@ -259,10 +219,10 @@ export default function Intelligence() {
 
           <div
             className="intel-headline overflow-hidden mb-8"
-            aria-label="Meet the Nine Agents."
+            aria-label="A Council That Never Sleeps"
           >
             <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
-              {["Meet the", "Nine Agents."].map((line, li) => (
+              {["A Council That", "Never Sleeps."].map((line, li) => (
                 <div key={line} className="block overflow-hidden">
                   <span
                     className={`block text-[clamp(2.8rem,6.4vw,6.8rem)] will-transform ${li === 1 ? "italic text-paper/52" : ""}`}
@@ -284,15 +244,16 @@ export default function Intelligence() {
           </div>
 
           <p className="intel-sub text-dim font-sans font-light max-w-2xl leading-[1.9] text-sm md:text-base will-opacity">
-            Each agent has one job. Together, they help Nawah make clear and
-            disciplined decisions.
+            Nine specialised intelligences — each devoted to a distinct domain
+            of analysis, each operating in concert, each accountable. They
+            deliberate. They disagree. They consensus. You wake to transparency.
           </p>
         </div>
 
         {/* 9-agent grid with 3D tilt */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 xl:grid-cols-3">
-          {AGENTS.map((agent, i) => (
-            <AgentCard key={agent.id} agent={agent} index={i} />
+          {AGENTS.map((agent) => (
+            <AgentCard key={agent.id} agent={agent} />
           ))}
         </div>
 
@@ -302,8 +263,8 @@ export default function Intelligence() {
                         items-start md:items-end justify-between gap-8"
         >
           <p className="font-serif italic text-[clamp(1.1rem,2vw,1.8rem)] text-paper/60 max-w-2xl leading-snug">
-            &ldquo;Nine agents. One system. One goal: manage wealth with
-            care.&rdquo;
+            &ldquo;Nine minds. One mandate. Zero compromise. Your wealth, tended
+            around the clock.&rdquo;
           </p>
           <p className="text-[9px] tracking-[0.4em] uppercase text-dim/40 font-sans shrink-0">
             Nawah — Council Protocol

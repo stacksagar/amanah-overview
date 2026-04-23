@@ -94,7 +94,7 @@ export default function Access() {
         ) : (
           <>
             <p className="access-el text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-18 text-center">
-              06 — Join Early
+              06 — The Invitation
             </p>
 
             <div className="overflow-hidden mb-4 text-center">
@@ -102,25 +102,26 @@ export default function Access() {
                 className="access-el font-serif font-black leading-[0.9] tracking-tight text-paper
                              text-[clamp(3rem,9vw,9rem)]"
               >
-                Be First.
-              </h2>
-            </div>
-            <div className="overflow-hidden mb-12 text-center">
-              <h2
-                className="access-el font-serif font-black italic leading-[0.9] tracking-tight
-                             text-paper/40 text-[clamp(3rem,9vw,9rem)]"
-              >
-                See It Early.
+                Early Access.
               </h2>
             </div>
 
             <div className="access-el max-w-4xl mx-auto border border-border/80 bg-card/85 px-6 py-7 md:px-10 md:py-10 lg:px-12 lg:py-12">
               <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10 space-y-4">
                 <p className="text-dim font-sans font-light text-base md:text-lg leading-relaxed">
-                  Leave your email and we will contact you when Nawah opens.
+                  We are currently accepting a limited cohort of founding
+                  members. These individuals will shape our evolution,
+                  stress-test our systems, and establish the foundation for a
+                  new standard in autonomous stewardship.
+                </p>
+                <p className="text-dim font-sans font-light text-base md:text-lg leading-relaxed">
+                  Priority is given to those who align with our founding
+                  principles: transparency, ethical rigor, and the courage to
+                  demand better from those who manage wealth.
                 </p>
                 <p className="text-paper/55 font-sans font-light text-sm md:text-base leading-relaxed">
-                  Private list. No noise. Only important updates.
+                  Pre-seed stage. MVP in active development. Target launch: Q3
+                  2026.
                 </p>
               </div>
 
@@ -129,7 +130,7 @@ export default function Access() {
                   htmlFor="access-email"
                   className="text-[10px] tracking-[0.38em] uppercase text-dim/65 font-sans text-center"
                 >
-                  Request Access
+                  Request Invitation
                 </label>
                 <div className="flex flex-col lg:flex-row gap-4 md:gap-5">
                   <input
@@ -148,27 +149,18 @@ export default function Access() {
                   >
                     <span
                       className="absolute inset-0 bg-paper translate-y-full
-                                     group-hover:translate-y-0 transition-transform duration-500
-                                     ease-[cubic-bezier(0.76,0,0.24,1)]"
+                                    group-hover:translate-y-0 transition-transform duration-500
+                                    ease-[cubic-bezier(0.76,0,0.24,1)]"
                     />
                     <span className="relative mix-blend-difference">
-                      Request Access
+                      Request Invitation
                     </span>
                   </button>
                 </div>
 
-                <div className="pt-3 flex flex-wrap items-center justify-center gap-4 md:gap-6">
-                  {["Private list", "Early updates", "Limited places"].map(
-                    (p) => (
-                      <div key={p} className="flex items-center gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                        <span className="text-[10px] tracking-[0.3em] uppercase text-dim/70 font-sans">
-                          {p}
-                        </span>
-                      </div>
-                    ),
-                  )}
-                </div>
+                <p className="pt-3 text-[10px] tracking-[0.3em] uppercase text-dim/70 font-sans text-center">
+                  Private list. No noise. Only important updates.
+                </p>
               </form>
             </div>
           </>

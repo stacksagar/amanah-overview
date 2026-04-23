@@ -6,6 +6,25 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const STATS = [
+  {
+    value: "4.5 trillion plus",
+    label: "Ethical wealth market underserved by intelligence",
+  },
+  {
+    value: "100 percent",
+    label: "Decision audit trail — every action logged",
+  },
+  {
+    value: "Performance-only partnership",
+    label: "No hidden charges",
+  },
+  {
+    value: "Nine specialists",
+    label: "Six deliberating minds. One mandate.",
+  },
+];
+
 export default function Philosophy() {
   const sectionRef = useRef<HTMLElement>(null);
   const ring1Ref = useRef<HTMLDivElement>(null);
@@ -121,35 +140,32 @@ export default function Philosophy() {
             >
               <h2
                 className="font-serif font-black leading-[0.9] tracking-tight text-paper"
-                aria-label="A Better Way to Grow Wealth."
+                aria-label="Rethink the Relationship"
               >
                 <span className="block text-[clamp(2.7rem,7vw,7rem)]">
-                  A Better Way
+                  Rethink the
                 </span>
                 <span className="block text-[clamp(2.7rem,7vw,7rem)] text-paper/72">
-                  to Grow
-                </span>
-                <span className="block text-[clamp(2.7rem,7vw,7rem)] italic text-paper/52">
-                  Wealth.
+                  Relationship.
                 </span>
               </h2>
             </div>
 
             <div className="phil-paras space-y-8 max-w-xl md:max-w-2xl">
               <p className="phil-para text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-                Most people do not have time to watch markets all day. But money
-                still needs care.
+                For generations, growing wealth demanded constant attention.
+                Markets never sleep, yet humans must. The result? Missed
+                opportunities, emotional decisions, and the slow erosion of
+                potential.
               </p>
               <p className="phil-para text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-                That is where mistakes happen. Good chances are missed. Emotion
-                gets in the way.
+                We asked a different question: What if your wealth could be
+                tended with the same care you give your family, your faith, your
+                craft — continuously, ethically, and without your presence?
               </p>
               <p className="phil-para text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-                Nawah was built to solve that problem. You set the rules. The
-                system keeps working.
-              </p>
-              <p className="phil-para text-paper/50 font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)] italic">
-                Simple idea. Strong discipline.
+                The answer required reimagining not just technology, but trust
+                itself.
               </p>
             </div>
           </div>
@@ -187,6 +203,22 @@ export default function Philosophy() {
           </div>
         </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-28">
+          {STATS.map((stat) => (
+            <div
+              key={stat.value}
+              className="border-t border-border pt-6 md:pt-7"
+            >
+              <p className="font-serif font-black text-[clamp(1.45rem,2.5vw,2.35rem)] leading-tight text-paper">
+                {stat.value}
+              </p>
+              <p className="mt-4 text-dim/70 font-sans font-light text-sm leading-relaxed max-w-[24ch]">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
+
         {/* Dot grid */}
         <div
           className="phil-dots grid gap-5 mb-28"
@@ -213,8 +245,9 @@ export default function Philosophy() {
               className="font-serif text-[clamp(1.4rem,2.8vw,2.6rem)] font-medium italic
                                    leading-snug text-paper/80"
             >
-              &ldquo;Your money should keep working, even when you are not
-              watching it.&rdquo;
+              &ldquo;What if your wealth could be tended with the same care you
+              give your family, your faith, your craft — continuously,
+              ethically, and without your presence?&rdquo;
             </blockquote>
             <p className="mt-6 text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
               The Founding Question

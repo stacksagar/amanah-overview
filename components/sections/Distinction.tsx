@@ -6,24 +6,6 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PILLARS = [
-  {
-    num: "01",
-    title: "If You Don’t Grow",
-    body: "We do not earn. Nawah only wins when you win.",
-  },
-  {
-    num: "02",
-    title: "If You Set a Boundary",
-    body: "The system stays inside it. Your rules come first.",
-  },
-  {
-    num: "03",
-    title: "If a Decision Is Made",
-    body: "It should be clear. You should know what happened and why.",
-  },
-];
-
 export default function Distinction() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -47,24 +29,14 @@ export default function Distinction() {
         scrollTrigger: { trigger: ".dist-headline", start: "top 82%" },
       });
 
-      /* Pillars: stagger in from bottom */
-      gsap.from(".dist-pillar", {
+      /* Body blocks */
+      gsap.from(".dist-body", {
         opacity: 0,
         y: 50,
         duration: 1,
         ease: "power4.out",
         stagger: 0.15,
-        scrollTrigger: { trigger: ".dist-pillars", start: "top 80%" },
-      });
-
-      /* Horizontal lines animate width */
-      gsap.from(".dist-pillar-line", {
-        scaleX: 0,
-        transformOrigin: "left",
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.15,
-        scrollTrigger: { trigger: ".dist-pillars", start: "top 80%" },
+        scrollTrigger: { trigger: ".dist-body-wrap", start: "top 80%" },
       });
 
       /* Pull-quote clip reveal */
@@ -87,15 +59,15 @@ export default function Distinction() {
     >
       <div className="max-w-7xl mx-auto">
         <p className="dist-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-18 md:mb-20">
-          02 — Aligned by Design
+          02 — Aligned by Design, Not by Accident
         </p>
 
         <div
           className="dist-headline overflow-hidden mb-22"
-          aria-label="Built to stay aligned."
+          aria-label="Aligned by Design, Not by Accident"
         >
           <h2 className="font-serif font-black leading-tight tracking-tight">
-            {["Built to Stay", "Aligned."].map((line, li) => (
+            {["Aligned by Design,", "Not by Accident."].map((line, li) => (
               <div key={line} className="block overflow-hidden">
                 <span
                   className={`block text-[clamp(2.8rem,6.8vw,6.6rem)] will-transform text-paper ${li === 1 ? "italic text-paper/52" : ""}`}
@@ -116,46 +88,31 @@ export default function Distinction() {
           </h2>
         </div>
 
-        <div className="dist-pillars grid grid-cols-1 md:grid-cols-3 gap-6 mb-28">
-          {PILLARS.map((p) => (
-            <div
-              key={p.num}
-              className="dist-pillar group relative overflow-hidden border border-border
-                         px-10 py-14 md:px-12 md:py-16 flex flex-col gap-7 will-opacity
-                         hover:border-accent/25 transition-colors duration-500 cursor-default"
-            >
-              {/* Hover fill */}
-              <div
-                className="absolute inset-0 bg-card translate-y-full group-hover:translate-y-0
-                              transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]"
-              />
-              {/* Content */}
-              <div className="relative">
-                <div
-                  className="dist-pillar-line h-px bg-paper/10 w-full group-hover:bg-accent/40
-                                transition-colors duration-500 mb-6"
-                />
-                <span className="text-[9px] tracking-[0.4em] uppercase text-accent/50 font-sans">
-                  {p.num}
-                </span>
-              </div>
-              <h3
-                className="relative font-serif font-bold text-[1.85rem] text-paper leading-snug
-                             group-hover:italic transition-all duration-300"
-              >
-                {p.title}
-              </h3>
-              <p className="relative text-dim/70 font-sans font-light text-sm md:text-base leading-[1.9] flex-1 max-w-[28ch]">
-                {p.body}
-              </p>
-            </div>
-          ))}
+        <div className="dist-body-wrap grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-28">
+          <div className="space-y-8 max-w-2xl">
+            <p className="dist-body text-dim/70 font-sans font-light text-[clamp(0.98rem,1.15vw,1.08rem)] leading-[1.95]">
+              Traditional stewardship extracts value regardless of outcome. We
+              considered this fundamentally misaligned.
+            </p>
+            <p className="dist-body text-dim/70 font-sans font-light text-[clamp(0.98rem,1.15vw,1.08rem)] leading-[1.95]">
+              Our structure inverts the model. We participate only in success.
+              No management fees. No administrative charges. No performance, no
+              compensation.
+            </p>
+          </div>
+          <div className="border-l border-border pl-8 md:pl-12">
+            <p className="dist-body text-dim/70 font-sans font-light text-[clamp(0.98rem,1.15vw,1.08rem)] leading-[1.95]">
+              This is not generosity. It is geometry. When our success requires
+              yours, every decision, every algorithm, every waking moment of our
+              system optimizes for a single outcome: your growth.
+            </p>
+          </div>
         </div>
 
         <div className="dist-quote-wrap overflow-hidden border-l-2 border-accent/40 pl-12 md:pl-14">
           <blockquote className="dist-quote-inner font-serif text-[clamp(1.3rem,2.5vw,2.2rem)] font-medium italic leading-snug text-paper/80 max-w-3xl">
-            &ldquo;Nawah is built to follow your rules, not work around
-            them.&rdquo;
+            &ldquo;When our success requires yours — every algorithm serves you
+            first.&rdquo;
           </blockquote>
           <p className="mt-6 text-[9px] tracking-[0.4em] uppercase text-dim/50 font-sans">
             Nawah — The Founding Principle

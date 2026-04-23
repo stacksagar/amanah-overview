@@ -77,7 +77,7 @@ export default function Statement() {
   return (
     <section
       ref={sectionRef}
-      id="statement"
+      id="founders"
       className="relative min-h-[70vh] flex flex-col items-center justify-center
                  px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border overflow-hidden"
     >
@@ -105,6 +105,9 @@ export default function Statement() {
       />
 
       <div className="max-w-5xl mx-auto text-center">
+        <p className="stmt-attr mb-16 text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
+          07 — The Founders
+        </p>
         <div
           ref={line1Ref}
           className="overflow-hidden mb-3"
@@ -114,7 +117,7 @@ export default function Statement() {
             className="font-serif font-black text-[clamp(2.5rem,7vw,7rem)] leading-[0.9]
                         tracking-tight text-paper"
           >
-            If you don&rsquo;t grow,
+            The
           </p>
         </div>
         <div
@@ -126,7 +129,7 @@ export default function Statement() {
             className="font-serif font-black italic text-[clamp(2.5rem,7vw,7rem)] leading-[0.9]
                         tracking-tight text-accent"
           >
-            we don&rsquo;t earn.
+            Founders.
           </p>
         </div>
         <div
@@ -151,16 +154,15 @@ export default function Statement() {
             className="font-serif text-[clamp(2rem,5vw,5rem)] leading-[0.95]
                         tracking-tight text-paper/30"
           >
-            Simple. Clear. Aligned.
+            Nawah Wealth was founded by Name and Name in London, 2026.
           </p>
         </div>
 
-        <div className="stmt-attr mt-16 flex items-center justify-center gap-3">
-          <div className="w-8 h-px bg-dim/30" />
-          <span className="text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
-            Nawah — The Founding Principle
-          </span>
-          <div className="w-8 h-px bg-dim/30" />
+        <div className="stmt-attr mt-16 max-w-3xl mx-auto space-y-6 text-center">
+          <p className="text-dim/80 font-sans font-light text-base md:text-lg leading-relaxed">
+            We built Nawah because we believe wealth stewardship should be
+            transparent, ethical, and truly aligned with those it serves.
+          </p>
         </div>
       </div>
     </section>

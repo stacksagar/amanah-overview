@@ -14,8 +14,6 @@ const LETTERS = [
   { id: "h-1", value: "H" },
 ];
 
-const LEGAL_ITEMS = ["Privacy", "Terms"];
-
 export default function Footer() {
   const sectionRef = useRef<HTMLElement>(null);
   const brandRef = useRef<HTMLDivElement>(null);
@@ -40,7 +38,6 @@ export default function Footer() {
         },
       );
 
-      /* ── Continuous letter float wave ── */
       LETTERS.forEach((_, i) => {
         gsap.to(`.brand-letter-${i}`, {
           y: -18,
@@ -106,94 +103,72 @@ export default function Footer() {
         />
       </svg>
 
-      {/* Massive brand name — shimmer + letter float */}
+      <div className="footer-meta max-w-4xl">
+        <p className="text-[9px] tracking-[0.5em] uppercase text-dim/70 font-sans mb-8">
+          08 — Investor Inquiries
+        </p>
+        <h2 className="font-serif font-black text-[clamp(2.8rem,6vw,6rem)] leading-[0.95] tracking-tight text-paper mb-8">
+          Investor Inquiries.
+        </h2>
+        <div className="space-y-5 max-w-3xl">
+          <p className="text-dim/90 font-sans font-light text-base md:text-lg leading-relaxed">
+            We are currently raising pre-seed funding to complete our MVP,
+            secure Sharia advisory board formation, and prepare for Q3 2026
+            launch.
+          </p>
+          <p className="text-dim/90 font-sans font-light text-base md:text-lg leading-relaxed">
+            For investment discussions: founder at nawah dot co dot uk
+          </p>
+        </div>
+      </div>
+
+      {/* Massive brand text */}
       <div
         ref={brandRef}
         className="flex-1 flex items-center justify-center will-transform"
       >
-        <h2
-          className="font-serif font-black tracking-tighter leading-none select-none
-                     flex items-end gap-0"
-          style={{ fontSize: "clamp(5rem, 20vw, 22rem)" }}
-          aria-label="NAWAH"
-        >
-          {LETTERS.map(({ id, value }, i) => (
-            <span
-              key={id}
-              className={`brand-letter-${i} brand-shimmer inline-block will-transform`}
-            >
-              {value}
-            </span>
-          ))}
-        </h2>
+        <div className="flex flex-col items-center justify-center select-none">
+          <h2
+            className="font-serif font-black tracking-tighter leading-none flex items-end gap-0 text-paper"
+            style={{ fontSize: "clamp(5rem, 20vw, 22rem)" }}
+            aria-label="NAWAH"
+          >
+            {LETTERS.map(({ id, value }, i) => (
+              <span
+                key={id}
+                className={`brand-letter-${i} inline-block will-transform`}
+              >
+                {value}
+              </span>
+            ))}
+          </h2>
+          <p className="mt-3 md:mt-4 font-sans text-[clamp(1rem,2vw,2.2rem)] tracking-[0.55em] uppercase text-paper/38 pl-[0.55em]">
+            Wealth
+          </p>
+        </div>
       </div>
 
       {/* Meta row */}
       <div className="footer-meta-wrap border-t border-border/60 pt-12 mt-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-14">
-          <div className="footer-meta">
-            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-3">
-              Nawah Wealth
-            </p>
-            <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
-              Designed in London.
-              <br />
-              Built for clear and ethical wealth management.
-            </p>
-          </div>
-
-          <div className="footer-meta">
-            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-3">
-              The Founders
-            </p>
-            <div className="space-y-3 text-dim/90 font-sans font-light text-sm leading-relaxed">
-              <p>Founded in London, 2026.</p>
-              <p>
-                Built by a team focused on clear systems, ethical rules, and
-                better alignment.
-              </p>
-            </div>
-          </div>
-
-          <div className="footer-meta">
-            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/70 font-sans mb-3">
-              Investor Inquiries
-            </p>
-            <div className="space-y-3">
-              <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
-                We are currently raising pre-seed capital.
-              </p>
-              <a
-                href="mailto:founder@nawah.co.uk"
-                className="text-dim/90 font-sans font-light text-sm hover:text-accent transition-colors duration-300"
-              >
-                founder@nawah.co.uk
-              </a>
-            </div>
-          </div>
-        </div>
-
         <div
           className="footer-meta flex flex-col md:flex-row items-start md:items-center
                         justify-between gap-4"
         >
-          <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
-            Pre-seed stage.
-          </p>
+          <div className="space-y-3">
+            <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
+              Nawah Wealth
+            </p>
+            <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
+              Designed in London. Growing Globally.
+            </p>
+            <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
+              Pre-seed stage. MVP in development.
+            </p>
+          </div>
           <div className="flex gap-8 items-center flex-wrap">
             <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
-              © 2026 Nawah Wealth. All rights reserved.
+              Copyright 2026 Nawah Wealth. All rights reserved.
             </p>
-            {LEGAL_ITEMS.map((item) => (
-              <button
-                key={item}
-                type="button"
-                className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans
-                           hover:text-dim transition-colors duration-300"
-              >
-                {item}
-              </button>
-            ))}
           </div>
         </div>
       </div>

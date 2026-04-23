@@ -5,9 +5,9 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const title =
-  "Nawah Wealth — Sharia-Compliant Wealth. Compounding While You Sleep.";
+  "Nawah Wealth — Sharia-Compliant Investing That Grows While You Sleep";
 const description =
-  "A council of autonomous AI agents trades ethically on your behalf — within your principles, without your presence. Every decision logged. Every action explainable.";
+  "Autonomous AI agents trade ethically on your behalf. You set the boundaries. They do the work. You wake to results. We only eat when you feast.";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],

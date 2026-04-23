@@ -178,12 +178,7 @@ export default function Hero() {
 
       /* ── Scramble eyebrow on load ── */
       if (eyebrowRef.current) {
-        scramble(
-          eyebrowRef.current,
-          "CLEAR. ETHICAL. ALWAYS WORKING.",
-          1.4,
-          0.3,
-        );
+        scramble(eyebrowRef.current, "NAWAH WEALTH", 1.4, 0.3);
       }
 
       const tl = gsap.timeline({ delay: 0.1 });
@@ -367,31 +362,22 @@ export default function Hero() {
         />
       </svg>
 
-      {/* Top year badge */}
-      <span
-        ref={yearRef}
-        className="absolute top-8 right-8 md:right-16 text-[9px] tracking-[0.4em]
-                       uppercase text-dim/40 font-sans will-opacity"
-      >
-        Est. 2026
-      </span>
-
       <div className="relative z-10 text-center max-w-7xl mx-auto w-full hero-skew-target will-transform">
         <p
           ref={eyebrowRef}
           className="text-[10px] tracking-[0.5em] uppercase text-dim/80 font-sans mb-14 md:mb-16 will-opacity"
         >
-          Clear. Ethical. Always working.
+          Nawah Wealth
         </p>
 
         <h1
           className="font-serif font-black leading-[0.9] tracking-tight text-paper"
-          aria-label="Your Wealth. Working While You Sleep."
+          aria-label="Sharia-Compliant Investing That Grows While You Sleep"
         >
           {[
-            { text: "YOUR WEALTH.", italic: false },
-            { text: "WORKING", italic: false },
-            { text: "WHILE YOU SLEEP.", italic: true },
+            { text: "SHARIA-COMPLIANT", italic: false },
+            { text: "INVESTING THAT GROWS", italic: false },
+            { text: "WHILE YOU SLEEP", italic: true },
           ].map(({ text, italic }) => (
             <div key={text} className="block overflow-hidden">
               <span
@@ -417,14 +403,11 @@ export default function Hero() {
           ref={subRef}
           className="mt-12 text-dim font-sans font-light
                      text-[clamp(1rem,1.2vw,1.12rem)]
-                     leading-[1.9] max-w-sm md:max-w-2xl mx-auto tracking-[0.01em] will-opacity"
+                     leading-[1.9] max-w-sm md:max-w-3xl mx-auto tracking-[0.01em] will-opacity"
         >
-          Nawah uses AI agents to manage wealth within your rules. You set the
-          limits. The system does the work.
-        </p>
-
-        <p className="mt-8 text-paper/55 font-sans font-light text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-          Clear records. No hidden moves.
+          Autonomous AI agents trade ethically on your behalf. You set the
+          boundaries. They do the work. You wake to results. We only eat when
+          you feast.
         </p>
 
         <div
@@ -435,14 +418,6 @@ export default function Hero() {
             onSubmit={handleEarlyAccess}
             className="w-full max-w-4xl border border-border/80 bg-card/80 px-5 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8 flex flex-col gap-5 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
           >
-            <div className="space-y-3 md:space-y-4">
-              <p className="text-[11px] tracking-[0.38em] uppercase text-dim/70 font-sans">
-                Join early access
-              </p>
-              <p className="text-dim/75 font-sans font-light text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-                Leave your email. We will contact you when Nawah opens.
-              </p>
-            </div>
             <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 md:gap-5">
               <input
                 type="email"
@@ -458,32 +433,14 @@ export default function Hero() {
               >
                 <span className="absolute inset-0 bg-paper translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
                 <span className="relative mix-blend-difference">
-                  Request Access
+                  Join the Waitlist
                 </span>
               </button>
             </div>
           </form>
           <p className="text-[10px] tracking-[0.32em] uppercase text-dim/55 font-sans text-center">
-            Private list. Limited places.
+            Private list. Limited places. No noise.
           </p>
-        </div>
-
-        <div className="mt-14 md:mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-5 md:gap-x-12">
-          {[
-            { val: "$4.5T+", label: "Capital" },
-            { val: "0%", label: "Fixed Fees" },
-            { val: "9", label: "Agents" },
-            { val: "Clear", label: "Records" },
-          ].map(({ val, label }) => (
-            <div key={label} className="text-center min-w-[92px]">
-              <div className="font-serif font-black text-xl md:text-2xl text-paper leading-none">
-                {val}
-              </div>
-              <div className="text-[8px] tracking-[0.32em] uppercase text-dim/45 font-sans mt-2">
-                {label}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
 
@@ -492,11 +449,8 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 will-opacity px-6"
       >
         <p className="max-w-sm text-center text-[8px] md:text-[9px] tracking-[0.24em] uppercase text-dim/45 font-sans leading-relaxed">
-          Scroll to see how Nawah works.
+          See how nine agents deliberate, decide, and deliver — every night.
         </p>
-        <span className="text-[8px] tracking-[0.6em] uppercase text-dim/40 font-sans">
-          Scroll
-        </span>
         <div className="w-px h-16 bg-dim/15 relative overflow-hidden">
           <div className="absolute inset-0 bg-paper/50 animate-scroll-line" />
         </div>

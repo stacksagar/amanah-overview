@@ -9,20 +9,20 @@ gsap.registerPlugin(ScrollTrigger);
 const STEPS = [
   {
     num: "01",
-    heading: "You Set the Rules.",
-    body: "You choose your limits, your goals, and your ethical boundaries.",
+    heading: "You Define the Boundaries.",
+    body: "Set your ethical constraints, risk appetite, and financial goals. Nawah never operates outside the limits you establish. Your principles are hard-coded — not guidelines.",
     accent: "Define",
   },
   {
     num: "02",
-    heading: "The Agents Review the Market.",
-    body: "Each agent looks at the market from a different angle before action is taken.",
+    heading: "Six Minds Deliberate.",
+    body: "Macro, Fundamental, Technical, Sentiment, Risk, and Execution agents analyse continuously. They disagree. They debate. They reach consensus. No single point of failure.",
     accent: "Deliberate",
   },
   {
     num: "03",
-    heading: "You See What Happened.",
-    body: "You get a clear record of actions, reasons, and results.",
+    heading: "You Wake to Results.",
+    body: "Every action logged. Every decision explained. Full transparency on what happened, why it happened, and what was considered. You review. You approve. You own.",
     accent: "Transparency",
   },
 ];
@@ -118,7 +118,7 @@ export default function Process() {
         {/* Label row with spinning hexagon */}
         <div className="flex items-start justify-between mb-24">
           <p className="proc-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
-            How It Works
+            04 — How It Works
           </p>
           <div className="flex items-center gap-8">
             {/* Floating triangle */}

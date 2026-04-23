@@ -9,23 +9,23 @@ gsap.registerPlugin(ScrollTrigger);
 const STATS = [
   {
     value: "100%",
-    label: "Recorded actions",
-    body: "Every action is saved and can be checked later.",
+    label: "Decision trail",
+    body: "Every decision leaves a trail.",
   },
   {
-    value: "CLEAR",
-    label: "Easy to review",
-    body: "People should be able to understand what the system is doing.",
+    value: "AUDIT",
+    label: "Designed for audit",
+    body: "Our frameworks are designed for audit.",
   },
   {
     value: "0",
-    label: "Empty promises",
-    body: "We do not say things we cannot prove.",
+    label: "Unclaimed certification",
+    body: "We do not claim certification we have not earned.",
   },
   {
     value: "OPEN",
-    label: "Open to questions",
-    body: "We welcome questions, review, and feedback.",
+    label: "Welcomes examination",
+    body: "Our processes welcome examination.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function Architecture() {
       <div className="max-w-7xl mx-auto w-full">
         <div className="flex items-start justify-between mb-20">
           <p className="arch-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
-            05 — Easy to Check
+            05 — Built for Scrutiny
           </p>
           <div
             ref={crossRef}
@@ -114,14 +114,12 @@ export default function Architecture() {
         <div
           className="arch-headline-wrap overflow-hidden mb-22"
           style={{ clipPath: "inset(0 100% 0 0)" }}
-          aria-label="Made to be clear"
+          aria-label="Built for Scrutiny"
         >
           <h2 className="font-serif font-black leading-[0.9] tracking-tight text-paper">
-            <span className="block text-[clamp(3rem,8vw,8rem)]">
-              Made to Be
-            </span>
+            <span className="block text-[clamp(3rem,8vw,8rem)]">Built for</span>
             <span className="block text-[clamp(3rem,8vw,8rem)] italic text-paper/50">
-              Clear.
+              Scrutiny.
             </span>
           </h2>
         </div>
@@ -129,22 +127,28 @@ export default function Architecture() {
         <div className="arch-body-wrap grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-24 mb-28">
           <div className="space-y-6">
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-              Nawah should be easy to understand. People should be able to see
-              what it does.
+              Every decision leaves a trail. Every action carries explanation.
+              Nothing is hidden because nothing needs to be.
             </p>
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-              That is why decisions, rules, and records are kept clear.
+              We seek the highest standards of external validation. Our
+              frameworks are designed for audit. Our processes welcome
+              examination.
             </p>
           </div>
           <div className="border-l border-border pl-8 md:pl-12">
             <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
-              We want both users and experts to be able to review the system.
+              Our ethical boundary protocols are being developed in consultation
+              with Islamic finance scholars and designed for AAOIFI-aligned
+              scrutiny.
             </p>
             <p className="arch-body mt-6 text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
-              We only say what we can show.
+              We do not claim certification we have not earned. We commit to
+              transparency in that journey.
             </p>
             <p className="arch-body mt-8 font-serif italic text-[clamp(1.2rem,2vw,1.7rem)] leading-snug text-paper/70">
-              &ldquo;People trust what they can see.&rdquo;
+              &ldquo;Trust is not requested. It is constructed, block by block,
+              until it becomes undeniable.&rdquo;
             </p>
           </div>
         </div>
