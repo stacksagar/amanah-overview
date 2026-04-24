@@ -67,112 +67,161 @@ export default function Hero() {
 
   useEffect(() => {
     /* Immediately set initial hidden states — before any useEffect delay */
-    gsap.set(".hero-line", { y: "115%" });
-    gsap.set(eyebrowRef.current, { opacity: 0 });
-    gsap.set(subRef.current, { opacity: 0, y: 32 });
-    gsap.set(ctaRef.current, { opacity: 0, y: 20 });
-    gsap.set(scrollRef.current, { opacity: 0 });
+    const heroLines = gsap.utils.toArray<HTMLElement>(".hero-line");
+    if (heroLines.length) {
+      gsap.set(heroLines, { y: "115%" });
+    }
+    if (eyebrowRef.current) {
+      gsap.set(eyebrowRef.current, { opacity: 0 });
+    }
+    if (subRef.current) {
+      gsap.set(subRef.current, { opacity: 0, y: 32 });
+    }
+    if (ctaRef.current) {
+      gsap.set(ctaRef.current, { opacity: 0, y: 20 });
+    }
+    if (scrollRef.current) {
+      gsap.set(scrollRef.current, { opacity: 0 });
+    }
 
     const ctx = gsap.context(() => {
       /* ── Continuous shape animations ── */
-      gsap.to(outerRingRef.current, {
-        rotation: 360,
-        duration: 55,
-        repeat: -1,
-        ease: "none",
-      });
-      gsap.to(midRingRef.current, {
-        rotation: -360,
-        duration: 38,
-        repeat: -1,
-        ease: "none",
-      });
-      gsap.to(innerRingRef.current, {
-        rotation: 360,
-        duration: 22,
-        repeat: -1,
-        ease: "none",
-      });
-      gsap.to(orbitalRef.current, {
-        rotation: 360,
-        duration: 16,
-        repeat: -1,
-        ease: "none",
-      });
-      gsap.to(squareRef.current, {
-        rotation: -360,
-        duration: 30,
-        repeat: -1,
-        ease: "none",
-      });
+      if (outerRingRef.current) {
+        gsap.to(outerRingRef.current, {
+          rotation: 360,
+          duration: 55,
+          repeat: -1,
+          ease: "none",
+        });
+      }
+      if (midRingRef.current) {
+        gsap.to(midRingRef.current, {
+          rotation: -360,
+          duration: 38,
+          repeat: -1,
+          ease: "none",
+        });
+      }
+      if (innerRingRef.current) {
+        gsap.to(innerRingRef.current, {
+          rotation: 360,
+          duration: 22,
+          repeat: -1,
+          ease: "none",
+        });
+      }
+      if (orbitalRef.current) {
+        gsap.to(orbitalRef.current, {
+          rotation: 360,
+          duration: 16,
+          repeat: -1,
+          ease: "none",
+        });
+      }
+      if (squareRef.current) {
+        gsap.to(squareRef.current, {
+          rotation: -360,
+          duration: 30,
+          repeat: -1,
+          ease: "none",
+        });
+      }
 
       /* Floating wrappers */
-      gsap.to(squareWrapRef.current, {
-        y: -22,
-        duration: 5,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      });
-      gsap.to(dot1Ref.current, {
-        y: -14,
-        x: 6,
-        duration: 3.5,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      });
-      gsap.to(dot2Ref.current, {
-        y: 18,
-        x: -8,
-        duration: 4.8,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      });
-      gsap.to(dot3Ref.current, {
-        y: -10,
-        x: 12,
-        duration: 6.2,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      });
+      if (squareWrapRef.current) {
+        gsap.to(squareWrapRef.current, {
+          y: -22,
+          duration: 5,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+        });
+      }
+      if (dot1Ref.current) {
+        gsap.to(dot1Ref.current, {
+          y: -14,
+          x: 6,
+          duration: 3.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+        });
+      }
+      if (dot2Ref.current) {
+        gsap.to(dot2Ref.current, {
+          y: 18,
+          x: -8,
+          duration: 4.8,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+        });
+      }
+      if (dot3Ref.current) {
+        gsap.to(dot3Ref.current, {
+          y: -10,
+          x: 12,
+          duration: 6.2,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+        });
+      }
 
       /* SVG diagonal line draw on load */
-      gsap.to(svgLineRef.current, {
-        attr: { strokeDashoffset: 0 },
-        duration: 2.4,
-        delay: 0.6,
-        ease: "power3.inOut",
-      });
+      if (svgLineRef.current) {
+        gsap.to(svgLineRef.current, {
+          attr: { strokeDashoffset: 0 },
+          duration: 2.4,
+          delay: 0.6,
+          ease: "power3.inOut",
+        });
+      }
 
       /* Shapes fade in */
-      gsap.from(
-        [outerRingRef.current, midRingRef.current, innerRingRef.current],
-        {
+      const ringTargets = [
+        outerRingRef.current,
+        midRingRef.current,
+        innerRingRef.current,
+      ].filter((el): el is HTMLDivElement => el !== null);
+      if (ringTargets.length) {
+        gsap.from(ringTargets, {
           opacity: 0,
           scale: 0.7,
           duration: 2,
           ease: "power3.out",
           stagger: 0.15,
           delay: 0.2,
-        },
+        });
+      }
+
+      const shapeTargets = [squareWrapRef.current, orbitalRef.current].filter(
+        (el): el is HTMLDivElement => el !== null,
       );
-      gsap.from([squareWrapRef.current, orbitalRef.current], {
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        delay: 0.8,
-      });
-      gsap.from([dot1Ref.current, dot2Ref.current, dot3Ref.current], {
-        opacity: 0,
-        scale: 0,
-        duration: 0.8,
-        ease: "back.out(2)",
-        stagger: 0.15,
-        delay: 1.2,
-      });
+      if (shapeTargets.length) {
+        gsap.from(shapeTargets, {
+          opacity: 0,
+          duration: 1.5,
+          ease: "power3.out",
+          delay: 0.8,
+        });
+      }
+
+      const dotTargets = [
+        dot1Ref.current,
+        dot2Ref.current,
+        dot3Ref.current,
+      ].filter((el): el is HTMLDivElement => el !== null);
+      if (dotTargets.length) {
+        gsap.from(dotTargets, {
+          opacity: 0,
+          scale: 0,
+          duration: 0.8,
+          ease: "back.out(2)",
+          stagger: 0.15,
+          delay: 1.2,
+        });
+      }
 
       /* ── Scramble eyebrow on load ── */
       if (eyebrowRef.current) {
@@ -182,11 +231,13 @@ export default function Hero() {
       const tl = gsap.timeline({ delay: 0.1 });
 
       /* Eyebrow fade-in (initially hidden via gsap.set outside context) */
-      tl.to(
-        eyebrowRef.current,
-        { opacity: 1, duration: 0.6, ease: "power2.out" },
-        0.2,
-      );
+      if (eyebrowRef.current) {
+        tl.to(
+          eyebrowRef.current,
+          { opacity: 1, duration: 0.6, ease: "power2.out" },
+          0.2,
+        );
+      }
 
       tl.to(
         ".hero-line",
@@ -199,17 +250,23 @@ export default function Hero() {
         0.4,
       );
 
-      tl.to(
-        subRef.current,
-        { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" },
-        "-=1.0",
-      );
-      tl.to(
-        ctaRef.current,
-        { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
-        "-=0.8",
-      );
-      tl.to(scrollRef.current, { opacity: 1, duration: 0.5 }, "-=0.4");
+      if (subRef.current) {
+        tl.to(
+          subRef.current,
+          { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" },
+          "-=1.0",
+        );
+      }
+      if (ctaRef.current) {
+        tl.to(
+          ctaRef.current,
+          { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
+          "-=0.8",
+        );
+      }
+      if (scrollRef.current) {
+        tl.to(scrollRef.current, { opacity: 1, duration: 0.5 }, "-=0.4");
+      }
 
       /* ── Scroll velocity skew ── */
       const skewSetter = gsap.quickSetter(".hero-skew-target", "skewY", "deg");
@@ -236,7 +293,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-[100svh] flex flex-col items-center justify-center px-6 md:px-16 lg:px-24 pt-32 pb-24 md:pt-40 md:pb-28 overflow-hidden"
+      className="relative min-h-svh flex flex-col items-center justify-center px-6 md:px-16 lg:px-24 pt-24 pb-20 md:pt-40 md:pb-28 overflow-hidden"
     >
       {/* Ambient glow */}
       <div
@@ -368,52 +425,46 @@ export default function Hero() {
         </p>
 
         <h1
-          className="font-serif font-black leading-[0.9] tracking-tight text-paper max-w-[14ch] sm:max-w-[13ch] md:max-w-none mx-auto"
+          className="font-serif font-black leading-[0.9] tracking-tight text-paper mx-auto"
           aria-label="Sharia-Compliant Investing That Grows While You Sleep"
         >
-          {[
-            {
-              mobile: ["SHARIA-COMPLIANT"],
-              desktop: "SHARIA-COMPLIANT",
-              italic: false,
-            },
-            {
-              mobile: ["INVESTING THAT", "GROWS"],
-              desktop: "INVESTING THAT GROWS",
-              italic: false,
-            },
-            {
-              mobile: ["WHILE YOU SLEEP"],
-              desktop: "WHILE YOU SLEEP",
-              italic: true,
-            },
-          ].map(({ mobile, desktop, italic }) => (
-            <div key={desktop} className="block overflow-hidden">
-              <span
-                className={`hero-line hidden md:block text-[clamp(3.6rem,7vw,7.8rem)] will-transform leading-[0.9]
-                            ${italic ? "italic" : ""}`}
-              >
-                {desktop}
+          <span className="hidden md:block">
+            {[
+              "SHARIA-COMPLIANT",
+              "INVESTING THAT GROWS",
+              "WHILE YOU SLEEP",
+            ].map((line, index) => (
+              <span key={line} className="block overflow-hidden">
+                <span
+                  className={`hero-line block text-[clamp(3.4rem,7vw,7.6rem)] will-transform leading-[0.9] ${index === 2 ? "italic" : ""}`}
+                >
+                  {line}
+                </span>
               </span>
+            ))}
+          </span>
 
-              <span className="block md:hidden">
-                {mobile.map((line) => (
-                  <span
-                    key={line}
-                    className={`hero-line block text-[clamp(2.7rem,11vw,4.6rem)] will-transform leading-[0.92]
-                                ${italic ? "italic" : ""}`}
-                  >
-                    {line}
-                  </span>
-                ))}
+          <span className="block md:hidden">
+            {[
+              "SHARIA-COMPLIANT",
+              "INVESTING THAT",
+              "GROWS",
+              "WHILE YOU SLEEP",
+            ].map((line, index) => (
+              <span key={line} className="block overflow-hidden">
+                <span
+                  className={`hero-line block text-[clamp(2.2rem,10vw,4.1rem)] will-transform leading-[0.94] ${index === 3 ? "italic" : ""}`}
+                >
+                  {line}
+                </span>
               </span>
-            </div>
-          ))}
+            ))}
+          </span>
         </h1>
 
         <p
           ref={subRef}
-          className="mt-12 text-dim font-sans font-light
+          className="mt-8 md:mt-12 text-dim font-sans font-light
                      text-[clamp(1rem,1.2vw,1.12rem)]
                      leading-[1.9] max-w-sm md:max-w-3xl mx-auto tracking-[0.01em] will-opacity"
         >
@@ -424,7 +475,7 @@ export default function Hero() {
 
         <div
           ref={ctaRef}
-          className="mt-16 md:mt-20 flex flex-col items-center gap-6 will-opacity"
+          className="mt-10 md:mt-20 flex flex-col items-center gap-6 will-opacity"
         >
           <form
             onSubmit={handleEarlyAccess}

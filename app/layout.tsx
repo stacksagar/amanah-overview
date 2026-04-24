@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   title,
   description,
   applicationName: "Nawah Wealth",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
   keywords: [
     "Nawah Wealth",
     "Sharia-compliant wealth",

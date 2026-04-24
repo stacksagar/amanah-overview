@@ -154,7 +154,8 @@ export default function Statement() {
             className="font-serif text-[clamp(2rem,5vw,5rem)] leading-[0.95]
                         tracking-tight text-paper/30"
           >
-            Nawah Wealth was founded by Name and Name in London, 2026.
+            Nawah Wealth was founded by Aziz Ahmed and Barry Lee in London,
+            2026.
           </p>
         </div>
 

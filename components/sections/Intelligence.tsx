@@ -110,35 +110,36 @@ function AgentCard({
   return (
     <div
       ref={cardRef}
-      className="agent-card bg-card border border-border px-7 py-8 md:px-8 md:py-9 flex flex-col gap-6
+      className="agent-card h-full bg-card border border-border px-7 py-8 md:px-8 md:py-9 flex flex-col gap-6
                  group will-transform hover:border-accent/30 transition-colors duration-500"
       style={{ transformStyle: "preserve-3d" }}
     >
-      <div className="flex items-start gap-5">
-        <div className="flex items-center gap-4">
-          <div
-            className={`relative w-18 h-22 rounded-[1.6rem] bg-linear-to-b ${agent.palette} overflow-hidden border border-paper/10 shrink-0`}
-            style={{ transform: "translateZ(22px)" }}
-            aria-hidden="true"
-          >
-            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-paper/80" />
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-10 rounded-t-[999px] bg-paper/75" />
-            <div className="absolute inset-x-3 top-2 h-px bg-paper/30" />
-          </div>
+      <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
+        <div
+          className={`relative w-18 h-22 rounded-[1.6rem] bg-linear-to-b ${agent.palette} overflow-hidden border border-paper/10 shrink-0`}
+          style={{ transform: "translateZ(22px)" }}
+          aria-hidden="true"
+        >
+          <div className="absolute top-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-paper/80" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-10 rounded-t-[999px] bg-paper/75" />
+          <div className="absolute inset-x-3 top-2 h-px bg-paper/30" />
+        </div>
 
-          <div style={{ transform: "translateZ(16px)" }}>
-            <p className="text-[9px] tracking-[0.4em] uppercase text-dim/40 font-sans mb-2">
-              Agent {agent.id}
-            </p>
-            <h3 className="font-serif font-black text-[1.55rem] text-paper leading-none group-hover:italic transition-all duration-400">
-              {agent.title}
-            </h3>
-          </div>
+        <div style={{ transform: "translateZ(16px)" }} className="min-w-0">
+          <p className="text-[9px] tracking-[0.4em] uppercase text-dim/40 font-sans mb-2">
+            Agent {agent.id}
+          </p>
+          <h3 className="font-serif font-black text-[1.45rem] md:text-[1.55rem] text-paper leading-tight group-hover:italic transition-all duration-400">
+            {agent.title}
+          </h3>
         </div>
       </div>
 
-      <div style={{ transform: "translateZ(18px)" }} className="space-y-4">
-        <p className="text-dim/72 font-sans font-light text-sm md:text-[0.98rem] leading-[1.85] flex-1">
+      <div
+        style={{ transform: "translateZ(18px)" }}
+        className="space-y-4 flex-1"
+      >
+        <p className="text-dim/80 font-sans font-light text-sm md:text-[0.98rem] leading-[1.85]">
           {agent.desc}
         </p>
         <p className="font-sans text-[10px] tracking-[0.28em] uppercase text-accent/65">

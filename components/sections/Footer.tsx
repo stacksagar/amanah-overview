@@ -117,7 +117,7 @@ export default function Footer() {
             launch.
           </p>
           <p className="text-dim/90 font-sans font-light text-base md:text-lg leading-relaxed">
-            For investment discussions: founder at nawah dot co dot uk
+            For investment discussions: founder@nawahwealth.com
           </p>
         </div>
       </div>
@@ -142,7 +142,7 @@ export default function Footer() {
               </span>
             ))}
           </h2>
-          <p className="mt-3 md:mt-4 font-sans text-[clamp(1rem,2vw,2.2rem)] tracking-[0.55em] uppercase text-paper/38 pl-[0.55em]">
+          <p className="mt-3 md:mt-4 font-sans text-[clamp(1rem,2vw,2.2rem)] tracking-[0.55em] uppercase text-paper/60 pl-[0.55em]">
             Wealth
           </p>
         </div>
