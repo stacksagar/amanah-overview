@@ -293,7 +293,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-svh flex flex-col items-center justify-center px-6 md:px-16 lg:px-24 pt-24 pb-20 md:pt-40 md:pb-28 overflow-hidden"
+      className="relative min-h-svh flex flex-col items-center justify-center px-5 sm:px-6 md:px-16 lg:px-24 pt-20 sm:pt-24 pb-16 sm:pb-20 md:pt-40 md:pb-28 overflow-hidden"
     >
       {/* Ambient glow */}
       <div
@@ -303,7 +303,7 @@ export default function Hero() {
 
       {/* ── Orbital ring system — top-right (responsive) ── */}
       <div
-        className="absolute -top-10 -right-10 sm:-top-28 sm:-right-40 pointer-events-none opacity-75"
+        className="absolute -top-6 -right-16 sm:-top-28 sm:-right-40 pointer-events-none opacity-55 sm:opacity-75 scale-[0.72] sm:scale-100 origin-top-right"
         aria-hidden="true"
       >
         <div
@@ -419,7 +419,7 @@ export default function Hero() {
       <div className="relative z-10 text-center max-w-7xl mx-auto w-full hero-skew-target will-transform">
         <p
           ref={eyebrowRef}
-          className="text-[10px] tracking-[0.5em] uppercase text-dim/80 font-sans mb-14 md:mb-16 will-opacity"
+          className="text-[10px] tracking-[0.42em] sm:tracking-[0.5em] uppercase text-dim/80 font-sans mb-10 sm:mb-14 md:mb-16 will-opacity"
         >
           Nawah Wealth
         </p>
@@ -453,7 +453,7 @@ export default function Hero() {
             ].map((line, index) => (
               <span key={line} className="block overflow-hidden">
                 <span
-                  className={`hero-line block text-[clamp(2.2rem,10vw,4.1rem)] will-transform leading-[0.94] ${index === 3 ? "italic" : ""}`}
+                  className={`hero-line block text-[clamp(2rem,10vw,4.1rem)] will-transform leading-[0.96] ${index === 3 ? "italic" : ""}`}
                 >
                   {line}
                 </span>
@@ -464,9 +464,9 @@ export default function Hero() {
 
         <p
           ref={subRef}
-          className="mt-8 md:mt-12 text-dim font-sans font-light
+          className="mt-6 sm:mt-8 md:mt-12 text-dim/90 font-sans font-light
                      text-[clamp(1rem,1.2vw,1.12rem)]
-                     leading-[1.9] max-w-sm md:max-w-3xl mx-auto tracking-[0.01em] will-opacity"
+                     leading-[1.85] max-w-md md:max-w-3xl mx-auto tracking-[0.01em] will-opacity"
         >
           Autonomous AI agents trade ethically on your behalf. You set the
           boundaries. They do the work. You wake to results. We only eat when
@@ -475,24 +475,24 @@ export default function Hero() {
 
         <div
           ref={ctaRef}
-          className="mt-10 md:mt-20 flex flex-col items-center gap-6 will-opacity"
+          className="mt-8 sm:mt-10 md:mt-20 flex flex-col items-center gap-5 sm:gap-6 will-opacity"
         >
           <form
             onSubmit={handleEarlyAccess}
-            className="w-full max-w-4xl border border-border/80 bg-card/80 px-5 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8 flex flex-col gap-5 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
+            className="w-full max-w-4xl border border-border/80 bg-card/80 px-4 py-4 sm:px-6 sm:py-6 md:px-8 md:py-8 flex flex-col gap-4 sm:gap-5 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
           >
-            <div className="flex flex-col lg:flex-row items-stretch justify-center gap-4 md:gap-5">
+            <div className="flex flex-col lg:flex-row items-stretch justify-center gap-3 sm:gap-4 md:gap-5">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 aria-label="Enter your email"
-                className="flex-1 min-w-0 bg-transparent border border-border px-8 md:px-10 py-6 md:py-7 font-sans text-base md:text-lg text-paper placeholder:text-dim/35 outline-none focus:border-paper/30 transition-colors duration-300"
+                className="flex-1 min-w-0 bg-transparent border border-border px-6 py-5 md:px-10 md:py-7 font-sans text-[15px] md:text-lg text-paper placeholder:text-dim/35 outline-none focus:border-paper/30 transition-colors duration-300"
               />
               <button
                 type="submit"
-                className="group relative overflow-hidden border border-paper/25 px-10 md:px-12 py-6 md:py-7 font-sans text-[11px] tracking-[0.3em] uppercase text-paper will-transform lg:min-w-[260px]"
+                className="group relative overflow-hidden border border-paper/25 px-8 py-5 md:px-12 md:py-7 font-sans text-[10px] sm:text-[11px] tracking-[0.24em] sm:tracking-[0.3em] uppercase text-paper will-transform lg:min-w-65"
               >
                 <span className="absolute inset-0 bg-paper translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
                 <span className="relative mix-blend-difference">
@@ -501,7 +501,7 @@ export default function Hero() {
               </button>
             </div>
           </form>
-          <p className="text-[10px] tracking-[0.32em] uppercase text-dim/55 font-sans text-center">
+          <p className="text-[10px] tracking-[0.24em] sm:tracking-[0.32em] uppercase text-dim/65 font-sans text-center">
             Private list. Limited places. No noise.
           </p>
         </div>
@@ -509,7 +509,7 @@ export default function Hero() {
 
       <div
         ref={scrollRef}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 will-opacity px-6"
+        className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 will-opacity px-6"
       >
         <p className="max-w-sm text-center text-[8px] md:text-[9px] tracking-[0.24em] uppercase text-dim/45 font-sans leading-relaxed">
           See how nine agents deliberate, decide, and deliver — every night.

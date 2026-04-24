@@ -92,16 +92,16 @@ export default function Architecture() {
     <section
       ref={sectionRef}
       id="architecture"
-      className="px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border overflow-hidden"
+      className="px-6 md:px-16 lg:px-24 py-28 md:py-44 border-t border-border overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <div className="flex items-start justify-between mb-20">
-          <p className="arch-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans">
+        <div className="flex items-start justify-between mb-12 md:mb-20">
+          <p className="arch-label text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim font-sans">
             05 — Built for Scrutiny
           </p>
           <div
             ref={crossRef}
-            className="w-10 h-10 shrink-0 will-transform opacity-20"
+            className="hidden sm:block w-10 h-10 shrink-0 will-transform opacity-20"
             aria-hidden="true"
           >
             <svg viewBox="0 0 40 40" fill="none">
@@ -112,7 +112,7 @@ export default function Architecture() {
         </div>
 
         <div
-          className="arch-headline-wrap overflow-hidden mb-22"
+          className="arch-headline-wrap overflow-hidden mb-14 md:mb-22"
           style={{ clipPath: "inset(0 100% 0 0)" }}
           aria-label="Built for Scrutiny"
         >
@@ -124,25 +124,25 @@ export default function Architecture() {
           </h2>
         </div>
 
-        <div className="arch-body-wrap grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-24 mb-28">
-          <div className="space-y-6">
-            <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
+        <div className="arch-body-wrap grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 mb-20 md:mb-28">
+          <div className="space-y-5 md:space-y-6">
+            <p className="arch-body text-dim/85 font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
               Every decision leaves a trail. Every action carries explanation.
               Nothing is hidden because nothing needs to be.
             </p>
-            <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
+            <p className="arch-body text-dim/85 font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
               We seek the highest standards of external validation. Our
               frameworks are designed for audit. Our processes welcome
               examination.
             </p>
           </div>
-          <div className="border-l border-border pl-8 md:pl-12">
-            <p className="arch-body text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
+          <div className="border-t md:border-t-0 md:border-l border-border pt-8 md:pt-0 pl-0 md:pl-12">
+            <p className="arch-body text-dim/85 font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
               Our ethical boundary protocols are being developed in consultation
               with Islamic finance scholars and designed for AAOIFI-aligned
               scrutiny.
             </p>
-            <p className="arch-body mt-6 text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
+            <p className="arch-body mt-6 text-dim/85 font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
               We do not claim certification we have not earned. We commit to
               transparency in that journey.
             </p>
@@ -158,7 +158,7 @@ export default function Architecture() {
             <div
               key={s.label}
               className="arch-stat group relative overflow-hidden border border-border
-                         px-8 py-10 md:py-12 flex flex-col gap-5 will-transform
+                         px-6 md:px-8 py-8 md:py-12 flex flex-col gap-5 will-transform
                          hover:border-accent/30 transition-colors duration-500 cursor-default"
             >
               {/* Hover fill */}

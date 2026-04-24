@@ -209,12 +209,12 @@ export default function Intelligence() {
     <section
       ref={sectionRef}
       id="intelligence"
-      className="px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border"
+      className="px-6 md:px-16 lg:px-24 py-28 md:py-44 border-t border-border"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}
-        <div className="mb-24">
-          <p className="intel-label text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-14">
+        <div className="mb-16 md:mb-24">
+          <p className="intel-label text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim font-sans mb-10 md:mb-14">
             03 — A Council That Never Sleeps
           </p>
 
@@ -244,7 +244,7 @@ export default function Intelligence() {
             </h2>
           </div>
 
-          <p className="intel-sub text-dim font-sans font-light max-w-2xl leading-[1.9] text-sm md:text-base will-opacity">
+          <p className="intel-sub text-dim/85 font-sans font-light max-w-2xl leading-[1.8] text-sm md:text-base will-opacity">
             Nine specialised intelligences — each devoted to a distinct domain
             of analysis, each operating in concert, each accountable. They
             deliberate. They disagree. They consensus. You wake to transparency.
@@ -252,7 +252,7 @@ export default function Intelligence() {
         </div>
 
         {/* 9-agent grid with 3D tilt */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 xl:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7 xl:grid-cols-3">
           {AGENTS.map((agent) => (
             <AgentCard key={agent.id} agent={agent} />
           ))}
@@ -260,14 +260,14 @@ export default function Intelligence() {
 
         {/* Bottom quote — client content */}
         <div
-          className="mt-20 pt-12 border-t border-border flex flex-col md:flex-row
-                        items-start md:items-end justify-between gap-8"
+          className="mt-14 md:mt-20 pt-8 md:pt-12 border-t border-border flex flex-col md:flex-row
+                        items-start md:items-end justify-between gap-6 md:gap-8"
         >
           <p className="font-serif italic text-[clamp(1.1rem,2vw,1.8rem)] text-paper/60 max-w-2xl leading-snug">
             &ldquo;Nine minds. One mandate. Zero compromise. Your wealth, tended
             around the clock.&rdquo;
           </p>
-          <p className="text-[9px] tracking-[0.4em] uppercase text-dim/40 font-sans shrink-0">
+          <p className="text-[10px] tracking-[0.32em] uppercase text-dim/40 font-sans shrink-0">
             Nawah — Council Protocol
           </p>
         </div>

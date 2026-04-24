@@ -78,13 +78,13 @@ export default function Statement() {
     <section
       ref={sectionRef}
       id="founders"
-      className="relative min-h-[70vh] flex flex-col items-center justify-center
-                 px-6 md:px-16 lg:px-24 py-40 md:py-44 border-t border-border overflow-hidden"
+      className="relative min-h-auto md:min-h-[70vh] flex flex-col items-center justify-center
+                 px-6 md:px-16 lg:px-24 py-28 md:py-44 border-t border-border overflow-hidden"
     >
       {/* Decorative diamond shape */}
       <div
         ref={shapeRef}
-        className="absolute right-[8%] top-1/2 -translate-y-1/2 w-48 h-48
+        className="absolute right-[8%] top-1/2 -translate-y-1/2 w-48 h-48 hidden md:block
                    border border-accent/20 will-transform opacity-0"
         style={{ transform: "translateY(-50%) rotate(45deg)" }}
         aria-hidden="true"
@@ -98,14 +98,14 @@ export default function Statement() {
 
       {/* Second smaller diamond */}
       <div
-        className="absolute left-[6%] bottom-[15%] w-20 h-20 border border-border/20
+        className="absolute left-[6%] bottom-[15%] w-20 h-20 border border-border/20 hidden md:block
                    pointer-events-none"
         style={{ transform: "rotate(45deg)" }}
         aria-hidden="true"
       />
 
       <div className="max-w-5xl mx-auto text-center">
-        <p className="stmt-attr mb-16 text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
+        <p className="stmt-attr mb-10 md:mb-16 text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim/50 font-sans">
           07 — The Founders
         </p>
         <div
@@ -122,7 +122,7 @@ export default function Statement() {
         </div>
         <div
           ref={line2Ref}
-          className="overflow-hidden mb-14"
+          className="overflow-hidden mb-10 md:mb-14"
           style={{ clipPath: "inset(0 0 0 100%)" }}
         >
           <p
@@ -152,15 +152,15 @@ export default function Statement() {
         >
           <p
             className="font-serif text-[clamp(2rem,5vw,5rem)] leading-[0.95]
-                        tracking-tight text-paper/30"
+                        tracking-tight text-paper/40"
           >
             Nawah Wealth was founded by Aziz Ahmed and Barry Lee in London,
             2026.
           </p>
         </div>
 
-        <div className="stmt-attr mt-16 max-w-3xl mx-auto space-y-6 text-center">
-          <p className="text-dim/80 font-sans font-light text-base md:text-lg leading-relaxed">
+        <div className="stmt-attr mt-12 md:mt-16 max-w-3xl mx-auto space-y-6 text-center">
+          <p className="text-dim/90 font-sans font-light text-base md:text-lg leading-relaxed">
             We built Nawah because we believe wealth stewardship should be
             transparent, ethical, and truly aligned with those it serves.
           </p>

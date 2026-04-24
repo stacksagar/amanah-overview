@@ -19,16 +19,16 @@ export default function Home() {
   return (
     <>
       {/* Sticky Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-5 mix-blend-difference pointer-events-none">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-16 py-4 sm:py-5 mix-blend-difference pointer-events-none">
         <a
           href="#hero"
-          className="pointer-events-auto relative w-[72px] h-11 sm:w-24 sm:h-14 md:w-32 md:h-[72px] lg:w-40 lg:h-22"
+          className="pointer-events-auto relative w-16 h-10 sm:w-24 sm:h-14 md:w-32 md:h-18 lg:w-40 lg:h-22"
         >
           <Image
             src="/logo.png"
             alt="Nawah Wealth"
             fill
-            sizes="(max-width: 639px) 72px, (max-width: 767px) 96px, (max-width: 1023px) 128px, 160px"
+            sizes="(max-width: 639px) 64px, (max-width: 767px) 96px, (max-width: 1023px) 128px, 160px"
             className="object-contain object-left"
             priority
           />

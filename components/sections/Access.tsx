@@ -58,14 +58,14 @@ export default function Access() {
     <section
       ref={sectionRef}
       id="access"
-      className="relative min-h-svh px-6 md:px-16 lg:px-24 py-40 md:py-44 flex flex-col
+      className="relative min-h-svh px-6 md:px-16 lg:px-24 py-28 md:py-44 flex flex-col
                  justify-center border-t border-border overflow-hidden"
     >
       {/* Animated accent orb */}
       <div
         ref={orbRef}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                   w-170 h-170 rounded-full pointer-events-none will-transform"
+                   w-110 h-110 sm:w-170 sm:h-170 rounded-full pointer-events-none will-transform"
         style={{
           background:
             "radial-gradient(circle, rgba(0,102,255,0.15) 0%, transparent 70%)",
@@ -77,7 +77,7 @@ export default function Access() {
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         {submitted ? (
           <div className="text-center">
-            <p className="confirm-el text-[9px] tracking-[0.5em] uppercase text-accent font-sans mb-10">
+            <p className="confirm-el text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-accent font-sans mb-8 md:mb-10">
               Request Received
             </p>
             <h2
@@ -93,7 +93,7 @@ export default function Access() {
           </div>
         ) : (
           <>
-            <p className="access-el text-[9px] tracking-[0.5em] uppercase text-dim font-sans mb-18 text-center">
+            <p className="access-el text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim font-sans mb-12 md:mb-18 text-center">
               06 — The Invitation
             </p>
 
@@ -106,15 +106,15 @@ export default function Access() {
               </h2>
             </div>
 
-            <div className="access-el max-w-4xl mx-auto border border-border/80 bg-card/85 px-6 py-7 md:px-10 md:py-10 lg:px-12 lg:py-12">
+            <div className="access-el max-w-4xl mx-auto border border-border/80 bg-card/85 px-5 py-6 md:px-10 md:py-10 lg:px-12 lg:py-12">
               <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10 space-y-4">
-                <p className="text-dim font-sans font-light text-base md:text-lg leading-relaxed">
+                <p className="text-dim/90 font-sans font-light text-base md:text-lg leading-relaxed">
                   We are currently accepting a limited cohort of founding
                   members. These individuals will shape our evolution,
                   stress-test our systems, and establish the foundation for a
                   new standard in autonomous stewardship.
                 </p>
-                <p className="text-dim font-sans font-light text-base md:text-lg leading-relaxed">
+                <p className="text-dim/90 font-sans font-light text-base md:text-lg leading-relaxed">
                   Priority is given to those who align with our founding
                   principles: transparency, ethical rigor, and the courage to
                   demand better from those who manage wealth.
@@ -132,7 +132,7 @@ export default function Access() {
                 >
                   Request Invitation
                 </label>
-                <div className="flex flex-col lg:flex-row gap-4 md:gap-5">
+                <div className="flex flex-col lg:flex-row gap-3 sm:gap-4 md:gap-5">
                   <input
                     id="access-email"
                     type="email"
@@ -140,12 +140,12 @@ export default function Access() {
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full flex-1 bg-transparent border border-border px-8 md:px-10 py-6 md:py-7 font-sans text-base md:text-lg text-paper placeholder:text-dim/30 outline-none focus:border-paper/30 transition-colors duration-300"
+                    className="w-full flex-1 bg-transparent border border-border px-6 md:px-10 py-5 md:py-7 font-sans text-base md:text-lg text-paper placeholder:text-dim/30 outline-none focus:border-paper/30 transition-colors duration-300"
                   />
 
                   <button
                     type="submit"
-                    className="group relative overflow-hidden border border-paper/25 px-10 md:px-12 py-6 md:py-7 font-sans text-[11px] tracking-[0.3em] uppercase text-paper will-transform lg:min-w-65"
+                    className="group relative overflow-hidden border border-paper/25 px-8 md:px-12 py-5 md:py-7 font-sans text-[10px] sm:text-[11px] tracking-[0.24em] sm:tracking-[0.3em] uppercase text-paper will-transform lg:min-w-65"
                   >
                     <span
                       className="absolute inset-0 bg-paper translate-y-full
@@ -158,7 +158,7 @@ export default function Access() {
                   </button>
                 </div>
 
-                <p className="pt-3 text-[10px] tracking-[0.3em] uppercase text-dim/70 font-sans text-center">
+                <p className="pt-3 text-[10px] tracking-[0.24em] sm:tracking-[0.3em] uppercase text-dim/70 font-sans text-center">
                   Private list. No noise. Only important updates.
                 </p>
               </form>

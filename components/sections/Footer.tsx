@@ -82,7 +82,7 @@ export default function Footer() {
     <footer
       ref={sectionRef}
       id="footer"
-      className="min-h-screen px-6 md:px-16 lg:px-24 pt-24 pb-12 flex flex-col
+      className="min-h-[85vh] md:min-h-screen px-5 sm:px-6 md:px-16 lg:px-24 pt-20 sm:pt-24 pb-10 md:pb-12 flex flex-col
                  justify-between border-t border-border overflow-hidden relative"
     >
       {/* Decorative SVG line */}
@@ -104,7 +104,7 @@ export default function Footer() {
       </svg>
 
       <div className="footer-meta max-w-4xl">
-        <p className="text-[9px] tracking-[0.5em] uppercase text-dim/70 font-sans mb-8">
+        <p className="text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim/70 font-sans mb-6 md:mb-8">
           08 — Investor Inquiries
         </p>
         <h2 className="font-serif font-black text-[clamp(2.8rem,6vw,6rem)] leading-[0.95] tracking-tight text-paper mb-8">
@@ -117,7 +117,7 @@ export default function Footer() {
             launch.
           </p>
           <p className="text-dim/90 font-sans font-light text-base md:text-lg leading-relaxed">
-            For investment discussions: info@nawahwealth.com
+            For investment discussions: founder@nawahwealth.com
           </p>
         </div>
       </div>
@@ -125,12 +125,12 @@ export default function Footer() {
       {/* Massive brand text */}
       <div
         ref={brandRef}
-        className="flex-1 flex items-center justify-center will-transform"
+        className="flex-1 flex items-center justify-center py-14 md:py-0 will-transform"
       >
         <div className="flex flex-col items-center justify-center select-none">
           <h2
             className="font-serif font-black tracking-tighter leading-none flex items-end gap-0 text-paper"
-            style={{ fontSize: "clamp(5rem, 20vw, 22rem)" }}
+            style={{ fontSize: "clamp(4rem, 22vw, 22rem)" }}
             aria-label="NAWAH"
           >
             {LETTERS.map(({ id, value }, i) => (
@@ -142,31 +142,31 @@ export default function Footer() {
               </span>
             ))}
           </h2>
-          <p className="mt-3 md:mt-4 font-sans text-[clamp(1rem,2vw,2.2rem)] tracking-[0.55em] uppercase text-paper/60 pl-[0.55em]">
+          <p className="mt-3 md:mt-4 font-sans text-[clamp(1rem,2vw,2.2rem)] tracking-[0.4em] sm:tracking-[0.55em] uppercase text-paper/60 pl-[0.4em] sm:pl-[0.55em]">
             Wealth
           </p>
         </div>
       </div>
 
       {/* Meta row */}
-      <div className="footer-meta-wrap border-t border-border/60 pt-12 mt-12">
+      <div className="footer-meta-wrap border-t border-border/60 pt-8 md:pt-12 mt-8 md:mt-12">
         <div
           className="footer-meta flex flex-col md:flex-row items-start md:items-center
-                        justify-between gap-4"
+                        justify-between gap-6 md:gap-4"
         >
           <div className="space-y-3">
-            <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
+            <p className="text-[10px] tracking-[0.24em] sm:tracking-[0.3em] uppercase text-dim/60 font-sans">
               Nawah Wealth
             </p>
             <p className="text-dim/90 font-sans font-light text-sm leading-relaxed">
               Designed in London. Growing Globally.
             </p>
-            <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
+            <p className="text-[10px] tracking-[0.24em] sm:tracking-[0.3em] uppercase text-dim/60 font-sans">
               Pre-seed stage. MVP in development.
             </p>
           </div>
           <div className="flex gap-8 items-center flex-wrap">
-            <p className="text-[9px] tracking-[0.3em] uppercase text-dim/60 font-sans">
+            <p className="text-[10px] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-dim/60 font-sans">
               Copyright 2026 Nawah Wealth. All rights reserved.
             </p>
           </div>
