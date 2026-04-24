@@ -117,7 +117,7 @@ export default function Footer() {
             launch.
           </p>
           <p className="text-dim/90 font-sans font-light text-base md:text-lg leading-relaxed">
-            For investment discussions: founder@nawahwealth.com
+            For investment discussions: info@nawahwealth.com
           </p>
         </div>
       </div>
