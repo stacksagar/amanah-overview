@@ -128,16 +128,16 @@ export default function Philosophy() {
               style={{ clipPath: "inset(0 100% 0 0)" }}
             >
               <h2
-                className="font-serif font-black leading-[0.9] tracking-tight text-paper"
+                className="font-serif font-black leading-[1.2] tracking-tight text-paper"
                 aria-label="You Are Missing Sharia-Compliant Opportunities Every Single Night"
               >
-                <span className="block text-[clamp(2.4rem,6vw,6.5rem)]">
+                <span className="block text-[clamp(2.4rem,6vw,6.5rem)] mb-2">
                   You Are Missing
                 </span>
-                <span className="block text-[clamp(2.4rem,6vw,6.5rem)] text-paper/72">
+                <span className="block text-[clamp(2.4rem,6vw,6.5rem)] text-paper/72 mb-2">
                   Sharia-Compliant Opportunities
                 </span>
-                <span className="block text-[clamp(2.4rem,6vw,6.5rem)] italic">
+                <span className="block text-[clamp(2.4rem,6vw,6.5rem)] italic text-accent">
                   Every Single Night
                 </span>
               </h2>

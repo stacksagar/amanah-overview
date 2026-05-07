@@ -425,7 +425,7 @@ export default function Hero() {
         </p>
 
         <h1
-          className="font-serif font-black leading-[0.9] tracking-tight text-paper mx-auto"
+          className="font-serif font-black leading-[1.2] tracking-tight text-paper mx-auto"
           aria-label="The Only Sharia-Compliant Stock Research Tool That Does the Work While You Sleep"
         >
           <span className="hidden md:block">
@@ -435,9 +435,9 @@ export default function Hero() {
               "THAT DOES THE WORK",
               "WHILE YOU SLEEP",
             ].map((line, index) => (
-              <span key={line} className="block overflow-hidden">
+              <span key={line} className="block overflow-hidden mb-2">
                 <span
-                  className={`hero-line block text-[clamp(3rem,6.5vw,6.8rem)] will-transform leading-[0.9] ${index === 3 ? "italic" : ""}`}
+                  className={`hero-line block text-[clamp(3rem,6.5vw,6.8rem)] will-transform leading-[1.2] ${index === 3 ? "italic" : ""}`}
                 >
                   {line}
                 </span>
@@ -454,9 +454,9 @@ export default function Hero() {
               "THE WORK",
               "WHILE YOU SLEEP",
             ].map((line, index) => (
-              <span key={line} className="block overflow-hidden">
+              <span key={line} className="block overflow-hidden mb-1.5">
                 <span
-                  className={`hero-line block text-[clamp(2rem,9vw,3.8rem)] will-transform leading-[0.96] ${index === 5 ? "italic" : ""}`}
+                  className={`hero-line block text-[clamp(2rem,9vw,3.8rem)] will-transform leading-[1.15] ${index === 5 ? "italic" : ""}`}
                 >
                   {line}
                 </span>
@@ -509,7 +509,7 @@ export default function Hero() {
             Join 247 traders on the private founding list. 100 places only. No
             spam. No noise.
           </p>
-          <p className="text-[10px] tracking-[0.24em] sm:tracking-[0.32em] uppercase text-paper/60 font-sans text-center">
+          <p className="text-[10px] tracking-[0.24em] sm:tracking-[0.32em] uppercase text-accent/70 font-sans text-center">
             Intelligence that respects your faith and your time.
           </p>
         </div>

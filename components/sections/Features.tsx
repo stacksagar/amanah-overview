@@ -97,7 +97,7 @@ export default function Features() {
             {["What You", "Receive"].map((line, li) => (
               <div key={line} className="block overflow-hidden mb-2 md:mb-3">
                 <span
-                  className={`block text-[clamp(2.8rem,6.8vw,6.6rem)] will-transform ${li === 1 ? "italic" : ""}`}
+                  className={`block text-[clamp(2.8rem,6.8vw,6.6rem)] will-transform ${li === 1 ? "italic text-accent" : ""}`}
                 >
                   {line.split("").map((char, ci) => (
                     <span

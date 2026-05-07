@@ -110,11 +110,11 @@ export default function Statement() {
         </p>
         <div
           ref={line1Ref}
-          className="overflow-hidden mb-3"
+          className="overflow-hidden mb-4 md:mb-6"
           style={{ clipPath: "inset(0 100% 0 0)" }}
         >
           <p
-            className="font-serif font-black text-[clamp(2.5rem,7vw,7rem)] leading-[0.9]
+            className="font-serif font-black text-[clamp(2.5rem,7vw,7rem)] leading-[1.2]
                         tracking-tight text-paper"
           >
             The
@@ -126,8 +126,8 @@ export default function Statement() {
           style={{ clipPath: "inset(0 0 0 100%)" }}
         >
           <p
-            className="font-serif font-black italic text-[clamp(2.5rem,7vw,7rem)] leading-[0.9]
-                        tracking-tight text-paper/70"
+            className="font-serif font-black italic text-[clamp(2.5rem,7vw,7rem)] leading-[1.2]
+                        tracking-tight text-accent"
           >
             Founders.
           </p>

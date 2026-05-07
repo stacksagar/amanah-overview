@@ -166,9 +166,9 @@ export default function Process() {
           className="proc-headline overflow-hidden mb-14 md:mb-24"
           aria-label="How It Works."
         >
-          <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
+          <h2 className="font-serif font-black leading-[1.2] tracking-tight text-paper">
             {["How It", "Works."].map((line, li) => (
-              <div key={line} className="block overflow-hidden">
+              <div key={line} className="block overflow-hidden mb-2">
                 <span
                   className={`block text-[clamp(2.4rem,6vw,5.8rem)] will-transform ${li === 1 ? "italic text-paper/40" : ""}`}
                 >
@@ -176,6 +176,10 @@ export default function Process() {
                     <span
                       key={ci}
                       className="overflow-hidden inline-block align-bottom"
+                      style={{
+                        display: "inline-block",
+                        verticalAlign: "baseline",
+                      }}
                     >
                       <span className="proc-head-char inline-block will-transform">
                         {char === " " ? "\u00a0" : char}
@@ -207,7 +211,7 @@ export default function Process() {
                   <span className="text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim/50 font-sans">
                     {step.num}
                   </span>
-                  <span className="proc-accent font-serif italic text-paper/60 text-lg leading-none font-bold">
+                  <span className="proc-accent font-serif italic text-accent text-lg leading-none font-bold">
                     {step.accent}
                   </span>
                 </div>

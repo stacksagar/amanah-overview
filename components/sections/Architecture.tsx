@@ -116,9 +116,11 @@ export default function Architecture() {
           style={{ clipPath: "inset(0 100% 0 0)" }}
           aria-label="Built For Trust"
         >
-          <h2 className="font-serif font-black leading-[0.9] tracking-tight text-paper">
-            <span className="block text-[clamp(3rem,8vw,8rem)]">Built For</span>
-            <span className="block text-[clamp(3rem,8vw,8rem)] italic">
+          <h2 className="font-serif font-black leading-[1.2] tracking-tight text-paper">
+            <span className="block text-[clamp(3rem,8vw,8rem)] mb-2">
+              Built For
+            </span>
+            <span className="block text-[clamp(3rem,8vw,8rem)] italic text-accent">
               Trust.
             </span>
           </h2>

@@ -142,7 +142,7 @@ function AgentCard({
         <p className="text-dim/80 font-sans font-light text-sm md:text-[0.98rem] leading-[1.85]">
           {agent.desc}
         </p>
-        <p className="font-sans text-[10px] tracking-[0.28em] uppercase text-dim/50">
+        <p className="font-sans text-[10px] tracking-[0.28em] uppercase text-accent/65">
           AI Persona — Not Human
         </p>
       </div>
@@ -222,16 +222,20 @@ export default function Intelligence() {
             className="intel-headline overflow-hidden mb-8"
             aria-label="How the Council Deliberates For You"
           >
-            <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
+            <h2 className="font-serif font-black leading-[1.2] tracking-tight text-paper">
               {["How the Council", "Deliberates For You"].map((line, li) => (
-                <div key={line} className="block overflow-hidden">
+                <div key={line} className="block overflow-hidden mb-2">
                   <span
-                    className={`block text-[clamp(2.8rem,6.4vw,6.8rem)] will-transform ${li === 1 ? "italic" : ""}`}
+                    className={`block text-[clamp(2.8rem,6.4vw,6.8rem)] will-transform ${li === 1 ? "italic text-accent" : ""}`}
                   >
                     {line.split("").map((char, ci) => (
                       <span
                         key={ci}
                         className="overflow-hidden inline-block align-bottom"
+                        style={{
+                          display: "inline-block",
+                          verticalAlign: "baseline",
+                        }}
                       >
                         <span className="intel-char inline-block will-transform">
                           {char === " " ? "\u00a0" : char}

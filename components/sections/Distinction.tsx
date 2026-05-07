@@ -66,16 +66,20 @@ export default function Distinction() {
           className="dist-headline overflow-hidden mb-14 md:mb-22"
           aria-label="Meet Your Personal Research Council"
         >
-          <h2 className="font-serif font-black leading-tight tracking-tight">
+          <h2 className="font-serif font-black leading-[1.2] tracking-tight">
             {["Meet Your Personal", "Research Council"].map((line, li) => (
-              <div key={line} className="block overflow-hidden">
+              <div key={line} className="block overflow-hidden mb-2">
                 <span
-                  className={`block text-[clamp(2.8rem,6.8vw,6.6rem)] will-transform text-paper ${li === 1 ? "italic" : ""}`}
+                  className={`block text-[clamp(2.8rem,6.8vw,6.6rem)] will-transform text-paper ${li === 1 ? "italic text-accent" : ""}`}
                 >
                   {line.split("").map((char, ci) => (
                     <span
                       key={ci}
                       className="overflow-hidden inline-block align-bottom"
+                      style={{
+                        display: "inline-block",
+                        verticalAlign: "baseline",
+                      }}
                     >
                       <span className="dist-char inline-block will-transform">
                         {char === " " ? "\u00a0" : char}
