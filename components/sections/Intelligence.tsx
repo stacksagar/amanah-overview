@@ -9,56 +9,56 @@ gsap.registerPlugin(ScrollTrigger);
 const AGENTS = [
   {
     id: "01",
-    title: "Global View",
-    desc: "Reads global economic shifts, interest rate cycles, and geopolitical signals before they price into the market.",
+    title: "Economic Landscape",
+    desc: "Reads the economic landscape — interest rates, currencies, geopolitical shifts before they move markets.",
     palette: "from-[#0f172a] via-[#1d4ed8] to-[#60a5fa]",
   },
   {
     id: "02",
-    title: "Intrinsic Value",
-    desc: "Excavates company financials, sector dynamics, earnings quality, and long-term value creation potential.",
+    title: "Company Fundamentals",
+    desc: "Excavates company fundamentals — financials, earnings, competitive position finding value before the crowd.",
     palette: "from-[#111827] via-[#0f766e] to-[#5eead4]",
   },
   {
     id: "03",
-    title: "Entry and Exit",
-    desc: "Identifies momentum, structure, and pattern across multiple timeframes with machine-grade consistency.",
+    title: "Momentum and Structure",
+    desc: "Identifies momentum and structure across timeframes — patterns, breakouts, volume confirmation spotting opportunity before it breaks.",
     palette: "from-[#1f2937] via-[#7c3aed] to-[#c4b5fd]",
   },
   {
     id: "04",
-    title: "Crowd Psychology",
-    desc: "Monitors news velocity, crowd positioning, and market mood in real time — without emotional bias.",
+    title: "Market Mood",
+    desc: "Monitors the mood of markets — news velocity, crowd positioning, sentiment extremes seeing fear and greed without feeling them.",
     palette: "from-[#172554] via-[#2563eb] to-[#93c5fd]",
   },
   {
     id: "05",
-    title: "Capital Protection",
-    desc: "Guards against drawdown, tail risk, and correlation failures. Never sleeps. Never assumes safety.",
+    title: "Safety Guard",
+    desc: "Guards your safety — drawdown limits, tail risk, correlation traps — never assuming safety, never sleeping.",
     palette: "from-[#111827] via-[#7f1d1d] to-[#f87171]",
   },
   {
     id: "06",
-    title: "Trade Quality",
-    desc: "Times every trade with optimal precision to minimise slippage, market impact, and missed opportunity.",
+    title: "Timing and Precision",
+    desc: "Analyses timing and precision — entry windows, liquidity, impact estimates when precision matters.",
     palette: "from-[#0f172a] via-[#334155] to-[#cbd5e1]",
   },
   {
     id: "07",
-    title: "Ethical Boundary",
-    desc: "Screens every position against Sharia-informed ethical frameworks before execution. Debt ratios. Business activity. Interest exposure. Your principles, hard-coded. No exceptions. No overrides.",
+    title: "Highest Standard",
+    desc: "Holds the highest standard — screening every opportunity against AAOIFI-informed ethical frameworks. Debt ratios below 33 percent. Interest income below 5 percent. Business activity verification. Your principles, hard-coded. No exceptions. No overrides. No excuses.",
     palette: "from-[#052e16] via-[#15803d] to-[#86efac]",
   },
   {
     id: "08",
-    title: "Quantitative Edge",
-    desc: "Mathematical modeling, statistical pattern extraction, and factor analysis at scale no human can match.",
+    title: "Mathematical Edge",
+    desc: "Applies mathematical edge — statistical modeling, factor extraction, quantitative analysis the edge institutions pay millions for.",
     palette: "from-[#13151a] via-[#4338ca] to-[#818cf8]",
   },
   {
     id: "09",
-    title: "Portfolio Design",
-    desc: "Dynamic portfolio construction, position sizing, and rebalancing. Always optimal. Always systematic. Never emotional.",
+    title: "Optimal Structure",
+    desc: "Engineers optimal structure — allocation, sizing, rebalancing — systematic discipline, never emotional.",
     palette: "from-[#1a1a1a] via-[#0f766e] to-[#67e8f9]",
   },
 ];
@@ -215,18 +215,18 @@ export default function Intelligence() {
         {/* Header */}
         <div className="mb-16 md:mb-24">
           <p className="intel-label text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim font-sans mb-10 md:mb-14">
-            03 — A Council That Never Sleeps
+            03 — The Proof
           </p>
 
           <div
             className="intel-headline overflow-hidden mb-8"
-            aria-label="A Council That Never Sleeps"
+            aria-label="How the Council Deliberates For You"
           >
             <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
-              {["A Council That", "Never Sleeps."].map((line, li) => (
+              {["How the Council", "Deliberates For You"].map((line, li) => (
                 <div key={line} className="block overflow-hidden">
                   <span
-                    className={`block text-[clamp(2.8rem,6.4vw,6.8rem)] will-transform ${li === 1 ? "italic text-paper/52" : ""}`}
+                    className={`block text-[clamp(2.8rem,6.4vw,6.8rem)] will-transform ${li === 1 ? "italic text-accent" : ""}`}
                   >
                     {line.split("").map((char, ci) => (
                       <span
@@ -245,9 +245,9 @@ export default function Intelligence() {
           </div>
 
           <p className="intel-sub text-dim/85 font-sans font-light max-w-2xl leading-[1.8] text-sm md:text-base will-opacity">
-            Nine specialised intelligences — each devoted to a distinct domain
-            of analysis, each operating in concert, each accountable. They
-            deliberate. They disagree. They consensus. You wake to transparency.
+            Behind every Signal Card sits a council of autonomous specialists.
+            Each devoted to a distinct domain. Each operating in concert. Each
+            accountable.
           </p>
         </div>
 
@@ -264,11 +264,12 @@ export default function Intelligence() {
                         items-start md:items-end justify-between gap-6 md:gap-8"
         >
           <p className="font-serif italic text-[clamp(1.1rem,2vw,1.8rem)] text-paper/60 max-w-2xl leading-snug">
-            &ldquo;Nine minds. One mandate. Zero compromise. Your wealth, tended
-            around the clock.&rdquo;
+            &ldquo;A council of minds. One unified mandate. Zero compromise.
+            Your research, delivered every morning before you check your
+            phone.&rdquo;
           </p>
           <p className="text-[10px] tracking-[0.32em] uppercase text-dim/40 font-sans shrink-0">
-            Nawah — Council Protocol
+            Nawah — Council Deliberation
           </p>
         </div>
       </div>

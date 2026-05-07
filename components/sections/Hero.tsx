@@ -426,17 +426,18 @@ export default function Hero() {
 
         <h1
           className="font-serif font-black leading-[0.9] tracking-tight text-paper mx-auto"
-          aria-label="Sharia-Compliant Investing That Grows While You Sleep"
+          aria-label="The Only Sharia-Compliant Stock Research Tool That Does the Work While You Sleep"
         >
           <span className="hidden md:block">
             {[
-              "SHARIA-COMPLIANT",
-              "INVESTING THAT GROWS",
+              "THE ONLY SHARIA-COMPLIANT",
+              "STOCK RESEARCH TOOL",
+              "THAT DOES THE WORK",
               "WHILE YOU SLEEP",
             ].map((line, index) => (
               <span key={line} className="block overflow-hidden">
                 <span
-                  className={`hero-line block text-[clamp(3.4rem,7vw,7.6rem)] will-transform leading-[0.9] ${index === 2 ? "italic" : ""}`}
+                  className={`hero-line block text-[clamp(3rem,6.5vw,6.8rem)] will-transform leading-[0.9] ${index === 3 ? "italic" : ""}`}
                 >
                   {line}
                 </span>
@@ -446,14 +447,16 @@ export default function Hero() {
 
           <span className="block md:hidden">
             {[
+              "THE ONLY",
               "SHARIA-COMPLIANT",
-              "INVESTING THAT",
-              "GROWS",
+              "STOCK RESEARCH",
+              "TOOL THAT DOES",
+              "THE WORK",
               "WHILE YOU SLEEP",
             ].map((line, index) => (
               <span key={line} className="block overflow-hidden">
                 <span
-                  className={`hero-line block text-[clamp(2rem,10vw,4.1rem)] will-transform leading-[0.96] ${index === 3 ? "italic" : ""}`}
+                  className={`hero-line block text-[clamp(2rem,9vw,3.8rem)] will-transform leading-[0.96] ${index === 5 ? "italic" : ""}`}
                 >
                   {line}
                 </span>
@@ -468,9 +471,10 @@ export default function Hero() {
                      text-[clamp(1rem,1.2vw,1.12rem)]
                      leading-[1.85] max-w-md md:max-w-3xl mx-auto tracking-[0.01em] will-opacity"
         >
-          Autonomous AI agents trade ethically on your behalf. You set the
-          boundaries. They do the work. You wake to results. We only eat when
-          you feast.
+          A council of AI researchers screens every opportunity for Sharia
+          compliance, analyses every angle, and delivers clear intelligence to
+          your phone. Whether you already trade through a broker or you are just
+          beginning your journey — you wake to decisions you can trust.
         </p>
 
         <div
@@ -496,13 +500,17 @@ export default function Hero() {
               >
                 <span className="absolute inset-0 bg-paper translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
                 <span className="relative mix-blend-difference">
-                  Join the Waitlist
+                  Claim My Free Founding Place
                 </span>
               </button>
             </div>
           </form>
           <p className="text-[10px] tracking-[0.24em] sm:tracking-[0.32em] uppercase text-dim/65 font-sans text-center">
-            Private list. Limited places. No noise.
+            Join 247 traders on the private founding list. 100 places only. No
+            spam. No noise.
+          </p>
+          <p className="text-[10px] tracking-[0.24em] sm:tracking-[0.32em] uppercase text-accent/70 font-sans text-center">
+            Intelligence that respects your faith and your time.
           </p>
         </div>
       </div>

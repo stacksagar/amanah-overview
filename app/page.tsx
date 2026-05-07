@@ -1,10 +1,13 @@
 import Access from "@/components/sections/Access";
 import Architecture from "@/components/sections/Architecture";
 import Distinction from "@/components/sections/Distinction";
+import Features from "@/components/sections/Features";
 import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
 import Intelligence from "@/components/sections/Intelligence";
+import Legal from "@/components/sections/Legal";
 import Philosophy from "@/components/sections/Philosophy";
+import Pricing from "@/components/sections/Pricing";
 import Process from "@/components/sections/Process";
 import Statement from "@/components/sections/Statement";
 import Image from "next/image";
@@ -55,7 +58,10 @@ export default function Home() {
         <Distinction />
         <Intelligence />
         <Process />
+        <Features />
         <Architecture />
+        <Legal />
+        <Pricing />
         <Access />
         <Statement />
         <Footer />

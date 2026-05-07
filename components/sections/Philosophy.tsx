@@ -8,20 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
   {
-    value: "4.5 trillion plus",
-    label: "Ethical wealth market underserved by intelligence",
-  },
-  {
-    value: "100 percent",
-    label: "Decision audit trail — every action logged",
-  },
-  {
-    value: "Performance-only partnership",
-    label: "No hidden charges",
-  },
-  {
-    value: "Nine specialists",
-    label: "Six deliberating minds. One mandate.",
+    value: "$4.5 trillion",
+    label:
+      "In ethical wealth managed by teams who work while you sleep. Until now, you did not have a team.",
   },
 ];
 
@@ -129,7 +118,7 @@ export default function Philosophy() {
     >
       <div className="max-w-7xl mx-auto">
         <p className="phil-label text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim font-sans mb-12 md:mb-20">
-          01 — Rethink the Relationship
+          01 — The Pain
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-14 lg:gap-36 mb-20 md:mb-28">
@@ -140,32 +129,43 @@ export default function Philosophy() {
             >
               <h2
                 className="font-serif font-black leading-[0.9] tracking-tight text-paper"
-                aria-label="Rethink the Relationship"
+                aria-label="You Are Missing Sharia-Compliant Opportunities Every Single Night"
               >
-                <span className="block text-[clamp(2.7rem,7vw,7rem)]">
-                  Rethink the
+                <span className="block text-[clamp(2.4rem,6vw,6.5rem)]">
+                  You Are Missing
                 </span>
-                <span className="block text-[clamp(2.7rem,7vw,7rem)] text-paper/72">
-                  Relationship.
+                <span className="block text-[clamp(2.4rem,6vw,6.5rem)] text-paper/72">
+                  Sharia-Compliant Opportunities
+                </span>
+                <span className="block text-[clamp(2.4rem,6vw,6.5rem)] italic text-accent">
+                  Every Single Night
                 </span>
               </h2>
             </div>
 
             <div className="phil-paras space-y-6 sm:space-y-8 max-w-xl md:max-w-2xl">
               <p className="phil-para text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-                For generations, growing wealth demanded constant attention.
-                Markets never sleep, yet humans must. The result? Missed
-                opportunities, emotional decisions, and the slow erosion of
-                potential.
+                You go to bed. Markets move. A stock breaks out. A sector
+                rotates. A Sharia-compliant company reports earnings that change
+                everything. You wake up. You check your phone. You see what
+                happened. You missed it. Again.
               </p>
               <p className="phil-para text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-                We asked a different question: What if your wealth could be
-                tended with the same care you give your family, your faith, your
-                craft — continuously, ethically, and without your presence?
+                This is not your fault. You have a job. A family. Prayers to
+                keep. Sleep you need. You cannot stare at charts until 2 AM. You
+                cannot read 40,000 securities before Fajr.
               </p>
               <p className="phil-para text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-                The answer required reimagining not just technology, but trust
-                itself.
+                But here is what hurts: every missed opportunity is wealth your
+                family never sees. Every emotional trade you make because you
+                are tired and rushing is money you lose. Every stock you
+                accidentally hold because you did not have time to check the
+                debt ratio or interest income is a burden on your conscience
+                that you could have avoided.
+              </p>
+              <p className="phil-para text-dim font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
+                You deserve better than this. Your faith deserves better than
+                this.
               </p>
             </div>
           </div>
@@ -245,12 +245,12 @@ export default function Philosophy() {
               className="font-serif text-[clamp(1.4rem,2.8vw,2.6rem)] font-medium italic
                                    leading-snug text-paper/80"
             >
-              &ldquo;What if your wealth could be tended with the same care you
-              give your family, your faith, your craft — continuously,
-              ethically, and without your presence?&rdquo;
+              &ldquo;4.5 trillion dollars in ethical wealth is managed by people
+              who have teams of analysts working while they sleep. You do not
+              have a team. Until now.&rdquo;
             </blockquote>
             <p className="mt-6 text-[9px] tracking-[0.5em] uppercase text-dim/50 font-sans">
-              The Founding Question
+              The Opportunity Gap
             </p>
           </div>
         </div>

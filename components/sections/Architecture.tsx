@@ -8,24 +8,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
   {
-    value: "100%",
-    label: "Decision trail",
-    body: "Every decision leaves a trail.",
-  },
-  {
-    value: "AUDIT",
-    label: "Designed for audit",
-    body: "Our frameworks are designed for audit.",
-  },
-  {
-    value: "0",
-    label: "Unclaimed certification",
-    body: "We do not claim certification we have not earned.",
-  },
-  {
     value: "OPEN",
-    label: "Welcomes examination",
-    body: "Our processes welcome examination.",
+    label: "Open council",
+    body: "We are not a black box. We are an open council.",
+  },
+  {
+    value: "TRANSPARENT",
+    label: "Full visibility",
+    body: "You see every screen. You read every reason. You verify every claim.",
+  },
+  {
+    value: "NO HIDDEN",
+    label: "Nothing hidden",
+    body: "Nothing is hidden because nothing needs to be.",
+  },
+  {
+    value: "AAOIFI",
+    label: "Aligned scrutiny",
+    body: "Designed for AAOIFI-aligned scrutiny with Islamic finance scholars.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function Architecture() {
       <div className="max-w-7xl mx-auto w-full">
         <div className="flex items-start justify-between mb-12 md:mb-20">
           <p className="arch-label text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim font-sans">
-            05 — Built for Scrutiny
+            06 — Built For Trust
           </p>
           <div
             ref={crossRef}
@@ -114,12 +114,12 @@ export default function Architecture() {
         <div
           className="arch-headline-wrap overflow-hidden mb-14 md:mb-22"
           style={{ clipPath: "inset(0 100% 0 0)" }}
-          aria-label="Built for Scrutiny"
+          aria-label="Built For Trust"
         >
           <h2 className="font-serif font-black leading-[0.9] tracking-tight text-paper">
-            <span className="block text-[clamp(3rem,8vw,8rem)]">Built for</span>
-            <span className="block text-[clamp(3rem,8vw,8rem)] italic text-paper/50">
-              Scrutiny.
+            <span className="block text-[clamp(3rem,8vw,8rem)]">Built For</span>
+            <span className="block text-[clamp(3rem,8vw,8rem)] italic text-accent">
+              Trust.
             </span>
           </h2>
         </div>
@@ -127,28 +127,20 @@ export default function Architecture() {
         <div className="arch-body-wrap grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 mb-20 md:mb-28">
           <div className="space-y-5 md:space-y-6">
             <p className="arch-body text-dim/85 font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-              Every decision leaves a trail. Every action carries explanation.
+              Every decision leaves a trail. Every analysis carries explanation.
               Nothing is hidden because nothing needs to be.
             </p>
             <p className="arch-body text-dim/85 font-sans font-light leading-loose text-[clamp(0.95rem,1.3vw,1.1rem)]">
-              We seek the highest standards of external validation. Our
-              frameworks are designed for audit. Our processes welcome
-              examination.
+              Our ethical frameworks are being developed in consultation with
+              Islamic finance scholars and designed for AAOIFI-aligned scrutiny.
+              We do not claim certification we have not earned. We commit to
+              transparency in that journey.
             </p>
           </div>
           <div className="border-t md:border-t-0 md:border-l border-border pt-8 md:pt-0 pl-0 md:pl-12">
             <p className="arch-body text-dim/85 font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
-              Our ethical boundary protocols are being developed in consultation
-              with Islamic finance scholars and designed for AAOIFI-aligned
-              scrutiny.
-            </p>
-            <p className="arch-body mt-6 text-dim/85 font-sans font-light leading-loose text-[clamp(0.95rem,1.2vw,1.05rem)]">
-              We do not claim certification we have not earned. We commit to
-              transparency in that journey.
-            </p>
-            <p className="arch-body mt-8 font-serif italic text-[clamp(1.2rem,2vw,1.7rem)] leading-snug text-paper/70">
-              &ldquo;Trust is not requested. It is constructed, block by block,
-              until it becomes undeniable.&rdquo;
+              We are not a black box. We are an open council. You see every
+              screen. You read every reason. You verify every claim.
             </p>
           </div>
         </div>

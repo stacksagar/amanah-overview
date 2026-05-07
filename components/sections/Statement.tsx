@@ -106,7 +106,7 @@ export default function Statement() {
 
       <div className="max-w-5xl mx-auto text-center">
         <p className="stmt-attr mb-10 md:mb-16 text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim/50 font-sans">
-          07 — The Founders
+          11 — The Founders
         </p>
         <div
           ref={line1Ref}
@@ -162,7 +162,9 @@ export default function Statement() {
         <div className="stmt-attr mt-12 md:mt-16 max-w-3xl mx-auto space-y-6 text-center">
           <p className="text-dim/90 font-sans font-light text-base md:text-lg leading-relaxed">
             We built Nawah because we believe wealth stewardship should be
-            transparent, ethical, and truly aligned with those it serves.
+            transparent, ethical, and truly aligned with those it serves. We are
+            building the tool we wish existed when we began our own investing
+            journeys. We are building it for you.
           </p>
         </div>
       </div>

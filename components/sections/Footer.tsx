@@ -105,7 +105,7 @@ export default function Footer() {
 
       <div className="footer-meta max-w-4xl">
         <p className="text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim/70 font-sans mb-6 md:mb-8">
-          08 — Investor Inquiries
+          Investor Inquiries
         </p>
         <h2 className="font-serif font-black text-[clamp(2.8rem,6vw,6rem)] leading-[0.95] tracking-tight text-paper mb-8">
           Investor Inquiries.

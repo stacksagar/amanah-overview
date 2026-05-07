@@ -9,21 +9,21 @@ gsap.registerPlugin(ScrollTrigger);
 const STEPS = [
   {
     num: "01",
-    heading: "You Define the Boundaries.",
-    body: "Set your ethical constraints, risk appetite, and financial goals. Nawah never operates outside the limits you establish. Your principles are hard-coded — not guidelines.",
+    heading: "Define",
+    body: "Set your ethical constraints, risk appetite, and financial goals in under 3 minutes. Nawah never operates outside the boundaries you establish. Your principles are hard-coded not suggestions.",
     accent: "Define",
   },
   {
     num: "02",
-    heading: "Six Minds Deliberate.",
-    body: "Macro, Fundamental, Technical, Sentiment, Risk, and Execution agents analyse continuously. They disagree. They debate. They reach consensus. No single point of failure.",
-    accent: "Deliberate",
+    heading: "Activate",
+    body: "Toggle Watch Mode before you sleep. Your council begins its monitoring cycle. They evaluate. They screen. They debate. They reach consensus.",
+    accent: "Activate",
   },
   {
     num: "03",
-    heading: "You Wake to Results.",
-    body: "Every action logged. Every decision explained. Full transparency on what happened, why it happened, and what was considered. You review. You approve. You own.",
-    accent: "Transparency",
+    heading: "Wake to Intelligence",
+    body: "Your Morning Briefing arrives at your chosen time. As-salamu alaykum. While you were away, your council evaluated hundreds of opportunities, screened dozens for Sharia compliance, and produced Signal Cards for those that passed. Every analysis explained. Every decision transparent. You review. You decide. You trade through your own broker with full confidence or you learn until you are ready to begin.",
+    accent: "Briefing",
   },
 ];
 
