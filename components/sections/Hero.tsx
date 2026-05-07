@@ -509,7 +509,7 @@ export default function Hero() {
             Join 247 traders on the private founding list. 100 places only. No
             spam. No noise.
           </p>
-          <p className="text-[10px] tracking-[0.24em] sm:tracking-[0.32em] uppercase text-accent/70 font-sans text-center">
+          <p className="text-[10px] tracking-[0.24em] sm:tracking-[0.32em] uppercase text-paper/60 font-sans text-center">
             Intelligence that respects your faith and your time.
           </p>
         </div>

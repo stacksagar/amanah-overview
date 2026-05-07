@@ -117,7 +117,7 @@ export default function Pricing() {
               }`}
             >
               {tier.badge && (
-                <p className="text-[8px] tracking-[0.25em] uppercase text-accent font-sans mb-3 leading-tight">
+                <p className="text-[8px] tracking-[0.25em] uppercase text-paper/70 font-sans mb-3 leading-tight">
                   {tier.badge}
                 </p>
               )}
@@ -138,7 +138,7 @@ export default function Pricing() {
                     key={feature}
                     className="text-dim/80 font-sans font-light text-xs md:text-sm leading-relaxed flex items-start gap-2 break-words"
                   >
-                    <span className="text-accent mt-0.5 shrink-0">•</span>
+                    <span className="text-paper/60 mt-0.5 shrink-0">•</span>
                     {feature}
                   </li>
                 ))}

@@ -70,7 +70,7 @@ export default function Distinction() {
             {["Meet Your Personal", "Research Council"].map((line, li) => (
               <div key={line} className="block overflow-hidden">
                 <span
-                  className={`block text-[clamp(2.8rem,6.8vw,6.6rem)] will-transform text-paper ${li === 1 ? "italic text-accent" : ""}`}
+                  className={`block text-[clamp(2.8rem,6.8vw,6.6rem)] will-transform text-paper ${li === 1 ? "italic" : ""}`}
                 >
                   {line.split("").map((char, ci) => (
                     <span

@@ -207,7 +207,7 @@ export default function Process() {
                   <span className="text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-dim/50 font-sans">
                     {step.num}
                   </span>
-                  <span className="proc-accent font-serif italic text-accent text-lg leading-none font-bold">
+                  <span className="proc-accent font-serif italic text-paper/60 text-lg leading-none font-bold">
                     {step.accent}
                   </span>
                 </div>

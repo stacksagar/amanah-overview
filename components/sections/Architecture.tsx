@@ -118,7 +118,7 @@ export default function Architecture() {
         >
           <h2 className="font-serif font-black leading-[0.9] tracking-tight text-paper">
             <span className="block text-[clamp(3rem,8vw,8rem)]">Built For</span>
-            <span className="block text-[clamp(3rem,8vw,8rem)] italic text-accent">
+            <span className="block text-[clamp(3rem,8vw,8rem)] italic">
               Trust.
             </span>
           </h2>

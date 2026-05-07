@@ -96,7 +96,7 @@ export default function Access() {
       <div className="relative z-10 max-w-6xl mx-auto w-full">
         {submitted ? (
           <div className="text-center">
-            <p className="confirm-el text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-accent font-sans mb-8 md:mb-10">
+            <p className="confirm-el text-[10px] tracking-[0.42em] md:tracking-[0.5em] uppercase text-paper/70 font-sans mb-8 md:mb-10">
               Request Received
             </p>
             <h2

@@ -127,7 +127,7 @@ export default function Statement() {
         >
           <p
             className="font-serif font-black italic text-[clamp(2.5rem,7vw,7rem)] leading-[0.9]
-                        tracking-tight text-accent"
+                        tracking-tight text-paper/70"
           >
             Founders.
           </p>

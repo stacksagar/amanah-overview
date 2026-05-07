@@ -137,7 +137,7 @@ export default function Philosophy() {
                 <span className="block text-[clamp(2.4rem,6vw,6.5rem)] text-paper/72">
                   Sharia-Compliant Opportunities
                 </span>
-                <span className="block text-[clamp(2.4rem,6vw,6.5rem)] italic text-accent">
+                <span className="block text-[clamp(2.4rem,6vw,6.5rem)] italic">
                   Every Single Night
                 </span>
               </h2>
