@@ -58,20 +58,21 @@ export default function Legal() {
           Important Legal Information
         </h2>
 
-        <div className="legal-content space-y-6 md:space-y-8">
-          <p className="legal-para text-dim/70 font-sans font-light text-sm md:text-[0.95rem] leading-[1.9]">
+        <div className="legal-content space-y-5 md:space-y-7">
+          <p className="legal-para text-dim/70 font-sans font-light text-sm md:text-[0.92rem] leading-[1.8] break-words">
             Nawah Wealth is a technology and research platform. We are not a
-            financial adviser. We are not authorised or regulated by the Financial
-            Conduct Authority or any other financial regulator. We do not give
-            financial advice. We do not provide investment recommendations. We do
-            not execute trades. We do not hold client funds. We do not manage
-            money. We do not arrange deals in investments.
+            financial adviser. We are not authorised or regulated by the
+            Financial Conduct Authority or any other financial regulator. We do
+            not give financial advice. We do not provide investment
+            recommendations. We do not execute trades. We do not hold client
+            funds. We do not manage money. We do not arrange deals in
+            investments.
           </p>
 
-          <p className="legal-para text-dim/70 font-sans font-light text-sm md:text-[0.95rem] leading-[1.9]">
+          <p className="legal-para text-dim/70 font-sans font-light text-sm md:text-[0.92rem] leading-[1.8] break-words">
             All content produced by Nawah Wealth including Signal Cards, Morning
-            Briefings, research reports, chat responses, and all other outputs is
-            for informational and educational purposes only. It does not
+            Briefings, research reports, chat responses, and all other outputs
+            is for informational and educational purposes only. It does not
             constitute financial advice, investment advice, or a personal
             recommendation. It should not be relied upon as a basis for making
             investment decisions. Past performance does not indicate future
@@ -79,7 +80,7 @@ export default function Legal() {
             the amount you invested. The value of investments is not guaranteed.
           </p>
 
-          <p className="legal-para text-dim/70 font-sans font-light text-sm md:text-[0.95rem] leading-[1.9]">
+          <p className="legal-para text-dim/70 font-sans font-light text-sm md:text-[0.92rem] leading-[1.8] break-words">
             Before making any investment decision, you must consult a licensed
             financial adviser who is authorised and regulated in your
             jurisdiction. You must conduct your own research and due diligence.
@@ -87,10 +88,10 @@ export default function Legal() {
             gains or losses that result from them.
           </p>
 
-          <p className="legal-para text-dim/70 font-sans font-light text-sm md:text-[0.95rem] leading-[1.9]">
-            Nawah Wealth accepts no liability for any loss or damage arising from
-            your use of our platform, your reliance on any information we provide,
-            or any investment decisions you make.
+          <p className="legal-para text-dim/70 font-sans font-light text-sm md:text-[0.92rem] leading-[1.8] break-words">
+            Nawah Wealth accepts no liability for any loss or damage arising
+            from your use of our platform, your reliance on any information we
+            provide, or any investment decisions you make.
           </p>
         </div>
       </div>

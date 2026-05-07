@@ -93,9 +93,9 @@ export default function Features() {
           className="feat-headline overflow-hidden mb-14 md:mb-22"
           aria-label="What You Receive"
         >
-          <h2 className="font-serif font-black leading-tight tracking-tight text-paper">
+          <h2 className="font-serif font-black leading-[1.1] tracking-tight text-paper">
             {["What You", "Receive"].map((line, li) => (
-              <div key={line} className="block overflow-hidden">
+              <div key={line} className="block overflow-hidden mb-2 md:mb-3">
                 <span
                   className={`block text-[clamp(2.8rem,6.8vw,6.6rem)] will-transform ${li === 1 ? "italic text-accent" : ""}`}
                 >
@@ -103,6 +103,10 @@ export default function Features() {
                     <span
                       key={ci}
                       className="overflow-hidden inline-block align-bottom"
+                      style={{
+                        display: "inline-block",
+                        verticalAlign: "baseline",
+                      }}
                     >
                       <span className="feat-char inline-block will-transform">
                         {char === " " ? "\u00a0" : char}
@@ -119,12 +123,12 @@ export default function Features() {
           {FEATURES.map((feature, index) => (
             <div
               key={feature.title}
-              className="feat-card bg-card border border-border px-8 py-8 md:px-10 md:py-10 hover:border-accent/30 transition-colors duration-500"
+              className="feat-card bg-card border border-border px-6 md:px-8 py-6 md:py-8 hover:border-accent/30 transition-colors duration-500"
             >
-              <h3 className="font-serif font-bold text-[clamp(1.35rem,2vw,1.8rem)] text-paper leading-snug mb-4">
+              <h3 className="font-serif font-bold text-[clamp(1.2rem,2vw,1.6rem)] text-paper leading-snug mb-3 md:mb-4">
                 Feature 0{index + 1} — {feature.title}
               </h3>
-              <p className="text-dim/80 font-sans font-light text-sm md:text-[0.98rem] leading-[1.85]">
+              <p className="text-dim/80 font-sans font-light text-sm md:text-[0.95rem] leading-[1.75] break-words">
                 {feature.desc}
               </p>
             </div>

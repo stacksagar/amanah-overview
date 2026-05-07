@@ -112,33 +112,33 @@ export default function Pricing() {
           {TIERS.map((tier, index) => (
             <div
               key={tier.name}
-              className={`pricing-tier bg-card border border-border px-6 md:px-8 py-8 md:py-10 hover:border-accent/30 transition-colors duration-500 flex flex-col ${
+              className={`pricing-tier bg-card border border-border px-5 md:px-7 py-6 md:py-8 hover:border-accent/30 transition-colors duration-500 flex flex-col ${
                 index === 3 ? "border-accent/50" : ""
               }`}
             >
               {tier.badge && (
-                <p className="text-[9px] tracking-[0.28em] uppercase text-accent font-sans mb-4">
+                <p className="text-[8px] tracking-[0.25em] uppercase text-accent font-sans mb-3 leading-tight">
                   {tier.badge}
                 </p>
               )}
-              <h3 className="font-serif font-black text-[clamp(1.5rem,2.5vw,2rem)] text-paper leading-tight mb-2">
+              <h3 className="font-serif font-black text-[clamp(1.3rem,2.3vw,1.8rem)] text-paper leading-tight mb-2">
                 {tier.name}
               </h3>
-              <div className="mb-6">
-                <span className="font-serif font-black text-[clamp(2.5rem,5vw,4rem)] leading-none text-paper">
+              <div className="mb-5">
+                <span className="font-serif font-black text-[clamp(2.2rem,4.5vw,3.5rem)] leading-none text-paper">
                   {tier.price}
                 </span>
-                <span className="text-dim/60 font-sans font-light text-sm ml-2">
+                <span className="text-dim/60 font-sans font-light text-xs md:text-sm ml-1.5">
                   {tier.period}
                 </span>
               </div>
-              <ul className="space-y-3 flex-1">
+              <ul className="space-y-2.5 flex-1">
                 {tier.features.map((feature) => (
                   <li
                     key={feature}
-                    className="text-dim/80 font-sans font-light text-sm leading-relaxed flex items-start gap-2"
+                    className="text-dim/80 font-sans font-light text-xs md:text-sm leading-relaxed flex items-start gap-2 break-words"
                   >
-                    <span className="text-accent mt-1">•</span>
+                    <span className="text-accent mt-0.5 shrink-0">•</span>
                     {feature}
                   </li>
                 ))}

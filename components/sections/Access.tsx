@@ -162,7 +162,7 @@ export default function Access() {
 
                   <button
                     type="submit"
-                    className="group relative overflow-hidden border border-paper/25 px-8 md:px-12 py-5 md:py-7 font-sans text-[10px] sm:text-[11px] tracking-[0.24em] sm:tracking-[0.3em] uppercase text-paper will-transform lg:min-w-65"
+                    className="group relative overflow-hidden border border-paper/25 px-6 md:px-10 py-4 md:py-6 font-sans text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.2em] sm:tracking-[0.24em] md:tracking-[0.3em] uppercase text-paper will-transform lg:min-w-65 whitespace-nowrap"
                   >
                     <span
                       className="absolute inset-0 bg-paper translate-y-full
